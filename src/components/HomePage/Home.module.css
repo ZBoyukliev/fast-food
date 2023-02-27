@@ -1,18 +1,18 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
- 
+
 body {
     font-family: 'Oswald';
     box-sizing: border-box;
 }
- 
- 
+
+
 .container {
     width: 100%;
-    height: 90vh;
+    height: 85vh;
     position: relative;
 }
+
 .container img {
     width: 100%;
     height: 100%;
@@ -20,119 +20,17 @@ body {
     object-fit: cover;
     z-index: -10;
 }
- 
-.container .header {
-    background:rgba(255,255,255,.9);
-    height: 80px;
-    width: 100%;
-}
- 
-.container .header .working-time-login {
-    width: 90%;
-    height: 40px;
-    padding: 0 20px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content:flex-end;
-}
- 
-.header .working-time-login .working-time {
-    margin-right: 320px;
-    color: rgb(88, 88, 88);
-    font-size: 15px;
-}
- 
-.header .working-time-login .logo {
-    width: 110px;
-    height: 170px;
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 60px;
-    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.6);
-}
- 
-.header .working-time-login .login {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-}
- 
-.header .working-time-login .login a {
-    text-decoration: none;
-    color: #195e33;
-}
- 
-.header .working-time-login .divider {
-    background-color: #195e33;
-    width: 2px;
-    height: 16px;
-}
- 
-.container .header nav {
-    width:82%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left:180px;
-    gap: 20px;
-}
- 
-.container .header nav .navigation {
-    width:55%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 8px;
-    margin-right: 32px;
-}
- 
-.header nav .phone-number {
-    color: #195e33;
-    font-weight: 600;
-    margin-right: 20px;
-    font-size:17px;
- 
-}
- 
-.header nav .search {
-    border: 1px solid #000;
-    text-transform: uppercase;
-    color: #195e33;
-    text-align: center;
-    font-size: 16px;
-    font-family: Oswald,sans-serif;
-    font-weight: 600;
-    outline: 0;
-    margin-right: 16px;
-}
- 
-.header nav  a{
-    text-decoration: none;
-    color: #195e33;
-    font-weight: 600;
-    font-size:17px;
-}
- 
-.header nav .nav-link:hover {
-    /* border-bottom: 3px solid #195e33; */
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-}
- 
+
 .container .content {
     position: absolute;
-    background:rgba(255,255,255,.9);
-    top:100px;
+    background: rgba(255, 255, 255, .9);
+    top: 55px;
     right: 68px;
     width: 128px;
     height: 370px;
     padding: 40px 24px;
 }
- 
+
 .container .content .title {
     color: #195e33;
     letter-spacing: 1.5px;
@@ -141,16 +39,16 @@ body {
     font-weight: 600;
     height: 150px;
 }
- 
+
 .container .content .desc {
     color: #195e33;
     margin-bottom: 32px;
     line-height: 1.2;
     font-family: 'Oswald';
 }
- 
+
 .container .content .btn-order {
-    background-color:#195e33;
+    background-color: #195e33;
     color: white;
     width: 100%;
     height: 40px;
@@ -158,4 +56,109 @@ body {
     font-size: 18px;
     border: none;
     font-family: 'Oswald';
+}
+
+/* ---------------------------------------------------- */
+
+/* Thummbs */
+
+.thumbs {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+
+.thumbs ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+.thumbs ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    text-align: center;
+    flex: 0 1 160px;
+}
+
+.thumbs ul li img {
+    width: 125px;
+    height: 105px;
+}
+
+.thumbs ul li h5 {
+    color: rgb(78, 78, 78);
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Offers */
+
+.offers {
+    background-image: url('bg.jpg');
+    width: 100%;
+    height: 90vh;
+}
+
+.offers .offers-title {
+    width: 130px;
+    /* height: 60px; */
+    margin: 0 auto;
+    background-color: #195e33;
+    color: white;
+    padding: 16px 40px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    top: -8px;
+    margin-bottom: 70px;
+}
+
+.offers .offers-pictures {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.offers .offers-pictures>div {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.offers .offers-pictures .offers-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    width: 85%;
+    height: 50px;
+    padding: 16px 24px;
+}
+
+.offers .offers-pictures .offers-img1,
+.offers .offers-pictures .offers-img2,
+.offers .offers-pictures .offers-img3 {
+    max-width: 100%;
+    transition: ease-in-out .3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+
+.offers .offers-pictures>div:hover .offers-img1,
+.offers .offers-pictures>div:hover .offers-img3,
+.offers .offers-pictures>div:hover .offers-img2 {
+    transform: scale(1.1);
 }
