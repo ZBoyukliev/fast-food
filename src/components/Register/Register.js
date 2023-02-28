@@ -2,43 +2,34 @@ import styles from './Register.module.css';
 
 const Register = () => {
     return (
-        <div className={styles.container}>
- 
-            <div className={styles['form-box']}>
-                <div className={styles.heading}>
-                    <h1>Здравеите!</h1>
+        <section className={styles[`bg`]}>
+        <div className={styles[`register`]}>
+            <div className={styles[`title`]}>
+                <h3>РЕГИСТРАЦИЯ</h3>
+            </div>
+            <form className={styles[`register-form`]}>
+                <div>
+                    <label htmlFor="email">Вашият e-mail</label>
+                    <input className={styles[`form-control`]} type="email" id="email" name="email" />
                 </div>
                 <div>
-                    <form >
-                        <div>
-                            <label htmlFor="email" >Моля въведете имейл адрес</label>
-                            <input className={styles['form-control']}
-                                type="email"
-                                id="email"
-                                name="email"></input>
-                        </div>
-                        <div>
-                            <label htmlFor="password" >Моля въведете парола</label>
-                            <input className={styles['form-control']}
-                                type="password"
-                                id="passwprd"
-                                name="password"></input>
-                        </div>
-                        <div>
-                            <label htmlFor="repeat-password" >Моля повторете паролата</label>
-                            <input className={styles['form-control']}
-                                type="password"
-                                id="repeat-passwprd"
-                                name="repeat-password"></input>
-                        </div>
-                            <input className={styles.register}
-                                type="submit"
-                                name="user-login"
-                                value="Регистрирай се" />
-                    </form>
+                    <label htmlFor="password">Парола</label>
+                    <input className={styles[`form-control`]} type="password" id="password" name="password" />
+
                 </div>
-            </div>
+                <div>
+                    <label htmlFor="re-password">Повтори Парола</label>
+                    <input className={styles[`form-control`]} type="password" id="re-password" name="re-password" />
+
+                </div>
+                <div className={styles[`buttons`]}>
+                    <input className={styles[`confrim`]} type="submit" value="&#10003; ПОТВЪРДИ" />
+                    <input className={styles[`clear`]} type="submit" value="&#10008; ИЗЧИСТИ" />
+                </div>
+            </form>
+            <p>Ако имате регистрация натиснете <a href="/login">тук</a>.</p>
         </div>
+    </section>
     );
 };
 

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+.container {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -10;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* menu-sec */
+
+.menu {
+    height: 100%;
+    width: 100%;
+    background-image: url('/public/images/bg.jpg');
+}
+
+.menu .menu-title {
+    width: 130px;
+    /* height: 60px; */
+    margin: 0 auto;
+    background-color: #195e33;
+    color: white;
+    padding: 16px 40px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    top: -8px;
+    margin-bottom: 70px;
+}
+
+.menu .menu-sec {
+    padding: 40px 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu .menu-sec .menu-sec-product {
+    cursor: pointer;
+    width: 35%;
+    padding: 30px 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu .menu-sec .menu-sec-product .menu-sec-title {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    color: #514c46;
+}
+
+.menu .menu-sec .menu-sec-product:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: ease-in-out .3s;
+    transform: scale(1);
+}
+
+.menu .menu-sec .menu-sec-product img{
+    width: 450px;
+    height: 370px;
+    margin-top: 50px;
+}
+
+.menu .menu-sec .menu-sec-product .btn-menu {
+    width: 178px;
+    height: 42px;
+    border: none;
+    background-color: #195e33;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    /* font-family: ' Oswald'; */
+}
+
+.menu .menu-sec .menu-sec-product .btn-menu i {
+    margin-right: 6px;
+    font-size: 18px;
+}
+
+.menu .menu-sec .menu-sec-product .div-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 auto;
+}
+
+.menu .menu-sec .menu-sec-product .div-btn .btn {
+    height: 42px;
+    width: 100px;
+    border: none;
+    background-color: #195e33;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}

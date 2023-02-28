@@ -16,7 +16,7 @@ const Header = () => {
         <nav>
             <ul className={styles["navigation"]} role="list">
                 <li className={styles["nav-link"]}>
-                    <a href="/#">МЕНЮ</a>
+                    <Link to="/menu">МЕНЮ</Link>
                 </li>
                 <li className={styles["nav-link"]}>
                     <a href="/#">ПРОМОЦИИ</a>
