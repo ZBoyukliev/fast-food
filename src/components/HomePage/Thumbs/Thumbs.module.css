@@ -1,0 +1,36 @@
+
+
+.thumbs {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+
+.thumbs ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+.thumbs ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    text-align: center;
+    flex: 0 1 160px;
+}
+
+.thumbs ul li img {
+    width: 125px;
+    height: 105px;
+}
+
+.thumbs ul li h5 {
+    color: rgb(78, 78, 78);
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+}

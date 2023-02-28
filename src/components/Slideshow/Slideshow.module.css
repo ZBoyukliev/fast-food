@@ -1,0 +1,27 @@
+
+.slide-container {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.slide-container div {
+    height: 500px;
+}
+
+.slide-container .offers-title {
+    width: 260px;
+    height: 30px;
+    background-color: #195e33;
+    color: white;
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    position: absolute;
+    top: -8px;
+    margin-bottom: 70px;
+    left: 38.8%;
+    z-index: 1;
+}

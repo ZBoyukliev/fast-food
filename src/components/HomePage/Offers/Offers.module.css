@@ -1,0 +1,65 @@
+
+
+.offers {
+    background-image: url('../bg.jpg');
+    width: 100%;
+    height: 90vh;
+}
+
+.offers .offers-title {
+    width: 130px;
+    /* height: 60px; */
+    margin: 0 auto;
+    background-color: #195e33;
+    color: white;
+    padding: 16px 40px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    top: -8px;
+    margin-bottom: 70px;
+}
+
+.offers .offers-pictures {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.offers .offers-pictures>div {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.offers .offers-pictures .offers-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    width: 85%;
+    height: 50px;
+    padding: 16px 24px;
+}
+
+.offers .offers-pictures .offers-img1,
+.offers .offers-pictures .offers-img2,
+.offers .offers-pictures .offers-img3 {
+    max-width: 100%;
+    transition: ease-in-out .3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+
+.offers .offers-pictures>div:hover .offers-img1,
+.offers .offers-pictures>div:hover .offers-img3,
+.offers .offers-pictures>div:hover .offers-img2 {
+    transform: scale(1.1);
+}

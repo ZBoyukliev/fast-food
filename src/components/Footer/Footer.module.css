@@ -3,16 +3,18 @@
 
 .footer {
     height: 100%;
-    width: 100%;
+    width: 97%;
     background-color: #195e33;
     color: white;
     padding: 30px 20px;
+    display: flex;
 }
 
 .footer .footer-shell {
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 42%;
+    padding-left: 30px;
 }
 
 .footer .footer-shell .footer-text {
@@ -25,4 +27,21 @@
 
 .footer .footer-shell .footer-text p:nth-child(1) {
     margin-bottom: 2px;
+}
+
+.footer .soc-media {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    padding-top: 10px;
+}
+
+.footer .soc-media .soc-media-ul {
+    display: flex;
+    gap: 28px;
+    font-size: 28px;
+}
+
+.footer a {
+    color: white;
 }
