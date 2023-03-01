@@ -1,0 +1,11 @@
+
+
+.trolley {
+    position: fixed;
+    background-image: url('/public/images/bg.jpg');
+    height: 250px;
+    width: 300px;
+    top: 40%;
+    right: 8px;
+    z-index: 100;
+}

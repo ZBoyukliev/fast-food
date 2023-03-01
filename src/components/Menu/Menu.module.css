@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
+.main {
+    /* position: relative; */
+}
+
 .container {
     width: 100%;
     height: 85vh;
-    position: relative;
+    display: flex;
+    /* position: relative; */
 }
 
 .container img {
@@ -35,7 +40,7 @@
     font-weight: 600;
     position: relative;
     top: -8px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 .menu .menu-sec {
@@ -64,13 +69,13 @@
 
 .menu .menu-sec .menu-sec-product:hover {
     background-color: rgba(0, 0, 0, 0.1);
-    transition: ease-in-out .3s;
+    transition: ease-in-out 0.4s;
     transform: scale(1);
 }
 
 .menu .menu-sec .menu-sec-product img{
-    width: 450px;
-    height: 370px;
+    width: 440px;
+    height: 360px;
     margin-top: 50px;
 }
 
