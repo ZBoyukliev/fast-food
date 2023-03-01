@@ -52,6 +52,7 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .menu .menu-sec .menu-sec-product .menu-sec-title {
@@ -71,6 +72,54 @@
     width: 450px;
     height: 370px;
     margin-top: 50px;
+}
+
+.menu .menu-sec .menu-sec-product .menu-price {
+    width: 80px;
+    height: 80px;
+    background-color: #195e33;
+    color: white;
+    position: absolute;
+    padding: 4px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 42px 42px 42px 0px;
+    right: 20px;
+    top: 260px;
+}
+
+.menu .menu-sec .menu-sec-product .menu-price :nth-child(1) {
+    font-size: 40px;
+    font-weight: 500;
+    position: relative;
+    margin-right: 30px;
+    margin-bottom: 8px;
+}
+
+.menu .menu-sec .menu-sec-product .menu-price :nth-child(2) {
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+}
+
+.menu .menu-sec .menu-sec-product .menu-price :nth-child(3) {
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+    right: 22px;
+    top: 40px;
+}
+
+.menu .menu-sec .menu-sec-product .menu-price :nth-child(4) {
+    position: absolute;
+    top: 62px;
+    font-size: 12px;
+    text-decoration-line: line-through;
+    color: #5e8e70;
+    font-weight: 700;
 }
 
 .menu .menu-sec .menu-sec-product .btn-menu {
