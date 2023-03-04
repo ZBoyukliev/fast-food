@@ -17,7 +17,7 @@ const Menu = () => {
                 </div>
                 <div className={styles['menu-sec']}>
                     <div className={styles['menu-sec-product']}>
-                        <h3 className={styles['menu-sec-titl']}>ТЕЛЕШКО ИЗКУШЕНИЕ</h3>
+                        <h3 className={styles['menu-sec-title']}>ТЕЛЕШКО ИЗКУШЕНИЕ</h3>
                         <img src='./images/TM_580x500.png' alt='meal' />
                         <div className={styles['menu-price']}>
                             <span>5.</span>

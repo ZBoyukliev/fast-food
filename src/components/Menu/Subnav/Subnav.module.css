@@ -22,8 +22,16 @@
 }
 
 .sub .sub-shell .sub-shell-ul li {
-    color: white;
+    color: #92aa9a;;
     font-size: 18px;
     cursor: pointer;
+}
+
+.sub .sub-shell .sub-shell-ul li:hover {
+    color: white;
+}
+
+.sub .sub-shell .sub-shell-ul a {
+    text-decoration: none;
 }
 
