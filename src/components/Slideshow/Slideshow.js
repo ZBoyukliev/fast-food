@@ -19,7 +19,7 @@ const slideImages = [
 const Slideshow = () => {
     return (
         <section className={styles['slide-container']}>
-            <div className={styles["offers-title"]}>
+            <div className={styles['offers-title']}>
                 <h3>НОВИ ПРЕДЛОЖЕНИЯ</h3>
             </div>
             <Slide>

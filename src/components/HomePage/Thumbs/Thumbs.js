@@ -2,7 +2,7 @@ import styles from './Thumbs.module.css';
 
 const Thumbs = () => {
     return (
-        <section className={styles["thumbs"]}>
+        <section className={styles['thumbs']}>
             <ul>
                 <li>
                     <img src="/images/duner.png" alt="" />
