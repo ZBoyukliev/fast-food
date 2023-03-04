@@ -24,5 +24,6 @@
 .sub .sub-shell .sub-shell-ul li {
     color: white;
     font-size: 18px;
+    cursor: pointer;
 }
 

@@ -2,18 +2,19 @@
     background-color: #195e33;
     padding: 2px 2px;
     position: fixed;
-    height: 242px;
+    max-height: 500px;
     width: 284px;
-    top: 40%;
+    top: 30%;
     right: 8px;
     z-index: 100;
+    border: 1px solid #195e33;
 }
 
 .trolley {
     /* position: fixed; */
     background-image: url('/public/images/bg.jpg');
-    height: 240px;
-    width: 280px;
+    /* height: 500px;
+    width: 280px; */
     top: 40%;
     z-index: 100;
     margin: 0 auto;
@@ -39,21 +40,67 @@
     background-image: url('/public/images/bg.jpg');
     padding: 20px 18px;
     max-width: 274px;
+    min-height: 282;
     vertical-align: baseline;
 }
 
+.trolley .items .items-aded {
+    max-height: 160px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
 .trolley .items .items-aded .items-aded-inner {
-    /* max-height: 284px;
-    overflow-y: scroll; */
     background-color: #195e33;
     padding-bottom: 1px;
 }
 
 /* -------------------------------------------------------------------------- */
+/* devider  */
 
 .devider {
     height: 1px;
     width: 100%;
     background-color: #195e33;
     
+}
+
+/* --------------------------------------------------------------------------------- */
+/* temp-sum  */
+
+.calc-sum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 18px;
+}
+
+.calc-sum .small {
+    font-weight: 600;
+    padding-top: 4px;
+}
+
+.calc-sum .calc-sum-head {
+    font-size: 20px;
+   font-weight: 900;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* footer  */
+
+.trolley-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 12px;
+}
+
+.trolley-footer .trolley-link-btn {
+    color: white;
+    background-color: #195e33;
+    padding: 12px 100px;
+    font-weight: 500;
+    text-decoration: none;
 }
