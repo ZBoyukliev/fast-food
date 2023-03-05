@@ -10,7 +10,7 @@ const Drinks = () => {
             <main className={styles['main']}>
                 <Trolley />
                 <section className={styles['container']}>
-                    <img src="/images/ayran.png" alt="doner" />
+                    <img src="/images/ayran.png" alt="drinks" />
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>

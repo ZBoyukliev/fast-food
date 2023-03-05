@@ -9,7 +9,7 @@ const KidsMenu = () => {
             <main className={styles['main']}>
                 <Trolley />
                 <section className={styles['container']}>
-                    <img src="/images/falafel.png" alt="falafel" />
+                    <img src="/images/falafel.png" alt="kids" />
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>

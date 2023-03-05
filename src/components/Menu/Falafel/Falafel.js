@@ -10,7 +10,7 @@ const Falafel = () => {
             <main className={styles['main']}>
                 <Trolley />
                 <section className={styles['container']}>
-                    <img src="/images/falafel.png" alt="falafel" />
+                    {/* <img src="/public/images/falafelbg.jpg" alt="falafel" /> */}
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>

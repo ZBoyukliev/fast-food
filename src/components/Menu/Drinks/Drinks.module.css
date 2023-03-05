@@ -5,10 +5,11 @@
     width: 100%;
     height: 60vh;
     display: flex;
-    /* position: relative; */
-    align-self: center;
-    justify-content: center;
-    /* background-image: url(''); */
+    background-image: url('/public/images/coca-cola-fizzy-drinks1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -20;
 }
 
 .container img {

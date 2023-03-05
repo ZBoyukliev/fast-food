@@ -6,22 +6,20 @@
     height: 60vh;
     display: flex;
     /* position: relative; */
-    background-image: url('/public/images/adobe1.jpg');
+    background-image: url('/public/images/falafelbg.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     z-index: -20;
 }
 
-.container img {
+/* .container img {
     width: 40%;
     height: 40%;
     position: absolute;
     right: 32%;
     top: 36%;
-    /* object-fit: cover; */
-    z-index: 10;
-}
+} */
 
 /* ---------------------------------------------------------------------------- */
 /* menu-sec */
