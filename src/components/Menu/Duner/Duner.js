@@ -10,7 +10,7 @@ const Duner = () => {
             <main className={styles['main']}>
                 <Trolley />
                 <section className={styles['container']}>
-                    <img src="/images/slide-picture-duner1.jpg" alt="doner" />
+                    <img src="/images/slide-picture-duner1.jpg" alt="duner" />
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>
@@ -20,6 +20,9 @@ const Duner = () => {
                         <div className={styles['menu-sec-product']}>
                             <h3 className={styles['menu-sec-title']}>ТЕЛЕШКО ИЗКУШЕНИЕ</h3>
                             <img src='./images/TM_580x500.png' alt='meal' />
+                            <div className={styles['menu-promo']}>
+                                <span>ПРОМО !</span>
+                            </div>
                             <div className={styles['menu-price']}>
                                 <span>5.</span>
                                 <span>50</span>
@@ -65,6 +68,9 @@ const Duner = () => {
                         <div className={styles['menu-sec-product']}>
                             <h3 className={styles['menu-sec-title']}>ТЕЛЕШКО ИЗКУШЕНИЕ</h3>
                             <img src='./images/2_Composite_za_obrabotka.png' alt='meal' />
+                            <div className={styles['menu-new-offer']}>
+                                <span>НОВО !</span>
+                            </div>
                             <div className={styles['menu-price']}>
                                 <span>5.</span>
                                 <span>50</span>

@@ -40,6 +40,34 @@
     margin-bottom: 30px;
 }
 
+.menu .menu-promo {
+    height: 40px;
+    width: 100px;
+    background-color: orangered;
+    color: white;
+    position: absolute;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 16px;
+    top: 100px;
+    right: 60px;
+}
+
+.menu .menu-new-offer {
+    height: 40px;
+    width: 100px;
+    background-color: #195e33;
+    color: white;
+    position: absolute;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 16px;
+    top: 120px;
+    right: 25px;
+}
+
 .menu .menu-sec {
     padding: 40px 40px;
     display: flex;
@@ -70,7 +98,7 @@
     transform: scale(1);
 }
 
-.menu .menu-sec .menu-sec-product img{
+.menu .menu-sec .menu-sec-product img {
     width: 440px;
     height: 360px;
     margin-top: 50px;

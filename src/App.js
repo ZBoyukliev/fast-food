@@ -4,7 +4,6 @@ import Home from './components/HomePage/Home';
 import { Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import Menu from './components/Menu/Menu';
 import Burger from './components/Menu/Burger/Burger';
 import Chicken from './components/Menu/Chicken/Chicken';
 import Deserts from './components/Menu/Deserts/Deserts';
@@ -24,7 +23,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/menu' element={<Menu />} />
+          <Route path='/menu' element={<Duner />} />
           <Route path='/burger' element={<Burger />} />
           <Route path='/chicken' element={<Chicken />} />
           <Route path='/deserts' element={<Deserts />} />
