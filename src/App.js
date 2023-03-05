@@ -13,6 +13,7 @@ import Duner from './components/Menu/Duner/Duner';
 import Falafel from './components/Menu/Falafel/Falafel';
 import Sauces from './components/Menu/Sauces/Sauces';
 import Pizza from './components/Menu/Pizza/Pizza';
+import KidsMenu from './components/Menu/KidsMenu/KidsMenu';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path='/falafel' element={<Falafel />} />
           <Route path='/sauces' element={<Sauces/>} />
           <Route path='/pizza' element={<Pizza/>} />
+          <Route path='/kids' element={<KidsMenu />} />
         </Routes>
       </div>
       <Footer />

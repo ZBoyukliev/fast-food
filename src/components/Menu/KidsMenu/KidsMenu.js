@@ -1,19 +1,19 @@
+import styles from './KidsMenu.module.css';
 import Subnav from '../Subnav/Subnav';
 import Trolley from '../Trolley/Trolley';
-import styles from './Chicken.module.css';
 
-const Chicken = () => {
+const KidsMenu = () => {
     return (
         <>
             <Subnav />
             <main className={styles['main']}>
                 <Trolley />
                 <section className={styles['container']}>
-                    <img src="/images/slide-picture-chicken1.jpg" alt="doner" />
+                    <img src="/images/falafel.png" alt="falafel" />
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>
-                        <h3>ПИЛЕ</h3>
+                        <h3>ДЕТСКО МЕНЮ</h3>
                     </div>
                     <div className={styles['menu-sec']}>
                         <div className={styles['menu-sec-product']}>
@@ -112,4 +112,4 @@ const Chicken = () => {
     );
 };
 
-export default Chicken;
+export default KidsMenu;

@@ -13,7 +13,7 @@ const Deserts = () => {
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>
-                        <h3>ПРОМОЦИИ</h3>
+                        <h3>ДЕСЕРТИ</h3>
                     </div>
                     <div className={styles['menu-sec']}>
 

@@ -14,7 +14,7 @@ const Falafel = () => {
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>
-                        <h3>ПРОМОЦИИ</h3>
+                        <h3>ФАЛАФЕЛ</h3>
                     </div>
                     <div className={styles['menu-sec']}>
                         <div className={styles['menu-sec-product']}>
