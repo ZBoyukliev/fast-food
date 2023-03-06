@@ -26,6 +26,9 @@ const Slideshow = () => {
                 {slideImages.map((slideImage, index) => (
                     <div className="each-slide" key={index}>
                         <div style={{ 'backgroundImage': `url(${slideImage.url})` }}>
+                        <div className='each-slide1'>
+                          BMB
+                        </div>
                             <span>{slideImage.caption}</span>
                         </div>
                     </div>

@@ -35,7 +35,7 @@
 
 .container .content .desc {
     color: #195e33;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
     line-height: 1.2;
     font-family: 'Oswald';
 }
@@ -49,4 +49,6 @@
     font-size: 18px;
     border: none;
     font-family: 'Oswald';
+    text-decoration: none;
+    padding: 6px 28px;
 }

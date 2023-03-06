@@ -19,10 +19,10 @@ const Header = () => {
                         <Link to="/menu">МЕНЮ</Link>
                     </li>
                     <li className={styles['nav-link']}>
-                        <a href="/#">ПРОМОЦИИ</a>
+                        <Link to="/offers">ПРОМОЦИИ</Link>
                     </li>
                     <li className={styles['nav-link']}>
-                        <a href="/#">А!СТАНДАРТ</a>
+                        <Link to="/#">А!СТАНДАРТ</Link>
                     </li>
                     <li className={styles['nav-link']}>
                         <a href="/#">КАКВО НОВО</a>

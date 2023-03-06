@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Food.module.css';
 
 const Food = () => {
@@ -10,7 +11,7 @@ const Food = () => {
                     Поръчай вкусен дюнер от голямото ни разнообразие с пилешко, телешко е панирано месо, в питка
                     или порция
                 </p>
-                <button className={styles['btn-order']}>ПОРЪЧАЙ</button>
+                <Link to='/duner' className={styles['btn-order']}>ПОРЪЧАЙ</Link>
             </div>
         </section>
     );
