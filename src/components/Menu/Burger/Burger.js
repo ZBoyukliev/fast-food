@@ -10,7 +10,7 @@ const Burger = () => {
             <main className={styles['main']}>
                 <Trolley />
                 <section className={styles['container']}>
-                    {/* <img src="/images/slide-picture-burger1.jpg" alt="burger" /> */}
+                    <img src="/images/slide-picture-burger1.jpg" alt="burger" />
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>

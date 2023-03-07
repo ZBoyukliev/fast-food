@@ -13,6 +13,10 @@
     gap: 4px;
 }
 
+.thumbs ul a {
+    text-decoration: none;
+}
+
 .thumbs ul li {
     display: flex;
     align-items: center;

@@ -22,7 +22,7 @@ const Header = () => {
                         <Link to="/offers">ПРОМОЦИИ</Link>
                     </li>
                     <li className={styles['nav-link']}>
-                        <Link to="/#">А!СТАНДАРТ</Link>
+                        <Link to="/#">КОМЕНТАРИ И РЕВЮТА</Link>
                     </li>
                     <li className={styles['nav-link']}>
                         <a href="/#">КАКВО НОВО</a>
@@ -32,9 +32,6 @@ const Header = () => {
                     </li>
                     <li className={styles['nav-link']}>
                         <a href="/#">ПИШИ НИ</a>
-                    </li>
-                    <li className={styles['nav-link']}>
-                        <a href="/#">B2B</a>
                     </li>
                 </ul>
 

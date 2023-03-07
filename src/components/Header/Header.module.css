@@ -94,7 +94,7 @@
     text-decoration: none;
     color: #195e33;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .header nav .nav-link:hover {
@@ -102,5 +102,4 @@
     text-decoration: underline;
     text-decoration-thickness: 4px;
     color: #195e33;
-
 }
