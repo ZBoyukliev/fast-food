@@ -9,7 +9,7 @@ const Menu = () => {
             <main className={styles['main']}>
              <Trolley />
             <section className={styles['container']}>
-                <img src="/images/slide-picture-duner1.jpg" alt="doner" />
+                <img src="/images/slide-picture-duner1.jpg" alt="duner" />
             </section>
             <section className={styles['menu']}>
                 <div className={styles['menu-title']}>
@@ -69,7 +69,7 @@ const Menu = () => {
                             <span>50</span>
                             <span>лв.</span>
                         </div>
-                        <div className={styles[`div-btn`]}>
+                        <div className={styles['div-btn']}>
                             <button className={styles['btn']}>МЕНЮ</button>
                             <button className={styles['btn']}>ДЕТАЍЛИ</button>
                             <button className={styles['btn']}>ДОБАВИ</button>
