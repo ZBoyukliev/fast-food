@@ -6,7 +6,7 @@
     height: 60vh;
     display: flex;
     /* position: relative; */
-    background-image: url('/public/images/falafelbg.jpg');
+    background-image: url('/public/images/falafel/falafelbg.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
