@@ -4,7 +4,7 @@
     height: 60vh;
     display: flex;
     /* position: relative; */
-    background-image: url('/public/images/photo-pizza.jpg');
+    background-image: url('/public/images/pizza/photo-pizza.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
