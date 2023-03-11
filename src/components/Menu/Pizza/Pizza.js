@@ -1,8 +1,9 @@
+import * as menuService from '../../../services/menuService';
 import { useEffect, useState } from 'react';
+
 import Subnav from '../Subnav/Subnav';
 import Trolley from '../Trolley/Trolley';
 import styles from './Pizza.module.css';
-import * as menuService from '../../../services/menuService';
 
 const Pizza = () => {
 
