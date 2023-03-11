@@ -2336,6 +2336,203 @@
                 "priceSt": "00",
             },
 
+            // DRINKS --------------------------------------------------------------------------------------
+            // PEPSI 2L ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a10": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a10",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'PEPSI 2L',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/pepsi2L.png",
+                "content": [],
+                "_createdOn": 1657194128610,
+                "price": 3.90,
+                "priceLv": "3.",
+                "priceSt": "90",
+            },
+
+            // MIRINDA 2L ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a11": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a11",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'MIRINDA 2L',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/mirinda2L.png",
+                "content": [],
+                "_createdOn": 1657194128611,
+                "price": 3.90,
+                "priceLv": "3.",
+                "priceSt": "90",
+            },
+
+            // SEVEN UP 2L ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a12": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a12",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'SEVEN UP 2L',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/sevenup2L.png",
+                "content": [],
+                "_createdOn": 1657194128612,
+                "price": 3.90,
+                "priceLv": "3.",
+                "priceSt": "90",
+            },
+
+            // PEPSI 500ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a13": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a13",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'PEPSI 500ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/pepsi500ml.png",
+                "content": [],
+                "_createdOn": 1657194128613,
+                "price": 2.20,
+                "priceLv": "2.",
+                "priceSt": "20",
+            },
+
+            // MIRINDA 500ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a14": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a14",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'MIRINDA 500ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/mirinda500ml.png",
+                "content": [],
+                "_createdOn": 1657194128614,
+                "price": 2.20,
+                "priceLv": "2.",
+                "priceSt": "20",
+            },
+
+            // SEVEN UP 500ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a15": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a15",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'SEVEN UP 500ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/sevenup500ml.png",
+                "content": [],
+                "_createdOn": 1657194128615,
+                "price": 2.20,
+                "priceLv": "2.",
+                "priceSt": "20",
+            },
+
+            // PEPSI 330ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a16": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a16",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'PEPSI 330ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/pepsi330ml.png",
+                "content": [],
+                "_createdOn": 1657194128616,
+                "price": 1.90,
+                "priceLv": "1.",
+                "priceSt": "90",
+            },
+
+            // MIRINDA 330ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a17": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a17",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'MIRINDA 330ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/mirinda330ml.png",
+                "content": [],
+                "_createdOn": 1657194128617,
+                "price": 1.90,
+                "priceLv": "1.",
+                "priceSt": "90",
+            },
+
+            // SEVEN UP 330ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a18": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a18",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'SEVEN UP 330ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/sevenup330ml.png",
+                "content": [],
+                "_createdOn": 1657194128618,
+                "price": 1.90,
+                "priceLv": "1.",
+                "priceSt": "90",
+            },
+
+            // LIPTION 500ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a19": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a19",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'LIPTION 500ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/liption500ml.png",
+                "content": [],
+                "_createdOn": 1657194128619,
+                "price": 2.90,
+                "priceLv": "2.",
+                "priceSt": "90",
+            },
+
+            // PRISON 500ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a20": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a20",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'PRISON 500ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/prisun500ml.png",
+                "content": [],
+                "_createdOn": 1657194128620,
+                "price": 1.90,
+                "priceLv": "1.",
+                "priceSt": "90",
+            },
+
+            // АЙРЯН АЛАДИН 500ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a21": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a21",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'АЙРЯН АЛАДИН 500ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/ayran.png",
+                "content": [],
+                "_createdOn": 1657194128621,
+                "price": 1.90,
+                "priceLv": "1.",
+                "priceSt": "90",
+            },
+
+            // АЙРЯН АЛАДИН 250ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a22": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a22",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'АЙРЯН АЛАДИН 250ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/airan250ml.png",
+                "content": [],
+                "_createdOn": 1657194128622,
+                "price": 1.50,
+                "priceLv": "1.",
+                "priceSt": "50",
+            },
+
+            // МИНЕРАЛНА ВОДА 500ML ------------------------------------------------------------------------------
+            "dr436770-76c5-40e2-b231-77409eda7a23": {
+                "_id": "rd436770-76c5-40e2-b231-77409eda7a23",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": 'МИНЕРАЛНА ВОДА 500ML',
+                "category": "drinks",
+                "imageUrl": "/images/drinks/voda500ml.png",
+                "content": [],
+                "_createdOn": 1657194128623,
+                "price": 1.50,
+                "priceLv": "1.",
+                "priceSt": "50",
+            },
+
         },
 
         comments: {

@@ -34,7 +34,7 @@ const Sauces = () => {
                     <div className={styles['menu-sec']}>
 
                         {souces.map(s => (
-                            <div className={styles['menu-sec-product']}>
+                            <div key={s._id} className={styles['menu-sec-product']}>
                                 <h3 className={styles['menu-sec-title']}>{s.title}</h3>
                                 <img src={s.imageUrl} alt='meal' />
                                 <div className={styles['menu-price']}>
