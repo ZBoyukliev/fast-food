@@ -45,7 +45,7 @@
 }
 
 .menu .menu-sec {
-    padding: 40px 40px;
+    padding: 40px 120px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -148,13 +148,13 @@
 .menu .menu-sec .menu-sec-product .div-btn {
     display: flex;
     justify-content: space-between;
-    gap: 16px;
+    gap: 36px;
     margin: 0 auto;
 }
 
 .menu .menu-sec .menu-sec-product .div-btn .btn {
     height: 42px;
-    width: 100px;
+    width: 140px;
     border: none;
     background-color: #195e33;
     color: white;
