@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
+import * as menuService from '../../../services/menuService';
+
 import Subnav from '../Subnav/Subnav';
 import Trolley from '../Trolley/Trolley';
 import styles from './Chicken.module.css';
-import { useEffect, useState } from 'react';
-import * as menuService from '../../../services/menuService';
 
 const Chicken = () => {
 
