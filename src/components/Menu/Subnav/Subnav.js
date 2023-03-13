@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Subnav.module.css';
 
 const Subnav = () => {
@@ -6,15 +6,15 @@ const Subnav = () => {
         <div className={styles['sub']}>
             <div className={styles['sub-shell']}>
                 <ul className={styles['sub-shell-ul']}>
-                    <Link to='/duner'><li>Дюнер</li></Link>
-                    <Link to='/burger'><li>Бургер</li></Link>
-                    <Link to='/pizza'><li>Пица</li></Link>
-                    <Link to='/chicken'><li>Пиле</li></Link>
-                    <Link to='/falafel'><li>Фалафел</li></Link>
-                    <Link to='/sauces'><li>Гарнитури и сосове</li></Link>
-                    <Link to='/drinks'><li>Напитки</li></Link>
-                    <Link to='/deserts'><li>Десерти</li></Link>
-                    <Link to='/kids'> <li>Детско меню</li></Link>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to='/duner'><li>Дюнер</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/burger'><li>Бургер</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/pizza'><li>Пица</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/chicken'><li>Пиле</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/falafel'><li>Фалафел</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/sauces'><li>Гарнитури и сосове</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/drinks'><li>Напитки</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/deserts'><li>Десерти</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/kids'> <li>Детско меню</li></NavLink>
                 </ul>
             </div>
         </div>
