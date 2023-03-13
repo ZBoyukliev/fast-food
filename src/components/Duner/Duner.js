@@ -1,17 +1,21 @@
+import * as menuService from '../../services/menuService';
+import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Subnav from '../Subnav/Subnav';
-import Trolley from '../Trolley/Trolley';
+
+import Subnav from '../Menu/Subnav/Subnav';
+import Trolley from '../Menu/Trolley/Trolley';
 import styles from './Duner.module.css';
-import * as menuService from '../../../services/menuService';
 
-const Duner = () => {
+const Duner = ({ src, type }) => {
 
-    const [duner, setDuner] = useState([]);
+    const location = useLocation();
+    const [menu, setMenu] = useState([]);
+    const category = location.pathname.slice(1);
 
     useEffect(() => {
-        menuService.getByCategory('doner')
-            .then(res => setDuner(res));
-    }, []);
+        menuService.getByCategory(category)
+            .then(res => setMenu(res));
+    }, [category]);
 
     return (
         <>
@@ -19,16 +23,16 @@ const Duner = () => {
             <main className={styles['main']}>
                 <Trolley />
                 <section className={styles['container']}>
-                    <img src="/images/slide-picture-duner1.jpg" alt="duner" />
+                    <img src={src} alt="duner" />
                 </section>
                 <section className={styles['menu']}>
                     <div className={styles['menu-title']}>
-                        <h3>ДЮНЕР</h3>
+                        <h3>{type}</h3>
                     </div>
                     <div className={styles['menu-sec']}>
 
-                        {duner.map( d => (
-                                <div className={styles['menu-sec-product']}>
+                        {menu.map(d => (
+                            <div className={styles['menu-sec-product']}>
                                 <h3 className={styles['menu-sec-title']}>{d.title}</h3>
                                 <img src={d.imageUrl} alt='meal' />
                                 <div className={styles['menu-price']}>

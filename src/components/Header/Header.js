@@ -16,7 +16,7 @@ const Header = () => {
             <nav>
                 <ul className={styles['navigation']} >
                     <li className={styles['nav-link']}>
-                        <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to="/menu">МЕНЮ</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to="/doner">МЕНЮ</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
                         <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to="/offers">ПРОМОЦИИ</NavLink>

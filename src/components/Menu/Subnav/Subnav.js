@@ -6,7 +6,7 @@ const Subnav = () => {
         <div className={styles['sub']}>
             <div className={styles['sub-shell']}>
                 <ul className={styles['sub-shell-ul']}>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to='/duner'><li>Дюнер</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to='/doner'><li>Дюнер</li></NavLink>
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/burger'><li>Бургер</li></NavLink>
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/pizza'><li>Пица</li></NavLink>
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/chicken'><li>Пиле</li></NavLink>
