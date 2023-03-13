@@ -103,3 +103,9 @@
     text-decoration-thickness: 4px;
     color: #195e33;
 }
+
+.header nav .nav-active {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    color: #195e33;
+}

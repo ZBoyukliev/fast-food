@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -16,22 +16,22 @@ const Header = () => {
             <nav>
                 <ul className={styles['navigation']} >
                     <li className={styles['nav-link']}>
-                        <Link to="/menu">МЕНЮ</Link>
+                        <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to="/menu">МЕНЮ</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <Link to="/offers">ПРОМОЦИИ</Link>
+                        <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to="/offers">ПРОМОЦИИ</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <Link to="/#">КОМЕНТАРИ И РЕВЮТА</Link>
+                        <NavLink className={({isActive}) => isActive ? styles['nav-acctive'] : ''} to="/">КОМЕНТАРИ И РЕВЮТА</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <a href="/#">КАКВО НОВО</a>
+                        <NavLink className={({isActive}) => isActive ? styles['nav-acctive'] : ''} href="/whatsnew">КАКВО НОВО</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <a href="/#">ЕЛА ПРИ НАС</a>
+                        <NavLink className={({isActive}) => isActive ? styles['nav-acctive'] : ''} href="/kids">ЕЛА ПРИ НАС</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <a href="/#">ПИШИ НИ</a>
+                        <NavLink className={({isActive}) => isActive ? styles['nav-acctive'] : ''} href="/kids">ПИШИ НИ</NavLink>
                     </li>
                 </ul>
 

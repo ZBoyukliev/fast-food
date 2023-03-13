@@ -8,7 +8,7 @@ const Offers = () => {
             </div>
             <div className={styles['offers-pictures']}>
                 <div>
-                    <img className={styles['offers-img1']} src="/images/master-combo.jpg" alt="master-combo" />
+                    <img className={styles['offers-img1']} src="/images/burgers/master-combo.jpg" alt="master-combo" />
                     <div className={styles['offers-desc']}>
                         <p>МАСТЪР КОМБО</p>
                     </div>
