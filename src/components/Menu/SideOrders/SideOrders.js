@@ -1,49 +1,53 @@
 import * as menuService from '../../../services/menuService';
 import { useEffect, useState } from 'react';
 
-import Subnav from '../Subnav/Subnav';
-import Trolley from '../Trolley/Trolley';
-import styles from './Sauces.module.css';
+import Subnav from '../../Subnav/Subnav';
+import Trolley from '../../Trolley/Trolley';
+import styles from './SideOrders.module.css';
+import { useLocation } from 'react-router-dom';
 
 
-const Sauces = () => {
+const Drinks = ({ src, type }) => {
 
-    const [souces, setSouces] = useState([]);
+    const location = useLocation();
+    const [menu, setMenu] = useState([]);
+    const category = location.pathname.slice(1);
 
     useEffect(() => {
-        menuService.getByCategory('souces')
-            .then(res => setSouces(res));
-    }, []);
+        menuService.getByCategory(category)
+            .then(res => setMenu(res));
+    }, [category]);
 
     return (
         <>
             <Subnav />
             <main className={styles['main']}>
+
                 <Trolley />
 
                 <section className={styles['container']}>
-                    <img src="/images/falafel.png" alt="sauces" />
+                    <img src={src} alt="drinks" />
                 </section>
 
                 <section className={styles['menu']}>
 
                     <div className={styles['menu-title']}>
-                        <h3>ГАРНИТУРИ И СОСОВЕ</h3>
+                        <h3>{type}</h3>
                     </div>
 
                     <div className={styles['menu-sec']}>
 
-                        {souces.map(s => (
-                            <div key={s._id} className={styles['menu-sec-product']}>
-                                <h3 className={styles['menu-sec-title']}>{s.title}</h3>
-                                <img src={s.imageUrl} alt='meal' />
+                        {menu.map(d => (
+                            <div key={d._id} className={styles['menu-sec-product']}>
+                                <h3 className={styles['menu-sec-title']}>{d.title}</h3>
+                                <img src={d.imageUrl} alt='meal' />
                                 <div className={styles['menu-price']}>
-                                    <span>{s.priceLv}</span>
-                                    <span>{s.priceSt}</span>
+                                    <span>{d.priceLv}</span>
+                                    <span>{d.priceSt}</span>
                                     <span>лв.</span>
                                 </div>
                                 <div className={styles['div-btn']}>
-                                    <button className={styles['btn']}>МЕНЮ</button>
+                                    {/* <button className={styles['btn']}>МЕНЮ</button> */}
                                     <button className={styles['btn']}>ДЕТАЍЛИ</button>
                                     <button className={styles['btn']}>ДОБАВИ</button>
                                 </div>
@@ -57,4 +61,4 @@ const Sauces = () => {
     );
 };
 
-export default Sauces;
+export default Drinks;

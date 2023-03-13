@@ -1,5 +1,5 @@
 import Offers from '../HomePage/Offers/Offers';
-import Trolley from '../Menu/Trolley/Trolley';
+import Trolley from '../Trolley/Trolley';
 import styles from './OffersPage.module.css';
 
 const OffersPage = () => {

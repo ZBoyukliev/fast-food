@@ -11,7 +11,7 @@ const Subnav = () => {
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/pizza'><li>Пица</li></NavLink>
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/chicken'><li>Пиле</li></NavLink>
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/falafel'><li>Фалафел</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/sauces'><li>Гарнитури и сосове</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/souces'><li>Гарнитури и сосове</li></NavLink>
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/drinks'><li>Напитки</li></NavLink>
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/deserts'><li>Десерти</li></NavLink>
                     <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/kids'> <li>Детско меню</li></NavLink>

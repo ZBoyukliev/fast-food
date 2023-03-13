@@ -5,21 +5,18 @@
     width: 100%;
     height: 60vh;
     display: flex;
-    background-image: url('/public/images/img0.jpg');
+    /* background-image: url('/public/images/drinks/coca-cola-fizzy-drinks1.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    z-index: -10;
+    background-size: cover; */
+    z-index: -20;
 }
 
 .container img {
-    width: 46%;
-    height: 70%;
-    position: absolute;
-    top: 14%;
-    right: 34%;
-    /* object-fit: cover; */
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
 }
 
 /* ---------------------------------------------------------------------------- */
@@ -150,13 +147,13 @@
 .menu .menu-sec .menu-sec-product .div-btn {
     display: flex;
     justify-content: space-between;
-    gap: 16px;
+    gap: 36px;
     margin: 0 auto;
 }
 
 .menu .menu-sec .menu-sec-product .div-btn .btn {
     height: 42px;
-    width: 100px;
+    width: 140px;
     border: none;
     background-color: #195e33;
     color: white;

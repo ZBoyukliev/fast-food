@@ -1,10 +1,10 @@
-import * as menuService from '../../services/menuService';
+import * as menuService from '../../../services/menuService';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import Subnav from '../Menu/Subnav/Subnav';
-import Trolley from '../Menu/Trolley/Trolley';
-import styles from './Duner.module.css';
+import Subnav from '../../Subnav/Subnav';
+import Trolley from '../../Trolley/Trolley';
+import styles from './MainFood.module.css';
 
 const Duner = ({ src, type }) => {
 

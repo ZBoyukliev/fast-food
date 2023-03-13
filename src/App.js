@@ -1,14 +1,12 @@
+import { Routes, Route } from 'react-router-dom';
+
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
-import { Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import Deserts from './components/Menu/Deserts/Deserts';
-import Drinks from './components/Menu/Drinks/Drinks';
-import Duner from './components/Duner/Duner';
-import Sauces from './components/Menu/Sauces/Sauces';
-import KidsMenu from './components/Menu/KidsMenu/KidsMenu';
+import SideOrders from './components/Menu/SideOrders/SideOrders';
+import MainFood from './components/Menu/MainFood/MainFood';
 import OffersPage from './components/OffersPage/OffersPage';
 
 function App() {
@@ -20,15 +18,15 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/doner' element={<Duner src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'}/>} />
-          <Route path='/burger' element={<Duner src={'/images/slide-picture-burger1.jpg'} type={'БУРГЕР'}/>} />
-          <Route path='/pizza' element={<Duner src={'/images/slide-picture-pizza.jpg'} type={'ПИЦА'}/>} />
-          <Route path='/chicken' element={<Duner src={'/images/slide-picture-chicken.jpg'} type={'ПИЛЕ'}/>} />
-          <Route path='/falafel' element={<Duner src={'/images/falafel/falafelbg.jpg'} type={'ФАЛАФЕЛ'}/>} />
-          <Route path='/deserts' element={<Deserts />} />
-          <Route path='/drinks' element={<Drinks />} />
-          <Route path='/sauces' element={<Sauces/>} />
-          <Route path='/kids' element={<KidsMenu />} />
+          <Route path='/doner' element={<MainFood src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
+          <Route path='/burger' element={<MainFood src={'/images/slide-picture-burger1.jpg'} type={'БУРГЕР'} />} />
+          <Route path='/pizza' element={<MainFood src={'/images/slide-picture-pizza.jpg'} type={'ПИЦА'} />} />
+          <Route path='/chicken' element={<MainFood src={'/images/slide-picture-chicken.jpg'} type={'ПИЛЕ'} />} />
+          <Route path='/falafel' element={<MainFood src={'/images/falafel/falafelbg.jpg'} type={'ФАЛАФЕЛ'} />} />
+          <Route path='/souces' element={<SideOrders src={'/images/chips-and-dips-oct-22.jpg'} type={'ГАРНИТУРИ И СОСОВЕ'} />} />
+          <Route path='/drinks' element={<SideOrders src={'/images/drinks/coca-cola-fizzy-drinks1.jpg'} type={'НАПИТКИ'} />} />
+          <Route path='/deserts' element={<SideOrders src={'/images/deserts/bgmuffins1.jpg'} type={'ДЕСЕРТИ'} />} />
+          <Route path='/kids' element={<SideOrders src={'/images/kids/maxresdefault1.jpg'} type={'ДЕТСКО МЕНЮ'} />} />
           <Route path='/offers' element={<OffersPage />} />
         </Routes>
       </div>
