@@ -5,6 +5,7 @@ import Subnav from '../../Subnav/Subnav';
 import Trolley from '../../Trolley/Trolley';
 import styles from './SideOrders.module.css';
 import { useLocation } from 'react-router-dom';
+import SideOrderItem from './SideOrderItem/SideOrderItem';
 
 
 const Drinks = ({ src, type }) => {
@@ -37,22 +38,7 @@ const Drinks = ({ src, type }) => {
 
                     <div className={styles['menu-sec']}>
 
-                        {menu.map(d => (
-                            <div key={d._id} className={styles['menu-sec-product']}>
-                                <h3 className={styles['menu-sec-title']}>{d.title}</h3>
-                                <img src={d.imageUrl} alt='meal' />
-                                <div className={styles['menu-price']}>
-                                    <span>{d.priceLv}</span>
-                                    <span>{d.priceSt}</span>
-                                    <span>лв.</span>
-                                </div>
-                                <div className={styles['div-btn']}>
-                                    {/* <button className={styles['btn']}>МЕНЮ</button> */}
-                                    <button className={styles['btn']}>ДЕТАЍЛИ</button>
-                                    <button className={styles['btn']}>ДОБАВИ</button>
-                                </div>
-                            </div>
-                        ))}
+                        {menu.map(d => <SideOrderItem key={d._id} {...d} />)}
 
                     </div>
                 </section>
