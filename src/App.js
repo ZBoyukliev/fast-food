@@ -8,25 +8,14 @@ import Register from './components/Register/Register';
 import SideOrders from './components/Menu/SideOrders/SideOrders';
 import MainFood from './components/Menu/MainFood/MainFood';
 import OffersPage from './components/OffersPage/OffersPage';
-import { AuthContext } from './components/context/AuthContext';
-import { useLocalStorage } from './hooks/useLocalStorage';
+import { AuthProvider } from './components/context/AuthContext';
 import { Logout } from './components/Logout/Logout';
 
 function App() {
 
-  const [auth, setAuth] = useLocalStorage('auth', {});
-
-  const userLogin = (authData) => {
-    setAuth(authData);
-  };
-
-  const userLogout = () => {
-    setAuth({});
-  };
-
   return (
     <>
-    <AuthContext.Provider value={{user:auth, userLogin, userLogout}}> 
+    <AuthProvider> 
       <Header />
       <div className="App">
         <Routes>
@@ -47,7 +36,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
-      </AuthContext.Provider>
+      </AuthProvider>
     </>
   );
 }

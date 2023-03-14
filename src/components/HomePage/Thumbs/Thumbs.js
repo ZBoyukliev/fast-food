@@ -13,37 +13,37 @@ const Thumbs = () => {
                 </li>
                 <li>
                     <Link to='/burger'>
-                        <img src="/images/burger.png" alt="burger" />
+                        <img src="/images/burgers/burger.png" alt="burger" />
                         <h5>БУРГЕР</h5>
                     </Link>
                 </li>
                 <li>
                     <Link to='/pizza'>
-                        <img src="/images/pizza.png" alt="pizza" />
+                        <img src="/images/pizza/pizza.png" alt="pizza" />
                         <h5>ПИЦА</h5>
                     </Link>
                 </li>
                 <li>
                     <Link to='/chicken'>
-                        <img src="/images/chicken.png" alt="chicken" />
+                        <img src="/images/chicken/chicken-fillet.png" alt="chicken" />
                         <h5>ПИЛЕ</h5>
                     </Link>
                 </li>
                 <li>
                     <Link to='/falafel'>
-                        <img src="/images/falafel.png" alt="falafel" />
+                        <img src="/images/falafel/falafel.png" alt="falafel" />
                         <h5>ФАЛАФЕЛ</h5>
                     </Link>
                 </li>
                 <li>
                     <Link to='/sauces'>
-                        <img src="/images/garnituri.png" alt="garnituri" />
+                        <img src="/images/souces/garnituri.png" alt="garnituri" />
                         <h5>ГАРНИТУРИ И СОСОВЕ</h5>
                     </Link>
                 </li>
                 <li>
                     <Link to='/drinks'>
-                        <img src="/images/ayran.png" alt="ayran" />
+                        <img src="/images/drinks/ayran.png" alt="ayran" />
                         <h5>НАПИТКИ</h5>
                     </Link>
                 </li>

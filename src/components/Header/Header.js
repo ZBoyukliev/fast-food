@@ -16,12 +16,14 @@ const Header = () => {
                     {user.email && <span>Wellcome {user.email} </span>}
 
                     {user.email ?
+                        <Link to="/logout">Изход</Link>
+                        :
                         <>
-                            <Link to="/logout">Изход</Link>
-                        </>
-                        : <><Link to="/login">Вход</Link>
+                            <Link to="/login">Вход</Link>
                             <div className={styles['divider']}></div>
-                            <Link to="/register">Регистрация</Link> </>}
+                            <Link to="/register">Регистрация</Link>
+                        </>
+                    }
 
                 </div>
             </div>
