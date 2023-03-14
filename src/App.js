@@ -10,6 +10,7 @@ import MainFood from './components/Menu/MainFood/MainFood';
 import OffersPage from './components/OffersPage/OffersPage';
 import { AuthContext } from './components/context/AuthContext';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { Logout } from './components/Logout/Logout';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/logout' element={<Logout />} />
           <Route path='/doner' element={<MainFood src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
           <Route path='/burger' element={<MainFood src={'/images/slide-picture-burger1.jpg'} type={'БУРГЕР'} />} />
           <Route path='/pizza' element={<MainFood src={'/images/slide-picture-pizza.jpg'} type={'ПИЦА'} />} />
