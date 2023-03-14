@@ -1,8 +1,8 @@
 
 import * as request from './requester';
- 
 const baseUrl = 'http://localhost:3030/data';
  
+
 export const getAll = () => request.get(`${baseUrl}/menu`);
  
 export const getByCategory = (foodCategory) => request.get(`${baseUrl}/menu?where=category%3D%22${foodCategory}%22`);

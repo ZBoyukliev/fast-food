@@ -32,7 +32,7 @@ const Duner = ({ src, type }) => {
                     <div className={styles['menu-sec']}>
 
                         {menu.map(d => (
-                            <div className={styles['menu-sec-product']}>
+                            <div key={d._id} className={styles['menu-sec-product']}>
                                 <h3 className={styles['menu-sec-title']}>{d.title}</h3>
                                 <img src={d.imageUrl} alt='meal' />
                                 <div className={styles['menu-price']}>
