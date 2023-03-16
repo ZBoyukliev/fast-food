@@ -1,0 +1,90 @@
+
+
+/* ------------------------------------------------------- */
+.main-details {
+    background-image: url('/public/images/bg.jpg');
+    height: 100%;
+    width: 89.4%;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    /* font-family: 'Oswald'; */
+    font:inherit;
+}
+
+.main-details .info {
+    margin-top: 30px;
+}
+
+.main-details .info a {
+    text-decoration: none;
+}
+
+.main-details .photo  {
+    align-items: center;
+    justify-content: center;
+    margin-right: 300px;
+}
+
+.main-details .photo .menu-sec-product {
+    position: relative;
+}
+
+
+.main-details .photo .menu-sec-product .menu-price {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 260px;
+    right: 10px;
+    background-color: #195e33;
+    color: white;
+    padding: 32px 32px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 120px 120px 120px 0px;
+}
+
+.main-details .photo .menu-sec-product .menu-price :nth-child(1) {
+    font-size: 70px;
+    font-weight: 600;
+    position: absolute;
+    top: 50px;
+    right: 70px;
+}
+
+.main-details .photo .menu-sec-product .menu-price :nth-child(2) {
+    font-size: 36px;
+    font-weight: 500;
+    position: absolute;
+    right: 30px;
+    top: 42px;
+}
+
+.main-details .photo .menu-sec-product .menu-price :nth-child(3) {
+    font-size: 36px;
+    font-weight: 500;
+    position: absolute;
+    right: 24px;
+    top: 72px;
+}
+
+.main-details .photo .menu-sec-product .menu-price :nth-child(4) {
+    position: absolute;
+    top: 62px;
+    font-size: 12px;
+    text-decoration-line: line-through;
+    color: #5e8e70;
+    font-weight: 700;
+}
+
+.main-details .photo .food-type {
+    text-align: center;
+    background-color: #195e33;
+    color: white;
+    width: 220px;
+    height: 44px;
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 16px;
+}

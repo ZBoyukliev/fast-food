@@ -10,7 +10,6 @@ const Register = () => {
 
     const onChangeHandler = (e) => {
         setUserData(state => ({ ...state, [e.target.name]: e.target.value }));
-
     };
 
     const { userLogin } = useContext(AuthContext);

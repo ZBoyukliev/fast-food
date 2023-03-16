@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap'); */
 
 
 .container {
@@ -6,6 +6,7 @@
     height: 60vh;
     display: flex;
     /* position: relative; */
+    /* font-family: 'Oswald'; */
 }
 
 .container img {
@@ -176,6 +177,7 @@
     margin: 0 auto;
 }
 
+
 .menu .menu-sec .menu-sec-product .div-btn .btn {
     height: 42px;
     width: 100px;
@@ -185,4 +187,20 @@
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.menu .menu-sec .menu-sec-product a {
+    text-decoration: none;
+    text-align: center;
+    height: 42px;
+    width: 100px;
+    border: none;
+    background-color: #195e33;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px;
+    box-sizing: border-box;
+    font-family: sans-serif ;
 }

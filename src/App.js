@@ -10,6 +10,7 @@ import MainFood from './components/Menu/MainFood/MainFood';
 import OffersPage from './components/OffersPage/OffersPage';
 import { AuthProvider } from './components/context/AuthContext';
 import { Logout } from './components/Logout/Logout';
+import FoodDetails from './components/Details/FoodDetails';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Route path='/deserts' element={<SideOrders src={'/images/deserts/bgmuffins1.jpg'} type={'ДЕСЕРТИ'} />} />
           <Route path='/kids' element={<SideOrders src={'/images/kids/maxresdefault1.jpg'} type={'ДЕТСКО МЕНЮ'} />} />
           <Route path='/offers' element={<OffersPage />} />
+          <Route path='/:category/:foodId' element={<FoodDetails />} />
         </Routes>
       </div>
       <Footer />

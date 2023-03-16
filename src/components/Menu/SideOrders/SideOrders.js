@@ -23,15 +23,12 @@ const Drinks = ({ src, type }) => {
         <>
             <Subnav />
             <main className={styles['main']}>
-
                 <Trolley />
-
                 <section className={styles['container']}>
                     <img src={src} alt="drinks" />
                 </section>
 
                 <section className={styles['menu']}>
-
                     <div className={styles['menu-title']}>
                         <h3>{type}</h3>
                     </div>
