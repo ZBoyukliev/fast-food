@@ -37,7 +37,6 @@ const FoodDetails = () => {
                             <span>{food.priceSt}</span>
                             <span>лв.</span>
                         </div>
-
                     </div>
                 </section>
             </section>

@@ -161,3 +161,19 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+.menu .menu-sec .menu-sec-product a {
+    text-decoration: none;
+    text-align: center;
+    height: 42px;
+    width: 100px;
+    border: none;
+    background-color: #195e33;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px;
+    box-sizing: border-box;
+    font-family: sans-serif ;
+}

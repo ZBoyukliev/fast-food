@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import styles from '../SideOrders.module.css';
 
 const SideOrderItem = ({
     title,
     imageUrl,
     priceLv,
-    priceSt
+    priceSt,
+    category,
+    _id
 }) => {
     return (
         <div className={styles['menu-sec-product']}>
@@ -17,7 +20,7 @@ const SideOrderItem = ({
         </div>
         <div className={styles['div-btn']}>
             {/* <button className={styles['btn']}>МЕНЮ</button> */}
-            <button className={styles['btn']}>ДЕТАЍЛИ</button>
+            <Link to={`/${category}/${_id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
             <button className={styles['btn']}>ДОБАВИ</button>
         </div>
     </div>

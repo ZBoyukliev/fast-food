@@ -23,7 +23,9 @@
 .main-details .photo  {
     align-items: center;
     justify-content: center;
-    margin-right: 300px;
+    /* margin-right: 300px; */
+    margin: 60px auto;
+    padding: 20px;
 }
 
 .main-details .photo .menu-sec-product {
@@ -32,7 +34,7 @@
 
 
 .main-details .photo .menu-sec-product .menu-price {
-    width: 110px;
+    width: 100px;
     height: 110px;
     position: absolute;
     top: 260px;
@@ -82,7 +84,7 @@
     text-align: center;
     background-color: #195e33;
     color: white;
-    width: 220px;
+    width: 260px;
     height: 44px;
     font-size: 24px;
     font-weight: 600;
