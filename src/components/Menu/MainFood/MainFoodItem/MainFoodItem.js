@@ -1,5 +1,4 @@
 
-// import * as menuService from '../../../../services/menuService';
 import { Link } from 'react-router-dom';
 import styles from '../MainFood.module.css';
 

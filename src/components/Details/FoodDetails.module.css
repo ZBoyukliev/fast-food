@@ -1,5 +1,3 @@
-
-
 /* ------------------------------------------------------- */
 .main-details {
     background-image: url('/public/images/bg.jpg');
@@ -9,23 +7,65 @@
     display: flex;
     justify-content: space-between;
     /* font-family: 'Oswald'; */
-    font:inherit;
+    font: inherit;
 }
 
 .main-details .info {
     margin-top: 30px;
+    padding: 10px 30px;
+    text-align: left;
 }
 
 .main-details .info a {
     text-decoration: none;
+    color: black;
+    font-size: larger;
+    font-weight: 500;
+    display: block;
+    margin: 20px 0;
 }
 
-.main-details .photo  {
+.main-details .info h3 {
+    margin-bottom: 30px;
+    color: #514c46;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.main-details .info h4 {
+    margin-bottom: 30px;
+    color: #514c46;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.main-details .info ul {
+    font-family: sans-serif;
+}
+
+.main-details .photo {
     align-items: center;
     justify-content: center;
     /* margin-right: 300px; */
-    margin: 60px auto;
+    margin: 20px auto;
     padding: 20px;
+    margin-right: 300px;
+}
+
+.main-details .photo .footer {
+    margin-left: 80px;
+}
+
+.main-details .photo .footer-btn {
+    text-align: center;
+    background-color: #195e33;
+    color: white;
+    width: 180px;
+    height: 44px;
+    font-size: 18px;
+    margin-left: 10px;
+    border: 0;
+    /* font-weight: 600; */
 }
 
 .main-details .photo .menu-sec-product {
@@ -35,9 +75,9 @@
 
 .main-details .photo .menu-sec-product .menu-price {
     width: 100px;
-    height: 110px;
+    height: 100px;
     position: absolute;
-    top: 260px;
+    top: 270px;
     right: 10px;
     background-color: #195e33;
     color: white;
@@ -89,4 +129,5 @@
     font-size: 24px;
     font-weight: 600;
     padding-top: 16px;
+    margin-left: 80px;
 }
