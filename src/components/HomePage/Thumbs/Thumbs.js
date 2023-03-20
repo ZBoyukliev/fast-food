@@ -6,7 +6,7 @@ const Thumbs = () => {
         <section className={styles['thumbs']}>
             <ul>
                 <li>
-                    <Link to='/menu/duner'>
+                    <Link to='/menu/doner'>
                         <img src="/images/duner.png" alt="duner" />
                         <h5>ДЮНЕР</h5>
                     </Link>
@@ -36,7 +36,7 @@ const Thumbs = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/menu/sauces'>
+                    <Link to='/menu/souces'>
                         <img src="/images/souces/garnituri.png" alt="garnituri" />
                         <h5>ГАРНИТУРИ И СОСОВЕ</h5>
                     </Link>

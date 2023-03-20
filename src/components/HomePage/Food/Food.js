@@ -11,7 +11,7 @@ const Food = () => {
                     Поръчай вкусен дюнер от голямото ни разнообразие с пилешко, телешко е панирано месо, в питка
                     или порция
                 </p>
-                <Link to='/doner' className={styles['btn-order']}>ПОРЪЧАЙ</Link>
+                <Link to='/menu/doner' className={styles['btn-order']}>ПОРЪЧАЙ</Link>
             </div>
         </section>
     );
