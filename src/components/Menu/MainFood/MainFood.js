@@ -11,7 +11,7 @@ const MainFood = ({ src, type }) => {
 
     const location = useLocation();
     const [menu, setMenu] = useState([]);
-    const category = location.pathname.slice(1);
+    const category = location.pathname.slice(6);
 
     useEffect(() => {
         menuService.getByCategory(category)

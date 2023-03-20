@@ -7,6 +7,7 @@ const Header = () => {
 
     const { user } = useContext(AuthContext);
 
+
     return (
         <header className={styles['header']}>
             <div className={styles['working-time-login']}>
@@ -30,13 +31,13 @@ const Header = () => {
             <nav>
                 <ul className={styles['navigation']} >
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/doner">МЕНЮ</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to='/menu'>МЕНЮ</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/offers">ПРОМОЦИИ</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-acctive'] : ''} to="/">КОМЕНТАРИ И РЕВЮТА</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-acctive'] : ''} to="/coments">КОМЕНТАРИ И РЕВЮТА</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
                         <NavLink className={({ isActive }) => isActive ? styles['nav-acctive'] : ''} href="/whatsnew">КАКВО НОВО</NavLink>

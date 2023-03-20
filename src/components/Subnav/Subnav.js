@@ -6,15 +6,15 @@ const Subnav = () => {
         <div className={styles['sub']}>
             <div className={styles['sub-shell']}>
                 <ul className={styles['sub-shell-ul']}>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to='/doner'><li>Дюнер</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/burger'><li>Бургер</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/pizza'><li>Пица</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/chicken'><li>Пиле</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/falafel'><li>Фалафел</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/souces'><li>Гарнитури и сосове</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/drinks'><li>Напитки</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/deserts'><li>Десерти</li></NavLink>
-                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/kids'> <li>Детско меню</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''} to='/menu/doner'><li>Дюнер</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/menu/burger'><li>Бургер</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/menu/pizza'><li>Пица</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/menu/chicken'><li>Пиле</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/menu/falafel'><li>Фалафел</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/menu/souces'><li>Гарнитури и сосове</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/menu/drinks'><li>Напитки</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/menu/deserts'><li>Десерти</li></NavLink>
+                    <NavLink className={({isActive}) => isActive ? styles['nav-active'] : ''}  to='/menu/kids'> <li>Детско меню</li></NavLink>
                 </ul>
             </div>
         </div>
