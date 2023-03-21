@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Offers.module.css';
 
 const Offers = () => {
@@ -19,12 +20,16 @@ const Offers = () => {
                         <p>ПИЦА, ТА ДРЪНКА</p>
                     </div>
                 </div>
+
                 <div>
-                    <img className={styles['offers-img3']} src="/images/teleshko-izkushenie.jpg" alt="teleshko-meal" />
-                    <div className={styles['offers-desc']}>
-                        <p>ТЕЛЕШКО ИЗКУШЕНИЕ</p>
-                    </div>
+                    <Link  to='/offers/offersItem'>
+                        <img className={styles['offers-img3']} src="/images/teleshko-izkushenie.jpg" alt="teleshko-meal" />
+                        <div className={styles['offers-desc']}>
+                            <p>ТЕЛЕШКО ИЗКУШЕНИЕ</p>
+                        </div>
+                    </Link>
                 </div>
+
             </div>
         </section>
     );

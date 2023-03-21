@@ -37,16 +37,16 @@ const Header = () => {
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/offers">ПРОМОЦИИ</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-acctive'] : ''} to="/coments">КОМЕНТАРИ И РЕВЮТА</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/coments">КОМЕНТАРИ И РЕВЮТА</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-acctive'] : ''} href="/whatsnew">КАКВО НОВО</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} href="/whatsnew">КАКВО НОВО</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-acctive'] : ''} href="/kids">ЕЛА ПРИ НАС</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} href="/kids">ЕЛА ПРИ НАС</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-acctive'] : ''} href="/kids">ПИШИ НИ</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} href="/kids">ПИШИ НИ</NavLink>
                     </li>
                 </ul>
 

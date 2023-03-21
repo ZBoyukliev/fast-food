@@ -1,0 +1,64 @@
+
+
+.container {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    /* position: relative; */
+    background-image: url('/public/images/new/promocii1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -20;
+}
+
+
+.offers {
+    background-image: url('/public/images/bg.jpg');
+    width: 100%;
+    height: 90vh;
+}
+
+.offers .offers-title {
+    width: 130px;
+    /* height: 60px; */
+    margin: 0 auto;
+    background-color: #195e33;
+    color: white;
+    padding: 16px 40px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    top: -8px;
+    margin-bottom: 70px;
+}
+
+.offers .offers-pictures {
+    display: flex;
+}
+
+.offers .offers-pictures .aside-img {
+    margin-left: 120px;
+}
+
+.offers .offers-pictures .text {
+    padding: 20px 60px;
+    font-size: 20px;
+}
+
+.offers .offers-pictures .text p {
+    line-height: 30px;
+}
+
+.main .offers .order-btn {
+    background-color: #195e33;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Oswald';
+    padding: 8px 44px;
+    border: 0;
+    margin: 50px auto;
+    display: block;
+}

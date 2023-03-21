@@ -13,10 +13,11 @@ import { Logout } from './components/Logout/Logout';
 import FoodDetails from './components/Details/FoodDetails';
 import Coments from './components/Coments/Coments';
 import MenuNavPage from './components/MenuNavPage/MenuNavPage';
+import OffersPageItem from './components/OffersPageItem/OffersPageItem';
 
 function App() {
 
- 
+
 
   return (
     <>
@@ -39,6 +40,7 @@ function App() {
             <Route path='/menu/deserts' element={<SideOrders src={'/images/deserts/bgmuffins1.jpg'} type={'ДЕСЕРТИ'} />} />
             <Route path='/menu/kids' element={<SideOrders src={'/images/kids/maxresdefault1.jpg'} type={'ДЕТСКО МЕНЮ'} />} />
             <Route path='/offers' element={<OffersPage />} />
+            <Route path='/offers/offersItem' element={<OffersPageItem />} />
             <Route path='/:category/:foodId' element={<FoodDetails />} />
             <Route path='/coments' element={<Coments />} />
           </Routes>
