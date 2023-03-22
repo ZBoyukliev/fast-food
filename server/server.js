@@ -2683,7 +2683,24 @@
         },
 
         comments: {
-
+            '1': {
+                '_id': 1,
+                'comment': `great food`,
+                'username': `Pesho`,
+                'imageUrl': 'https://www.aladinfoods.bg/files/images/294/light_duner.png'
+            },
+            '2': {
+                '_id': 2,
+                'comment': `Very delicious`,
+                'username': `Gosho`,
+                'imageUrl': 'https://www.aladinfoods.bg/files/images/294/light_duner.png'
+            },
+            '3': {
+                '_id': 3,
+                'comment': `Basi dyunera`,
+                'username': `Tosho`,
+                'imageUrl': 'https://www.takeaway.com/bg/foodwiki/uploads/sites/9/2019/10/doner_kebab_1-1080x961.jpg'
+            }
         }
     };
 

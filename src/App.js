@@ -11,9 +11,9 @@ import OffersPage from './components/OffersPage/OffersPage';
 import { AuthProvider } from './components/context/AuthContext';
 import { Logout } from './components/Logout/Logout';
 import FoodDetails from './components/Details/FoodDetails';
-import Coments from './components/Coments/Coments';
 import MenuNavPage from './components/MenuNavPage/MenuNavPage';
 import OffersPageItem from './components/OffersPageItem/OffersPageItem';
+import Comments from './components/Comments/Comments';
 
 function App() {
 
@@ -42,7 +42,7 @@ function App() {
             <Route path='/offers' element={<OffersPage />} />
             <Route path='/offers/offersItem' element={<OffersPageItem />} />
             <Route path='/:category/:foodId' element={<FoodDetails />} />
-            <Route path='/coments' element={<Coments />} />
+            <Route path='/coments' element={<Comments />} />
           </Routes>
         </div>
         <Footer />
