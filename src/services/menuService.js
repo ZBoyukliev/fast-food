@@ -6,6 +6,8 @@ const baseUrl = 'http://localhost:3030/data';
 export const getAll = () => request.get(`${baseUrl}/menu`);
  
 export const getByCategory = (foodCategory) => request.get(`${baseUrl}/menu?where=category%3D%22${foodCategory}%22`);
+
+export const getOffers = () => request.get(`${baseUrl}/menu?where=type%3D%22offer%22`);
  
 // export const getNewest = () => request.get(`${baseUrl}/menu?sortBy=_createdOn%20desc`);
  

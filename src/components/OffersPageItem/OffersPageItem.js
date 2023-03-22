@@ -1,6 +1,20 @@
+import { useEffect, useState } from 'react';
+import {  useParams } from 'react-router-dom';
 import styles from './OffersPageItem.module.css';
+import * as menuService from '../../services/menuService';
 
-const OffersPageItem = () => {
+const OffersPageItem = ( ) => {
+
+    const { offerId } = useParams();
+    const [offer, setOffer] = useState({});
+
+    useEffect(() => {
+        menuService.getById(offerId)
+            .then(result => {
+                setOffer(result);
+            });
+    }, [offerId]);
+
     return (
         <main className={styles['main']}>
             <section className={styles['container']}>
@@ -13,14 +27,11 @@ const OffersPageItem = () => {
                 </div>
                 <div className={styles['offers-pictures']}>
                     <aside className={styles['aside-img']}>
-                        <img src='/images/offers/teleshko-izkushenie.jpg' alt='meal' />
+                        <img src={offer.imageUrl2} alt='meal' />
                     </aside>
                     <div className={styles['text']}>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Eos maiores ipsa eum a, nihil fugit quas repudiandae,
-                            impedit quis suscipit numquam praesentium, quos temporibus porro dolores consequatur veritatis.
-                            Numquam, veniam?
+                          {offer.offerdesc}
                         </p>
                        
                     </div>

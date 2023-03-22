@@ -1,34 +1,36 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Offers.module.css';
+import * as menuService from '../../../services/menuService';
+
 
 const Offers = () => {
+
+    const [offer, setOffer] = useState([]);
+
+    useEffect(() => {
+        menuService.getOffers()
+            .then(res => setOffer(res));
+    }, []);
+
     return (
         <section className={styles['offers']}>
             <div className={styles['offers-title']}>
                 <h3>ПРОМОЦИИ</h3>
             </div>
             <div className={styles['offers-pictures']}>
-                <div>
-                    <img className={styles['offers-img1']} src="/images/burgers/master-combo.jpg" alt="master-combo" />
-                    <div className={styles['offers-desc']}>
-                        <p>МАСТЪР КОМБО</p>
-                    </div>
-                </div>
-                <div>
-                    <img className={styles['offers-img2']} src="/images/pizza-ta-dranka.jpg" alt="pizza-meal" />
-                    <div className={styles['offers-desc']}>
-                        <p>ПИЦА, ТА ДРЪНКА</p>
-                    </div>
-                </div>
-
-                <div>
-                    <Link  to='/offers/offersItem'>
-                        <img className={styles['offers-img3']} src="/images/teleshko-izkushenie.jpg" alt="teleshko-meal" />
-                        <div className={styles['offers-desc']}>
-                            <p>ТЕЛЕШКО ИЗКУШЕНИЕ</p>
+                {offer.map(o =>
+                    
+                        <div key={o._id}>
+                             <Link to={`/offers/${o._id}`}>
+                            <img className={styles['offers-img1']} src={o.imageUrl1} alt="master-combo" />
+                            <div className={styles['offers-desc']}>
+                                <p>{o.title}</p>
+                            </div>
+                             </Link>
                         </div>
-                    </Link>
-                </div>
+                  
+                    )}
 
             </div>
         </section>
