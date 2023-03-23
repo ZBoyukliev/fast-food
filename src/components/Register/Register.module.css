@@ -38,8 +38,16 @@
     font-weight: 600;
     margin-bottom: 30px;
 }
+
 .register .register-form {
     width: 100%;
+}
+
+.register .register-form .error-msg{
+    display: block;
+    color: red;
+    text-align: center;
+    margin: 20px auto;
 }
  
 .register .register-form div {

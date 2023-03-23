@@ -42,6 +42,13 @@
     width: 100%;
 }
  
+.login .login-form .error-msg{
+    display: block;
+    color: red;
+    text-align: center;
+    margin: 20px auto;
+}
+
 .login .login-form div {
     width: 100%;
     height: 30px;

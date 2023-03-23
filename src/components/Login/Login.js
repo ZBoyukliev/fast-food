@@ -7,6 +7,8 @@ import * as authService from '../../services/authService';
 const Login = () => {
 
     const [userData, setUserData] = useState({ email: '', password: '' });
+    const [error, setError] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
 
     const onChangeHandler = (e) => {
         setUserData(state => ({ ...state, [e.target.name]: e.target.value }));
@@ -22,6 +24,14 @@ const Login = () => {
             .then(authData => {
                 userLogin(authData);
                 navigate('/');
+            })
+            .catch((error) => {
+                setError(true);
+                setErrorMsg(error.message);
+                setTimeout(() => {
+                    setError(false);
+                }, 3000);
+                return;
             });
     };
 
@@ -51,6 +61,7 @@ const Login = () => {
                             onChange={onChangeHandler} />
 
                     </div>
+                    {error && <p className={styles['error-msg']}>{errorMsg}</p>}
                     <div className={styles['buttons']}>
                         <input className={styles['confrim']} type="submit" value="&#10003; ПОТВЪРДИ" />
                         <input className={styles['clear']} type="submit" value="&#10008; ИЗЧИСТИ" />
