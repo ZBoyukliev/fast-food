@@ -23,13 +23,22 @@ const Register = () => {
 
         if (password !== repass) {
             setError(true);
-            setErrorMsg('password must be the same');
+            setErrorMsg('passwords dont match');
             setTimeout(() => {
                 setError(false);
             }, 3000);
             return;
         };
 
+        if(email === '' || password === '' || repass === '') {
+            setError(true);
+            setErrorMsg('all fields are required');
+            setTimeout(() => {
+                setError(false);
+            }, 3000);
+            return;
+        };
+        
         authService.register(email, password)
             .then(authData => {
                 userLogin(authData);
