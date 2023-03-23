@@ -23,8 +23,3 @@ export const edit = (foodId, foodData) => request.put(`${baseUrl}/menu/${foodId}
  
 // export const removeFavourite = (newId) => request.del(`${baseUrl}/favourites/${newId}`);
 
-export const getAllComments = () => request.get(`${baseUrl}/comments`);
- 
-export const postComment = (foodId, comment, username, imageUrl) => request.post(`${baseUrl}/comments`, {foodId, comment, username, imageUrl});
- 
-export const removeCommment = (commentId) => request.del(`${baseUrl}/comments/${commentId}`);

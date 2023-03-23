@@ -2697,19 +2697,25 @@
         comments: {
             '1': {
                 '_id': 1,
-                'comment': `great food`,
+                'comment': `Дюнерите са уникални, соса е наи добрия който съм пробвал някога !!!`,
                 'username': `Pesho`,
                 'imageUrl': 'https://www.aladinfoods.bg/files/images/294/light_duner.png'
             },
             '2': {
                 '_id': 2,
-                'comment': `Very delicious`,
+                'comment': `Супер качество, пресни зеленчуци, крехко месо на топ цени. :)`,
                 'username': `Gosho`,
                 'imageUrl': 'https://www.aladinfoods.bg/files/images/294/light_duner.png'
             },
             '3': {
                 '_id': 3,
-                'comment': `Basi dyunera`,
+                'comment': `Топ дюнери , топ пици всичко е номер едно! Най добрите в града !!!`,
+                'username': `Tosho`,
+                'imageUrl': '/images/comments/pizza-two.jpg'
+            },
+            '4': {
+                '_id': 4,
+                'comment': `Топ дюнери , топ пици всичко е номер едно! Най добрите в града !!!`,
                 'username': `Tosho`,
                 'imageUrl': 'https://www.takeaway.com/bg/foodwiki/uploads/sites/9/2019/10/doner_kebab_1-1080x961.jpg'
             }
