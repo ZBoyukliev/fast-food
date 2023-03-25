@@ -2697,27 +2697,24 @@
         comments: {
             '1': {
                 '_id': 1,
-                'comment': `Дюнерите са уникални, соса е наи добрия който съм пробвал някога !!!`,
-                'username': `Pesho`,
-                'imageUrl': 'https://www.aladinfoods.bg/files/images/294/light_duner.png'
+                'comment': `Супер качество, пресни зеленчуци, крехко месо на топ цени. :)`,
+                'username': `Gosho`,
+                'imageUrl': 'https://www.aladinfoods.bg/files/images/294/light_duner.png',
+                "_ownerId": "c1",
             },
             '2': {
                 '_id': 2,
-                'comment': `Супер качество, пресни зеленчуци, крехко месо на топ цени. :)`,
-                'username': `Gosho`,
-                'imageUrl': 'https://www.aladinfoods.bg/files/images/294/light_duner.png'
+                'comment': `Топ дюнери , топ пици всичко е номер едно! Най добрите в града !!!`,
+                'username': `Tosho`,
+                'imageUrl': '/images/comments/pizza-two.jpg',
+                "_ownerId": "c2",
             },
             '3': {
                 '_id': 3,
                 'comment': `Топ дюнери , топ пици всичко е номер едно! Най добрите в града !!!`,
                 'username': `Tosho`,
-                'imageUrl': '/images/comments/pizza-two.jpg'
-            },
-            '4': {
-                '_id': 4,
-                'comment': `Топ дюнери , топ пици всичко е номер едно! Най добрите в града !!!`,
-                'username': `Tosho`,
-                'imageUrl': 'https://www.takeaway.com/bg/foodwiki/uploads/sites/9/2019/10/doner_kebab_1-1080x961.jpg'
+                'imageUrl': 'https://www.takeaway.com/bg/foodwiki/uploads/sites/9/2019/10/doner_kebab_1-1080x961.jpg',
+                "_ownerId": "c3",
             }
         }
     };

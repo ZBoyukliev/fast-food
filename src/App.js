@@ -17,7 +17,12 @@ import Comments from './components/Comments/Comments';
 
 function App() {
 
-
+//   const contextValues = {
+//     userId: auth._id,
+//     token: auth.accessToken,
+//     userEmail: auth.email,
+//     isAuthenticated: !!auth.accessToken,
+// };
 
   return (
     <>
