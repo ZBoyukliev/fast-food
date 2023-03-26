@@ -13,10 +13,10 @@ export const Logout = () => {
         authService.logout(user.accessToken)
         .then(() => {
             userLogout();
-            navigate('/');
+            navigate(-1);
         })
         .catch(() => {
-            navigate('/');
+            navigate(-1);
         });
     });
 

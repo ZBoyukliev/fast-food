@@ -42,7 +42,7 @@ const Register = () => {
         authService.register(email, password)
             .then(authData => {
                 userLogin(authData);
-                navigate('/');
+                navigate(-1);
             });
     };
 

@@ -23,7 +23,8 @@ const Login = () => {
         authService.login(email, password)
             .then(authData => {
                 userLogin(authData);
-                navigate('/');
+                navigate(-1);
+                
             })
             .catch((error) => {
                 setError(true);
