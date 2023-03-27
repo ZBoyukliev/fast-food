@@ -14,6 +14,7 @@ import FoodDetails from './components/Details/FoodDetails';
 import MenuNavPage from './components/MenuNavPage/MenuNavPage';
 import OffersPageItem from './components/OffersPageItem/OffersPageItem';
 import Comments from './components/Comments/Comments';
+import WhatsNew from './components/WhatsNew/WhatsNew';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
             <Route path='/menu/deserts' element={<SideOrders src={'/images/deserts/bgmuffins1.jpg'} type={'ДЕСЕРТИ'} />} />
             <Route path='/menu/kids' element={<SideOrders src={'/images/kids/maxresdefault1.jpg'} type={'ДЕТСКО МЕНЮ'} />} />
             <Route path='/offers' element={<OffersPage />} />
+            <Route path='/news' element={<WhatsNew src={'/images/falafel/falafelbg.jpg'}/>} />
             <Route path='/offers/:offerId' element={<OffersPageItem />} />
             <Route path='/:category/:foodId' element={<FoodDetails />} />
             <Route path='/coments' element={<Comments />} />

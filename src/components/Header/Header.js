@@ -40,13 +40,13 @@ const Header = () => {
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/coments">КОМЕНТАРИ И РЕВЮТА</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} href="/whatsnew">КАКВО НОВО</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/news">КАКВО НОВО</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} href="/kids">ЕЛА ПРИ НАС</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} to="/kids">А!СТАНДАРТ</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} href="/kids">ПИШИ НИ</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} to="/kids">ПИШИ НИ</NavLink>
                     </li>
                 </ul>
 
