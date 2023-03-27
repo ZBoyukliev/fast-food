@@ -36,6 +36,10 @@ const Login = () => {
             });
     };
 
+    const onClearHandler = () => {
+        setUserData({ email: '', password: '' });
+    };
+
     return (
         <section className={styles['bg']}>
             <div className={styles['login']}>
@@ -65,7 +69,7 @@ const Login = () => {
                     {error && <p className={styles['error-msg']}>{errorMsg}</p>}
                     <div className={styles['buttons']}>
                         <input className={styles['confrim']} type="submit" value="&#10003; ПОТВЪРДИ" />
-                        <input className={styles['clear']} type="submit" value="&#10008; ИЗЧИСТИ" />
+                        <input onClick={onClearHandler} className={styles['clear']} type="click" value="&#10008; ИЗЧИСТИ" />
                     </div>
                 </form>
                 <p>Ако нямате регистрация може да си направите от <a href="/register">тук</a>.</p>

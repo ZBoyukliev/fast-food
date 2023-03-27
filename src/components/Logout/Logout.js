@@ -8,17 +8,17 @@ import { AuthContext } from '../context/AuthContext';
 export const Logout = () => {
     const navigate = useNavigate();
     const { user, userLogout } = useContext(AuthContext);
-    
+
     useEffect(() => {
         authService.logout(user.accessToken)
-        .then(() => {
-            userLogout();
-            navigate(-1);
-        })
-        .catch(() => {
-            navigate(-1);
-        });
-    });
+            .then(() => {
+                userLogout();
+                navigate('/');
+            })
+            .catch(() => {
+                navigate('/');
+            });
+    }, [user.accessToken, navigate, userLogout]);
 
     return null;
 };

@@ -2,10 +2,33 @@
  
  
 .comment {
-    height: 100%;
+    min-height: 85vh;
     width: 100%;
     /* padding: 20px 60px; */
     background-image: url('/public/images/bg.jpg');
+}
+
+.comment .comment-sec .no-comments {
+    font-size: 34px;
+    font-weight: 600;
+    color: #195e33;
+    /* display: block; */
+}
+
+.comment .comment-sec .nouser-show {
+    color: #514c46;
+    font-size: 20px;
+    margin: 40px;
+}
+
+.comment .comment-sec .no-comments-d {
+    padding: 60px 20px;
+}
+
+.comment .comment-sec .no-comments-p {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 20px;
 }
 
 .comment .comment-sec-title {
