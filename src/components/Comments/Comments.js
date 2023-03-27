@@ -5,6 +5,9 @@ import styles from './Comments.module.css';
 import * as commentsService from '../../services/commentsService';
 import { AuthContext } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
+import AddCommentForm from './AddCommentForm';
+import EditCommentForm from './EditCommentForm';
+import CommentItem from './CommentItem';
 
 
 const Comments = () => {
@@ -33,13 +36,10 @@ const Comments = () => {
         console.log(result);
     };
 
-
-
     const onDeleteHandler = (id) => {
         commentsService.removeCommment(id);
         setComments(state => state.filter(x => x._id !== id));
     };
-
 
     const [editComment, setEditComment] = useState({});
 
@@ -82,101 +82,36 @@ const Comments = () => {
                     }
 
                     {comments?.map(c => (
-                        <div key={c._id} className={styles['comment-sec-product']}>
-                            <h3 className={styles['comment-sec-title']}><span> </span>{c.username}</h3>
-                            <div className={styles['img']}>
-                                <img src={c.imageUrl} alt='meal' />
-                            </div>
-                            <div className={styles['comment-content']}>
-                                <p className={styles['comment-content-p']}> {c.comment}</p>
-                            </div>
-                            {c._ownerId === user.userId && <div className={styles['div-btn']}>
-                                <button className={styles['edit-btn']} onClick={() => onEditHandler(c)}>&#9998; Редактирай</button>
-                                <button className={styles['delete-btn']} onClick={() => { window.confirm('Сигурни ли сте че искате да изтриете ревюто си ?') && onDeleteHandler(c._id); }} >&#10008; Изтрий</button>
-                            </div>}
-
-                        </div>
+                        <CommentItem key={c._id} 
+                        comment={c} 
+                        onEditHandler={onEditHandler} 
+                        user={user} 
+                        onDeleteHandler={onDeleteHandler} />
                     )) || []}
 
+                </div>
+                {user.userId && !editForm && <>
+                    <h2 className={styles['comment-title2']}>
+                        <i className="fa-solid fa-circle-arrow-down"></i>
+                        Остави твоя коментар тук
+                        <i className="fa-solid fa-circle-arrow-down"></i>
+                    </h2>
+                    <AddCommentForm onChangeHandler={onChangeHandler} review={review} onSubmitHandler={onSubmitHandler} />
+                </>}
+
+                {editForm &&
+                    <EditCommentForm
+                        onEditChangeHandler={onEditChangeHandler}
+                        onEditHandler={onEditHandler}
+                        onEditSubmitHandler={onEditSubmitHandler}
+                        editComment={editComment}
+                    />
+                }
                     {!user.userId && comments.length > 0 &&
                         <p className={styles['nouser-show']}>
                             За да оставиш твоя коментар влез в профила си <Link to='/login'>тук</Link>
                             или се регистрирай <Link to='/register'>тук</Link>
                         </p>}
-
-                </div>
-                {user.userId && !editForm && <>   <h2 className={styles['comment-title2']}><i className="fa-solid fa-circle-arrow-down"></i> Остави твоя коментар тук <i className="fa-solid fa-circle-arrow-down"></i></h2>
-                    <form className={styles['comments-form']} onSubmit={onSubmitHandler}>
-                        <div className={styles['username']}>
-                            <label htmlFor="username">Псевдоним</label>
-                            <input
-                                type="text"
-                                id="username"
-                                name="username"
-                                value={review.username}
-                                onChange={onChangeHandler}
-                            />
-                        </div>
-                        <div className={styles['image']}>
-                            <label htmlFor="image">Снимка</label>
-                            <input
-                                type="text"
-                                id="image"
-                                name="imageUrl"
-                                value={review.imageUrl}
-                                onChange={onChangeHandler}
-                            />
-                        </div>
-                        <div className={styles['comment-text']}>
-                            <label htmlFor="comment">Коментар</label>
-                            <textarea
-                                type="text"
-                                id="comment"
-                                name="comment"
-                                rows={4}
-                                value={review.comment}
-                                onChange={onChangeHandler}
-                            />
-                        </div>
-
-                        <input className={styles['add-btn']} type="submit" value="Добави коментар" />
-                    </form> </>}
-
-                {editForm && <form className={styles['comments-form']} onSubmit={onEditSubmitHandler}>
-                    <div className={styles['username']}>
-                        <label htmlFor="username">Псевдоним</label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            value={editComment.username}
-                            onChange={onEditChangeHandler}
-                        />
-                    </div>
-                    <div className={styles['image']}>
-                        <label htmlFor="image">Снимка</label>
-                        <input
-                            type="text"
-                            id="image"
-                            name="imageUrl"
-                            value={editComment.imageUrl}
-                            onChange={onEditChangeHandler}
-                        />
-                    </div>
-                    <div className={styles['comment-text']}>
-                        <label htmlFor="comment">Коментар</label>
-                        <textarea
-                            type="text"
-                            id="comment"
-                            name="comment"
-                            rows={4}
-                            value={editComment.comment}
-                            onChange={onEditChangeHandler}
-                        />
-                    </div>
-
-                    <input className={styles['add-btn']} type="submit" value="Редактирай" />
-                </form>}
             </section>
         </main>
     );
