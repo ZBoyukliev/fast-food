@@ -73,7 +73,7 @@ const Header = () => {
                         onChange={onChangeHandler}
                         placeholder="Търси" />
                 </form>
-                <a className={styles['order']} href="/#">ПОРЪЧАЙ</a>
+                <Link className={styles['order']} to="/">ПОРЪЧАЙ</Link>
             </nav>
         </header>
     );
