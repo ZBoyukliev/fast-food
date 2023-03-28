@@ -1,6 +1,6 @@
 import styles from './Login.module.css';
 import { AuthContext } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import * as authService from '../../services/authService';
 
@@ -24,7 +24,7 @@ const Login = () => {
             .then(authData => {
                 userLogin(authData);
                 navigate(-1);
-                
+
             })
             .catch((error) => {
                 setError(true);
@@ -69,10 +69,10 @@ const Login = () => {
                     {error && <p className={styles['error-msg']}>{errorMsg}</p>}
                     <div className={styles['buttons']}>
                         <input className={styles['confrim']} type="submit" value="&#10003; ПОТВЪРДИ" />
-                        <input onClick={onClearHandler} className={styles['clear']} type="click" value="&#10008; ИЗЧИСТИ" />
+                        <input onClick={onClearHandler} className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" />
                     </div>
                 </form>
-                <p>Ако нямате регистрация може да си направите от <a href="/register">тук</a>.</p>
+                <p>Ако нямате регистрация може да си направите от <Link to="/register">тук</Link>.</p>
             </div>
         </section>
     );

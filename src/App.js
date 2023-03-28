@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <FoodContext.Provider value={{onSearch, searchFood}}>
+        <FoodContext.Provider value={{ onSearch, searchFood }}>
           <Header />
           <div className="App">
             <Routes>

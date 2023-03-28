@@ -88,3 +88,7 @@
     color: white;
     border: none;
 }
+
+.login .login-form .buttons .clear:hover {
+    cursor: pointer;
+}

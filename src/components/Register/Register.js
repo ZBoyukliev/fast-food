@@ -88,7 +88,7 @@ const Register = () => {
                     {error && <p className={styles['error-msg']}>{errorMsg}</p>}
                     <div className={styles['buttons']}>
                         <input className={styles['confrim']} type="submit" value="&#10003; ПОТВЪРДИ" />
-                        <input onClick={onClearHandler} className={styles['clear']} type="click" value="&#10008; ИЗЧИСТИ" />
+                        <input onClick={onClearHandler} className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" />
                     </div>
                 </form>
                 <p>Ако имате регистрация натиснете <Link to="/login">тук</Link>.</p>
