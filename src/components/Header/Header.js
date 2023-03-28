@@ -1,12 +1,22 @@
 import styles from './Header.module.css';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { FoodContext } from '../context/FoodContext';
 
 const Header = () => {
 
     const { user } = useContext(AuthContext);
+    const [search, setSearch] = useState({ search: '' });
+    const { onSearch } = useContext(FoodContext);
 
+    const onChangeHandler = (e) => {
+        setSearch(state => ({ ...state, [e.target.name]: e.target.value }));
+    };
+
+    const onSearchSubmit = (e) => {
+        onSearch(e, search);
+    };
 
     return (
         <header className={styles['header']}>
@@ -54,8 +64,14 @@ const Header = () => {
                     <i className="fa-solid fa-phone"></i>
                     <span>0700044744</span>
                 </div>
-
-                <input className={styles['search']} type="text" placeholder="Търси" />
+                <form onSubmit={onSearchSubmit}>
+                    <input className={styles['search']}
+                        type="text"
+                        name="search"
+                        value={search.search}
+                        onChange={onChangeHandler}
+                        placeholder="Търси" />
+                </form>
                 <a className={styles['order']} href="/#">ПОРЪЧАЙ</a>
             </nav>
         </header>

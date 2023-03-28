@@ -75,18 +75,18 @@ const Comments = () => {
                         comments.length === 0 &&
                         <div className={styles['no-comments-d']}>
                             <h2 className={styles['no-comments']}>Все още няма коментари. Осотави първия коментар.</h2>
-                            <p className={styles['no-comments-p']}>За да оставиш твоя коментар моля влез в профила си <Link to={'/login'}>тук</Link> или
+                            <p className={styles['no-comments-p']}>За да оставиш твоя коментар моля влез в профила си <Link to={'/login'}>тук </Link> или
                                 се регистрирай  <Link to={'/login'}>тук</Link>
                             </p>
                         </div>
                     }
 
                     {comments?.map(c => (
-                        <CommentItem key={c._id} 
-                        comment={c} 
-                        onEditHandler={onEditHandler} 
-                        user={user} 
-                        onDeleteHandler={onDeleteHandler} />
+                        <CommentItem key={c._id}
+                            comment={c}
+                            onEditHandler={onEditHandler}
+                            user={user}
+                            onDeleteHandler={onDeleteHandler} />
                     )) || []}
 
                 </div>
@@ -107,11 +107,11 @@ const Comments = () => {
                         editComment={editComment}
                     />
                 }
-                    {!user.userId && comments.length > 0 &&
-                        <p className={styles['nouser-show']}>
-                            За да оставиш твоя коментар влез в профила си <Link to='/login'>тук</Link>
-                            или се регистрирай <Link to='/register'>тук</Link>
-                        </p>}
+                {!user.userId && comments.length > 0 &&
+                    <p className={styles['nouser-show']}>
+                        За да оставиш твоя коментар влез в профила си <Link to='/login'>тук </Link>
+                        или се регистрирай <Link to='/register'>тук</Link>
+                    </p>}
             </section>
         </main>
     );
