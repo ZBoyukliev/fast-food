@@ -83,9 +83,17 @@
     color: white;
     border: none;
 }
+
+.register .register-form .buttons .confrim:hover {
+   cursor: pointer;
+}
  
 .register .register-form .buttons .clear {
     background-color: rgba(0,0,0,0.3);
     color: white;
     border: none;
+}
+
+.register .register-form .buttons .clear:hover {
+    cursor: pointer;
 }

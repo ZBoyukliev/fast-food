@@ -82,6 +82,10 @@
     color: white;
     border: none;
 }
+
+.login .login-form .buttons .confrim:hover {
+   cursor: pointer;
+}
  
 .login .login-form .buttons .clear {
     background-color: rgba(0,0,0,0.3);
