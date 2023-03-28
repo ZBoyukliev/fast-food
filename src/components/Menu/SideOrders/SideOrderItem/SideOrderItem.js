@@ -20,7 +20,7 @@ const SideOrderItem = ({
         </div>
         <div className={styles['div-btn']}>
             {/* <button className={styles['btn']}>МЕНЮ</button> */}
-            <Link to={`/${category}/${_id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
+            <Link to={`/menu/${category}/${_id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
             <button className={styles['btn']}>ДОБАВИ</button>
         </div>
     </div>

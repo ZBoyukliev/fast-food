@@ -59,7 +59,7 @@ function App() {
               <Route path='/offers' element={<OffersPage />} />
               <Route path='/news' element={<WhatsNew src={'/images/pizza/pizza-news.jpg'} />} />
               <Route path='/offers/:offerId' element={<OffersPageItem />} />
-              <Route path='/:category/:foodId' element={<FoodDetails />} />
+              <Route path='/menu/:category/:foodId' element={<FoodDetails />} />
               <Route path='/coments' element={<Comments />} />
               <Route path='/search' element={<Search />} />
             </Routes>
