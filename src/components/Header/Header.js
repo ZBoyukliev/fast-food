@@ -16,6 +16,7 @@ const Header = () => {
 
     const onSearchSubmit = (e) => {
         onSearch(e, search);
+        setSearch({search: ''});
     };
 
     return (

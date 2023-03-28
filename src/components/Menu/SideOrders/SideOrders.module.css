@@ -49,6 +49,21 @@
     flex-wrap: wrap;
 }
 
+.menu .menu-sec-title {
+    font-size: 70px;
+    font-weight: 600;
+    margin: 60px auto;
+    color: #514c46;
+}
+
+.menu .menu-sec-title2 {
+    display: block;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 60px auto;
+    color: #514c46;
+}
+
 .menu .menu-sec .menu-sec-product {
     cursor: pointer;
     width: 35%;

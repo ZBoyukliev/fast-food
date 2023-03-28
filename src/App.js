@@ -7,7 +7,6 @@ import Home from './components/HomePage/Home';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import SideOrders from './components/Menu/SideOrders/SideOrders';
-import MainFood from './components/Menu/MainFood/MainFood';
 import OffersPage from './components/OffersPage/OffersPage';
 import { AuthProvider } from './components/context/AuthContext';
 import { Logout } from './components/Logout/Logout';
@@ -33,8 +32,6 @@ function App() {
 
     setSearchFood(result);
     navigate('/search');
-    
-    e.target.reset();
   };
 
 
@@ -50,11 +47,11 @@ function App() {
               <Route path='/register' element={<Register />} />
               <Route path='/logout' element={<Logout />} />
               <Route path='/menu' element={<MenuNavPage src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
-              <Route path='/menu/doner' element={<MainFood src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
-              <Route path='/menu/burger' element={<MainFood src={'/images/slide-picture-burger1.jpg'} type={'БУРГЕР'} />} />
-              <Route path='/menu/pizza' element={<MainFood src={'/images/slide-picture-pizza.jpg'} type={'ПИЦА'} />} />
-              <Route path='/menu/chicken' element={<MainFood src={'/images/slide-picture-chicken.jpg'} type={'ПИЛЕ'} />} />
-              <Route path='/menu/falafel' element={<MainFood src={'/images/falafel/falafelbg.jpg'} type={'ФАЛАФЕЛ'} />} />
+              <Route path='/menu/doner' element={<SideOrders src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
+              <Route path='/menu/burger' element={<SideOrders src={'/images/slide-picture-burger1.jpg'} type={'БУРГЕР'} />} />
+              <Route path='/menu/pizza' element={<SideOrders src={'/images/slide-picture-pizza.jpg'} type={'ПИЦА'} />} />
+              <Route path='/menu/chicken' element={<SideOrders src={'/images/slide-picture-chicken.jpg'} type={'ПИЛЕ'} />} />
+              <Route path='/menu/falafel' element={<SideOrders src={'/images/falafel/falafelbg.jpg'} type={'ФАЛАФЕЛ'} />} />
               <Route path='/menu/souces' element={<SideOrders src={'/images/chips-and-dips-oct-22.jpg'} type={'ГАРНИТУРИ И СОСОВЕ'} />} />
               <Route path='/menu/drinks' element={<SideOrders src={'/images/drinks/coca-cola-fizzy-drinks1.jpg'} type={'НАПИТКИ'} />} />
               <Route path='/menu/deserts' element={<SideOrders src={'/images/deserts/bgmuffins1.jpg'} type={'ДЕСЕРТИ'} />} />
