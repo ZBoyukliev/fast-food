@@ -71,6 +71,7 @@
 
 .menu .menu-sec {
     padding: 40px 120px;
+    min-height: 65vh;
     display: flex;
     flex-wrap: wrap;
 }
@@ -84,6 +85,21 @@
     display: flex;
     flex-direction: column;
     position: relative;
+}
+
+.menu .menu-sec-title {
+    font-size: 70px;
+    font-weight: 600;
+    margin: 60px auto;
+    color: #514c46;
+}
+
+.menu .menu-sec-title2 {
+    display: block;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 60px auto;
+    color: #514c46;
 }
 
 .menu .menu-sec .menu-sec-product .menu-sec-title {
