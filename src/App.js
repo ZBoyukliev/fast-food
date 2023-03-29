@@ -39,9 +39,13 @@ function App() {
       } else {
         return [...state, food];
       }
-      
+
     });
 
+  };
+
+  const onRemoveFromCart = (id) => {
+    setCartItem(state => state.filter( f => f._id !== id));
   };
 
   const onSearch = async (e, search) => {
@@ -57,7 +61,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem }}>
+        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem , onRemoveFromCart}}>
           <Header />
           <div className="App">
             <Routes>

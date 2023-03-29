@@ -5,7 +5,7 @@ import { FoodContext } from '../context/FoodContext';
 
 const Trolley = () => {
 
-    const { cartItem } = useContext(FoodContext);
+    const { cartItem, onRemoveFromCart } = useContext(FoodContext);
     const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const Trolley = () => {
                                     <p>{c.count}</p>
                                     <p className={styles['p-title']}>{c.title}</p>
                                     <p className={styles['p-price']}> {c.price.toFixed(2)}лв.</p>
-                                    <button className={styles['remove-cart']}>&#10008;</button>
+                                    <button onClick={() =>onRemoveFromCart(c._id)} className={styles['remove-cart']}>&#10008;</button>
                                 </li>
                             </div>) || []}
 
