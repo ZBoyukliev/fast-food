@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
+.container {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    z-index: -20;
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* menu-sec */
+
+.menu {
+    min-height: 50vh;
+    width: 100%;
+    background-image: url('/public/images/bg.jpg');
+}
+
+.menu .menu-title {
+    width: 130px;
+    /* height: 60px; */
+    margin: 0 auto;
+    background-color: #195e33;
+    color: white;
+    padding: 16px 40px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    top: -8px;
+    margin-bottom: 30px;
+}
+
+.menu .cart-table .cart-row {
+    display: flex;
+    background-color: white;
+    width: 900px;
+    margin: 0 auto;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    border: 1px solid rgb(72, 72, 72);
+}
+
+.menu .cart-table .cart-row .cart-row-title {
+    font-size: 20px;
+}

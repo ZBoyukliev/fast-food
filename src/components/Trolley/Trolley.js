@@ -51,7 +51,7 @@ const Trolley = () => {
                 </div>
 
                 <footer className={styles['trolley-footer']}>
-                    <Link className={styles['trolley-link-btn']}>ПОРЪЧАЙ</Link>
+                    <Link to='/createorder' className={styles['trolley-link-btn']}>ПОРЪЧАЙ</Link>
                 </footer>
 
             </div>

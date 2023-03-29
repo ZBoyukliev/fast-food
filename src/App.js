@@ -18,6 +18,7 @@ import Comments from './components/Comments/Comments';
 import WhatsNew from './components/WhatsNew/WhatsNew';
 import { useState } from 'react';
 import Search from './components/Header/Search';
+import CreateOrder from './components/CreateOrder/CreateOrder';
 
 function App() {
 
@@ -26,7 +27,6 @@ function App() {
   const navigate = useNavigate();
 
   const onAddToCart = (food) => {
-    // [...state, food]
     setCartItem(state => {
       const item = state.find(i => i._id === food._id);
       let count = food.count;
@@ -45,7 +45,7 @@ function App() {
   };
 
   const onRemoveFromCart = (id) => {
-    setCartItem(state => state.filter( f => f._id !== id));
+    setCartItem(state => state.filter(f => f._id !== id));
   };
 
   const onSearch = async (e, search) => {
@@ -61,7 +61,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem , onRemoveFromCart}}>
+        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem, onRemoveFromCart }}>
           <Header />
           <div className="App">
             <Routes>
@@ -85,6 +85,7 @@ function App() {
               <Route path='/menu/:category/:foodId' element={<FoodDetails />} />
               <Route path='/coments' element={<Comments />} />
               <Route path='/search' element={<Search />} />
+              <Route path='/createorder' element={<CreateOrder />} />
             </Routes>
           </div>
           <Footer />
