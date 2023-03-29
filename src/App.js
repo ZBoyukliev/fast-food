@@ -22,7 +22,13 @@ import Search from './components/Header/Search';
 function App() {
 
   const [searchFood, setSearchFood] = useState([]);
+  const [cartItem, setCartItem] = useState([]);
   const navigate = useNavigate();
+
+  const onAddToCart = (food) => {
+     setCartItem(state => [...state, food]);
+     console.log(cartItem);
+  };
 
   const onSearch = async (e, search) => {
     e.preventDefault();
@@ -34,11 +40,10 @@ function App() {
     navigate('/search');
   };
 
-
   return (
     <>
       <AuthProvider>
-        <FoodContext.Provider value={{ onSearch, searchFood }}>
+        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem}}>
           <Header />
           <div className="App">
             <Routes>

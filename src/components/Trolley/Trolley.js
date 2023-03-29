@@ -1,7 +1,20 @@
 import styles from './Trolley.module.css';
 import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { FoodContext } from '../context/FoodContext';
 
 const Trolley = () => {
+
+    const { cartItem } = useContext(FoodContext);
+    const [totalPrice, setTotalPrice] = useState(0);
+    
+
+    useEffect(() => {
+        let sum = 0;
+        cartItem.forEach( c => sum += c.price);
+        setTotalPrice(sum);
+    },[cartItem, setTotalPrice]);
+
     return (
         <div className={styles['outer']}>
             <div className={styles['trolley']}>
@@ -12,25 +25,27 @@ const Trolley = () => {
 
                 <div className={styles['items']}>
                     <ul className={styles['items-aded']}>
-                        <div className={styles['items-aded-inner']}>
-                            <li className={styles['items-aded-li']}>
-                                В момента нямате добавени артикули в количката
-                            </li>
-                            {/* <li className={styles[`items-aded-li`]}>
-                                В момента нямате добавени артикули в количката
-                            </li> */}
-                            {/* <li className={styles[`items-aded-li`]}>
-                                В момента нямате добавени артикули в количката
-                            </li> */}
-                            {/* <li className={styles[`items-aded-li`]}>
-                                В момента нямате добавени артикули в количката
-                            </li> */}
-                        </div>
+
+                        {cartItem.length === 0 &&
+                            <div className={styles['items-aded-inner']}>
+                                <li className={styles['items-aded-li']}>
+                                    В момента нямате добавени артикули в количката
+                                </li>
+                            </div>}
+
+                        {cartItem?.map(c =>
+                            <div className={styles['items-aded-inner']}>
+                                <li className={styles['items-aded-li']}><p className={styles['p-title']}>{c.title}</p>
+                                <p className={styles['p-price']}> {c.price.toFixed(2)}лв.</p>
+                                    <button className={styles['remove-cart']}>&#10008;</button>
+                                </li>
+                            </div>) || []}
+
                     </ul>
                     <div className={styles['calc-sum']}>
-                    <small className={styles['small']}>МЕЖДИННА СУМА:</small>
-                    <h3 className={styles['calc-sum-head']}>0лв.</h3>
-                </div>
+                        <small className={styles['small']}>МЕЖДИННА СУМА: {totalPrice.toFixed(2)}</small>
+                        <h3 className={styles['calc-sum-head']}>лв.</h3>
+                    </div>
                 </div>
 
                 <footer className={styles['trolley-footer']}>

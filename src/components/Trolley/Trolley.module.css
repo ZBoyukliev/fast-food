@@ -20,6 +20,13 @@
     margin: 0 auto;
 }
 
+.trolley .remove-cart {
+    color: red;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+}
+
 .trolley .trolley-head {
     background-color: #195e33;
     color: white;
@@ -38,10 +45,21 @@
     display: flex;
     text-align: center;
     background-image: url('/public/images/bg.jpg');
-    padding: 20px 18px;
+    padding: 20px 4px;
     max-width: 274px;
     min-height: 282;
     vertical-align: baseline;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trolley .items .items-aded .items-aded-inner .items-aded-li .remove-cart,
+.trolley .items .items-aded .items-aded-inner .items-aded-li .p-price{
+    width: 15%;
+}
+
+.trolley .items .items-aded .items-aded-inner .items-aded-li  .p-title{
+    width: 56%;
 }
 
 .trolley .items .items-aded {

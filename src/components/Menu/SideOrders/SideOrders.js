@@ -35,7 +35,7 @@ const Drinks = ({ src, type }) => {
 
                     <div className={styles['menu-sec']}>
 
-                        {menu.map(d => <SideOrderItem key={d._id} {...d} />)}
+                        {menu.map(d => <SideOrderItem key={d._id} food={d} />)}
 
                     </div>
                 </section>

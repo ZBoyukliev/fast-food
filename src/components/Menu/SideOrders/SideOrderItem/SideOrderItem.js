@@ -1,27 +1,31 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { FoodContext } from '../../../context/FoodContext';
 import styles from '../SideOrders.module.css';
 
 const SideOrderItem = ({
-    title,
-    imageUrl,
-    priceLv,
-    priceSt,
-    category,
-    _id
+    food
 }) => {
+
+    const { onAddToCart } = useContext(FoodContext);
+
+    const onAddItem = () => {
+        onAddToCart(food);
+    };
+    
     return (
         <div className={styles['menu-sec-product']}>
-        <h3 className={styles['menu-sec-title']}>{title}</h3>
-        <img src={imageUrl} alt='meal' />
+        <h3 className={styles['menu-sec-title']}>{food.title}</h3>
+        <img src={food.imageUrl} alt='meal' />
         <div className={styles['menu-price']}>
-            <span>{priceLv}</span>
-            <span>{priceSt}</span>
+            <span>{food.priceLv}</span>
+            <span>{food.priceSt}</span>
             <span>лв.</span>
         </div>
         <div className={styles['div-btn']}>
             {/* <button className={styles['btn']}>МЕНЮ</button> */}
-            <Link to={`/menu/${category}/${_id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
-            <button className={styles['btn']}>ДОБАВИ</button>
+            <Link to={`/menu/${food.category}/${food._id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
+            <button onClick={ onAddItem} className={styles['btn']}>ДОБАВИ</button>
         </div>
     </div>
     );
