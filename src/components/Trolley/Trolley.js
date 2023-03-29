@@ -7,13 +7,13 @@ const Trolley = () => {
 
     const { cartItem } = useContext(FoodContext);
     const [totalPrice, setTotalPrice] = useState(0);
-    
 
     useEffect(() => {
         let sum = 0;
-        cartItem.forEach( c => sum += c.price);
+        cartItem.forEach(c => sum += c.price);
         setTotalPrice(sum);
-    },[cartItem, setTotalPrice]);
+    }, [cartItem, setTotalPrice]);
+
 
     return (
         <div className={styles['outer']}>
@@ -34,9 +34,11 @@ const Trolley = () => {
                             </div>}
 
                         {cartItem?.map(c =>
-                            <div className={styles['items-aded-inner']}>
-                                <li className={styles['items-aded-li']}><p className={styles['p-title']}>{c.title}</p>
-                                <p className={styles['p-price']}> {c.price.toFixed(2)}лв.</p>
+                            <div key={c._id} className={styles['items-aded-inner']}>
+                                <li className={styles['items-aded-li']}>
+                                    <p>{c.count}</p>
+                                    <p className={styles['p-title']}>{c.title}</p>
+                                    <p className={styles['p-price']}> {c.price.toFixed(2)}лв.</p>
                                     <button className={styles['remove-cart']}>&#10008;</button>
                                 </li>
                             </div>) || []}

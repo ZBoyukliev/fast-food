@@ -26,8 +26,22 @@ function App() {
   const navigate = useNavigate();
 
   const onAddToCart = (food) => {
-     setCartItem(state => [...state, food]);
-     console.log(cartItem);
+    // [...state, food]
+    setCartItem(state => {
+      const item = state.find(i => i._id === food._id);
+      let count = food.count;
+      let price = food.price;
+
+      if (item) {
+        count = item.count + 1;
+        price += item.price;
+        return state.map(f => f._id === item._id ? { ...f, count: count, price: price } : f);
+      } else {
+        return [...state, food];
+      }
+      
+    });
+
   };
 
   const onSearch = async (e, search) => {
@@ -43,7 +57,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem}}>
+        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem }}>
           <Header />
           <div className="App">
             <Routes>

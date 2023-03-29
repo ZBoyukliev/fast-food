@@ -10,7 +10,7 @@ const SideOrderItem = ({
     const { onAddToCart } = useContext(FoodContext);
 
     const onAddItem = () => {
-        onAddToCart(food);
+        onAddToCart({...food, count:1});
     };
     
     return (
