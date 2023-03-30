@@ -41,7 +41,7 @@
 .menu .cart-table .cart-row {
     display: flex;
     background-color: white;
-    width: 900px;
+    width: 1000px;
     margin: 0 auto;
     height: 50px;
     justify-content: space-between;
@@ -51,5 +51,43 @@
 }
 
 .menu .cart-table .cart-row .cart-row-title {
+    font-size: 20px;
+    width: 40%;
+}
+
+.menu .cart-table .cart-row .cart-row-counter .add-remove-btn {
+    background-color: transparent;
+    color: #195e33;
+    font-size: 26px;
+    border: none;
+}
+
+.menu .cart-table .cart-row .cart-row-counter .add-remove-btn:hover {
+    cursor: pointer;
+}
+
+.menu .cart-table .cart-row .cart-input {
+    width: 40px;
+    text-align: center;
+    margin: 0 6px;
+    padding: 6px 10px;
+}
+
+.menu .cart-table .cart-row .cart-row-span {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.menu .cart-table .cart-row .del-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.menu .cart-table .cart-row .del-btn:hover {
+    cursor: pointer;
+}
+
+.menu .cart-table .cart-row .del-btn .x-span {
+    color: red;
     font-size: 20px;
 }
