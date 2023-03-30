@@ -1,10 +1,11 @@
-import * as menuService from '../../services/menuService';
-import styles from './FoodDetails.module.css';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import * as menuService from '../../services/menuService';
+import styles from './FoodDetails.module.css';
 import Subnav from '../Subnav/Subnav';
 import Trolley from '../Trolley/Trolley';
-import { useNavigate } from 'react-router-dom';
 
 
 const FoodDetails = () => {

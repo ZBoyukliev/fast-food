@@ -1,8 +1,9 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import * as menuService from './services/menuService';
 import { AuthProvider } from './components/context/AuthContext';
 import { FoodContext } from './components/context/FoodContext';
+import { useState } from 'react';
 
+import * as menuService from './services/menuService';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
@@ -10,15 +11,14 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import SideOrders from './components/Menu/SideOrders/SideOrders';
 import OffersPage from './components/OffersPage/OffersPage';
-import { Logout } from './components/Logout/Logout';
 import FoodDetails from './components/Details/FoodDetails';
 import MenuNavPage from './components/MenuNavPage/MenuNavPage';
 import OffersPageItem from './components/OffersPageItem/OffersPageItem';
 import Comments from './components/Comments/Comments';
 import WhatsNew from './components/WhatsNew/WhatsNew';
-import { useState } from 'react';
 import Search from './components/Header/Search';
 import CreateOrder from './components/CreateOrder/CreateOrder';
+import { Logout } from './components/Logout/Logout';
 
 function App() {
 

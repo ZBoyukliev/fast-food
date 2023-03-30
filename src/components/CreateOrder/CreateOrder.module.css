@@ -91,3 +91,30 @@
     color: red;
     font-size: 20px;
 }
+
+/* section price */
+/* --------------------------------------------------------------------------------- */
+
+.prices {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.prices .discount-code {
+    display: flex;
+    height: 100%;
+    width: 40%;
+    padding: 20px 40px;
+}
+
+.prices .sum-to-pay {
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    color: #195e33;
+    font-size: 40px;
+    font-weight: 600;
+}

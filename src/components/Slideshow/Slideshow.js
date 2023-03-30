@@ -1,6 +1,6 @@
-import styles from './Slideshow.module.css';
-
 import { Slide } from 'react-slideshow-image';
+
+import styles from './Slideshow.module.css';
 import 'react-slideshow-image/dist/styles.css';
 
 const slideImages = [

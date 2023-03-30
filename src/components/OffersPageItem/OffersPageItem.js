@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import {  useParams } from 'react-router-dom';
-import styles from './OffersPageItem.module.css';
+
 import * as menuService from '../../services/menuService';
+import styles from './OffersPageItem.module.css';
 
 const OffersPageItem = ( ) => {
 

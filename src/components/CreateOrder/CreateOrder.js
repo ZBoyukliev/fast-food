@@ -31,7 +31,16 @@ const CreateOrder = () => {
                         </div>
                     </section>
 
-                    <section>
+                    <section className={styles['prices']}>
+                        <div className={styles['discount-code']}>
+                            <h3>Код за отстъпка</h3>
+                            <input />
+                            <button>ПРИЛОЖИ</button>
+                        </div >
+
+                        <div className={styles['sum-to-pay']}>
+                            <h2 className={styles['sum-to-pay-title']}>Общо: 21.30лв.</h2>
+                        </div>
 
                     </section>
 

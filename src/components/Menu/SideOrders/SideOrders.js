@@ -1,10 +1,10 @@
-import * as menuService from '../../../services/menuService';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
+import * as menuService from '../../../services/menuService';
 import Subnav from '../../Subnav/Subnav';
 import Trolley from '../../Trolley/Trolley';
 import styles from './SideOrders.module.css';
-import { useLocation } from 'react-router-dom';
 import SideOrderItem from './SideOrderItem/SideOrderItem';
 
 

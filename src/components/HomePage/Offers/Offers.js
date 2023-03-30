@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Offers.module.css';
+
 import * as menuService from '../../../services/menuService';
+import styles from './Offers.module.css';
 
 
 const Offers = () => {

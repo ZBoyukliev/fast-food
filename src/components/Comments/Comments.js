@@ -1,10 +1,11 @@
 
 import { useContext, useEffect } from 'react';
 import { useState } from 'react';
-import styles from './Comments.module.css';
-import * as commentsService from '../../services/commentsService';
 import { AuthContext } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
+
+import * as commentsService from '../../services/commentsService';
+import styles from './Comments.module.css';
 import AddCommentForm from './AddCommentForm';
 import EditCommentForm from './EditCommentForm';
 import CommentItem from './CommentItem';
@@ -13,9 +14,10 @@ import CommentItem from './CommentItem';
 const Comments = () => {
     const [comments, setComments] = useState([]);
     const [editForm, setShowEditForm] = useState(false);
+    const [editComment, setEditComment] = useState({});
+    const [review, setReview] = useState({ username: '', imageUrl: '', comment: '' });
 
     const { user } = useContext(AuthContext);
-    const [review, setReview] = useState({ username: '', imageUrl: '', comment: '' });
 
     useEffect(() => {
         commentsService.getAllComments()
@@ -40,8 +42,6 @@ const Comments = () => {
         commentsService.removeCommment(id);
         setComments(state => state.filter(x => x._id !== id));
     };
-
-    const [editComment, setEditComment] = useState({});
 
     const onEditHandler = async (comment) => {
         const result = await commentsService.getCommendById(comment._id);
