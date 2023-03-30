@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
-import { useContext  } from 'react';
+import { useContext } from 'react';
 import { FoodContext } from '../context/FoodContext';
 
 import styles from './Trolley.module.css';
+import TrolleyItem from './TrolleyItem';
 
 const Trolley = () => {
 
-    const { cartItem, onRemoveFromCart, totalPrice } = useContext(FoodContext);
+    const { cartItem, totalPrice } = useContext(FoodContext);
 
     return (
         <div className={styles['outer']}>
@@ -26,15 +27,7 @@ const Trolley = () => {
                                 </li>
                             </div>}
 
-                        {cartItem?.map(c =>
-                            <div key={c._id} className={styles['items-aded-inner']}>
-                                <li className={styles['items-aded-li']}>
-                                    <p>{c.count}</p>
-                                    <p className={styles['p-title']}>{c.title}</p>
-                                    <p className={styles['p-price']}> {c.price.toFixed(2)}лв.</p>
-                                    <button onClick={() => onRemoveFromCart(c._id)} className={styles['remove-cart']}>&#10008;</button>
-                                </li>
-                            </div>) || []}
+                        <TrolleyItem />
 
                     </ul>
                     <div className={styles['calc-sum']}>
