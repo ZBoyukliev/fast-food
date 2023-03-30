@@ -1,7 +1,7 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { AuthProvider } from './components/context/AuthContext';
 import { FoodContext } from './components/context/FoodContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import * as menuService from './services/menuService';
 import Footer from './components/Footer/Footer';
@@ -24,7 +24,15 @@ function App() {
 
   const [searchFood, setSearchFood] = useState([]);
   const [cartItem, setCartItem] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
   const navigate = useNavigate();
+
+
+  useEffect(() => {
+    let sum = 0;
+    cartItem.forEach(c => sum += c.price);
+    setTotalPrice(sum);
+}, [cartItem, setTotalPrice]);
 
   const onAddToCart = (food) => {
     setCartItem(state => {
@@ -61,7 +69,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem, onRemoveFromCart }}>
+        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem, onRemoveFromCart, totalPrice }}>
           <Header />
           <div className="App">
             <Routes>

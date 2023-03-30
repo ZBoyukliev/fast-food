@@ -1,20 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useContext  } from 'react';
 import { FoodContext } from '../context/FoodContext';
 
 import styles from './Trolley.module.css';
 
 const Trolley = () => {
 
-    const { cartItem, onRemoveFromCart } = useContext(FoodContext);
-    const [totalPrice, setTotalPrice] = useState(0);
-
-    useEffect(() => {
-        let sum = 0;
-        cartItem.forEach(c => sum += c.price);
-        setTotalPrice(sum);
-    }, [cartItem, setTotalPrice]);
-
+    const { cartItem, onRemoveFromCart, totalPrice } = useContext(FoodContext);
 
     return (
         <div className={styles['outer']}>
@@ -40,7 +32,7 @@ const Trolley = () => {
                                     <p>{c.count}</p>
                                     <p className={styles['p-title']}>{c.title}</p>
                                     <p className={styles['p-price']}> {c.price.toFixed(2)}лв.</p>
-                                    <button onClick={() =>onRemoveFromCart(c._id)} className={styles['remove-cart']}>&#10008;</button>
+                                    <button onClick={() => onRemoveFromCart(c._id)} className={styles['remove-cart']}>&#10008;</button>
                                 </li>
                             </div>) || []}
 

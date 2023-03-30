@@ -149,3 +149,20 @@
     font-weight: 600;
     padding-left: 100px;
 }
+
+.menu .continue-btn {
+    background-color: #195e33;
+    color: white;
+    border: none;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.menu .continue {
+    padding: 20px;
+    display: flex;
+}
