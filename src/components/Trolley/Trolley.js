@@ -7,7 +7,7 @@ import TrolleyItem from './TrolleyItem';
 
 const Trolley = () => {
 
-    const { cartItem, totalPrice } = useContext(FoodContext);
+    const {  totalPrice } = useContext(FoodContext);
 
     return (
         <div className={styles['outer']}>
@@ -19,13 +19,6 @@ const Trolley = () => {
 
                 <div className={styles['items']}>
                     <ul className={styles['items-aded']}>
-
-                        {cartItem.length === 0 &&
-                            <div className={styles['items-aded-inner']}>
-                                <li className={styles['items-aded-li']}>
-                                    В момента нямате добавени артикули в количката
-                                </li>
-                            </div>}
 
                         <TrolleyItem />
 
