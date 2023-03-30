@@ -33,7 +33,7 @@ function App() {
               <Route path='/register' element={<Register />} />
               <Route path='/logout' element={<Logout />} />
               <Route path='/menu' element={<MenuNavPage src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
-              <Route path='/menu/doner' element={<SideOrders src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
+              <Route path='/menu/:category' element={<SideOrders src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
               <Route path='/menu/burger' element={<SideOrders src={'/images/slide-picture-burger1.jpg'} type={'БУРГЕР'} />} />
               <Route path='/menu/pizza' element={<SideOrders src={'/images/slide-picture-pizza.jpg'} type={'ПИЦА'} />} />
               <Route path='/menu/chicken' element={<SideOrders src={'/images/slide-picture-chicken.jpg'} type={'ПИЛЕ'} />} />
