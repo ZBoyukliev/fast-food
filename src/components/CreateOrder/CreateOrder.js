@@ -15,6 +15,7 @@ const CreateOrder = () => {
                     </div>
 
                     <section className={styles['cart-table']}>
+
                         <div className={styles['cart-row']}>
                             <h3 className={styles['cart-row-title']}>ROLLER</h3>
                             <div className={styles['cart-row-counter']}>
@@ -29,13 +30,15 @@ const CreateOrder = () => {
                             </h5>
                             <button className={styles['del-btn']}>ИЗТРИЙ <span className={styles['x-span']}>&#10008;</span></button>
                         </div>
+
                     </section>
 
                     <section className={styles['prices']}>
+
                         <div className={styles['discount-code']}>
-                            <h3>Код за отстъпка</h3>
-                            <input />
-                            <button>ПРИЛОЖИ</button>
+                            <h3 className={styles['discount-code-title']}>Код за отстъпка:</h3>
+                            <input className={styles['discount-code-inp']}/>
+                            <button className={styles['discount-code-btn']}>ПРИЛОЖИ</button>
                         </div >
 
                         <div className={styles['sum-to-pay']}>

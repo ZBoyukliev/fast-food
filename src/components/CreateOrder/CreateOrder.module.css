@@ -18,7 +18,7 @@
 /* menu-sec */
 
 .menu {
-    min-height: 50vh;
+    min-height: 60vh;
     width: 100%;
     background-image: url('/public/images/bg.jpg');
 }
@@ -51,7 +51,8 @@
 }
 
 .menu .cart-table .cart-row .cart-row-title {
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 600;
     width: 40%;
 }
 
@@ -81,6 +82,8 @@
 .menu .cart-table .cart-row .del-btn {
     background-color: transparent;
     border: none;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .menu .cart-table .cart-row .del-btn:hover {
@@ -94,6 +97,7 @@
 
 /* section price */
 /* --------------------------------------------------------------------------------- */
+/* code-sec */
 
 .prices {
     display: flex;
@@ -104,17 +108,44 @@
 .prices .discount-code {
     display: flex;
     height: 100%;
-    width: 40%;
-    padding: 20px 40px;
+    width: 50%;
+    padding: 140px 80px;
+    justify-content: center;
 }
 
-.prices .sum-to-pay {
+.prices .discount-code .discount-code-title {
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.prices .discount-code .discount-code-inp {
+    margin-right: 4px;
+    padding: 4px;
     height: 100%;
-    width: 50%;
+}
+
+.prices .discount-code .discount-code-btn {
+    background-color:#195e33;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------- */
+/* sum-to-pay */
+
+
+.prices .sum-to-pay {
+    margin: 40px auto;
+    height: 100%;
+    width: 40%;
     align-items: center;
     justify-content: center;
-    padding: 20px 40px;
+    padding: 80px 20px;
     color: #195e33;
-    font-size: 40px;
+    font-size: 60px;
     font-weight: 600;
+    padding-left: 100px;
 }
