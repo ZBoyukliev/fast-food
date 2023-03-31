@@ -6,7 +6,16 @@ import styles from './CreateOrder.module.css';
 
 const CreateOrderItem = () => {
 
-    const { cartItem, onRemoveFromCart } = useContext(FoodContext);
+    const { cartItem, onRemoveFromCart, onAddToCart, onRemoveOneItem } = useContext(FoodContext);
+
+    const onAddItem = (food) => {
+        console.log(food)
+        onAddToCart({...food, count:1});
+    };
+
+    const removeItem = (food) => {
+        onRemoveOneItem(food);
+    };
 
     return (
         <>
@@ -14,13 +23,14 @@ const CreateOrderItem = () => {
                 <h3 className={styles['cart-row-title']}>{c.title}</h3>
                 <div className={styles['cart-row-counter']}>
 
-                    <button className={styles['add-remove-btn']}> - </button>
-                    <input className={styles['cart-input']} defaultValue={c.count} />
-                    <button className={styles['add-remove-btn']}> + </button>
+                    <button onClick={() => removeItem(c)} className={styles['add-remove-btn']}> - </button>
+                    {/* <input className={styles['cart-input']} value={c.count} /> */}
+                    <span>{c.count}</span>
+                    <button onClick={() => onAddItem(c)} className={styles['add-remove-btn']}> + </button>
                 </div>
 
                 <h5 className={styles['cart-row-price']}>
-                    <span className={styles['cart-row-span']}>{c.price.toFixed(2)}</span>лв.
+                    <span className={styles['cart-row-span']}>{c.newPrice.toFixed(2)}</span>лв.
                 </h5>
                 <button onClick={() => onRemoveFromCart(c._id)} className={styles['del-btn']}>ИЗТРИЙ <span className={styles['x-span']}>&#10008;</span></button>
             </div>) || []}</>

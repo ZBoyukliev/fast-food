@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { FoodContext } from '../context/FoodContext';
 
 import styles from './CreateOrder.module.css';
-import CreateOrderItem from './CreateOrderIten';
+import CreateOrderItem from './CreateOrderItem';
 
 const CreateOrder = () => {
 

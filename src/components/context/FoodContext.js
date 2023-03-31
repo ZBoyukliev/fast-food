@@ -17,7 +17,7 @@ export const FoodProvider = ({
 
     useEffect(() => {
         let sum = 0;
-        cartItem.forEach(c => sum += c.price);
+        cartItem.forEach(c => sum += c.newPrice);
         setTotalPrice(sum);
     }, [cartItem, setTotalPrice]);
 
@@ -29,8 +29,31 @@ export const FoodProvider = ({
 
             if (item) {
                 count = item.count + 1;
-                price += item.price;
-                return state.map(f => f._id === item._id ? { ...f, count: count, price: price } : f);
+                price += item.newPrice;
+                console.log(item.newPrice);
+                console.log(item.price);
+                return state.map(f => f._id === item._id ? { ...f, count: count, newPrice: price } : f);
+            } else {
+                return [...state, food];
+            }
+        });
+    };
+
+    const onRemoveOneItem = (food) => {
+        setCartItem(state => {
+            const item = state.find(i => i._id === food._id);
+            let count = food.count;
+
+            if (item) {
+             
+                count = item.count - 1;
+                item.newPrice -= item.price;
+
+                if (count <= 0) {
+                    onRemoveFromCart(food._id);
+                 }
+
+                return state.map(f => f._id === item._id ? { ...f, count: count, newPrice: item.newPrice } : f);
             } else {
                 return [...state, food];
             }
@@ -54,7 +77,7 @@ export const FoodProvider = ({
     };
 
     return (
-        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem, onRemoveFromCart, totalPrice }}>
+        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem, onRemoveFromCart, totalPrice, onRemoveOneItem }}>
             {children}
         </FoodContext.Provider>
     );
