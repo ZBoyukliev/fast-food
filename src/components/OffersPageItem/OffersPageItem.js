@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import {  useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import * as menuService from '../../services/menuService';
 import styles from './OffersPageItem.module.css';
 
-const OffersPageItem = ( ) => {
+const OffersPageItem = () => {
 
     const { offerId } = useParams();
     const [offer, setOffer] = useState({});
@@ -32,12 +32,12 @@ const OffersPageItem = ( ) => {
                     </aside>
                     <div className={styles['text']}>
                         <p>
-                          {offer.offerdesc}
+                            {offer.offerdesc}
                         </p>
-                       
+
                     </div>
                 </div>
-                <button className={styles['order-btn']}>ПОРЪЧАЙ</button>
+                <Link className={styles['order-btn']} to={`/menu/${offer.category}/${offer._id}`}>ПОРЪЧАЙ </Link>
             </section>
         </main>
     );

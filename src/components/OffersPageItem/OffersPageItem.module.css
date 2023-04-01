@@ -52,13 +52,16 @@
 }
 
 .main .offers .order-btn {
+    width: 100px;
     background-color: #195e33;
     color: white;
     font-size: 24px;
     font-weight: 600;
     font-family: 'Oswald';
-    padding: 8px 44px;
+    padding: 12px 44px;
     border: 0;
     margin: 50px auto;
+    text-decoration: none;
     display: block;
+    text-align: center;
 }
