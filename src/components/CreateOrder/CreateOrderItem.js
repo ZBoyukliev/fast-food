@@ -9,7 +9,7 @@ const CreateOrderItem = () => {
     const { cartItem, onRemoveFromCart, onAddToCart, onRemoveOneItem } = useContext(FoodContext);
 
     const onAddItem = (food) => {
-        console.log(food)
+        console.log(food);
         onAddToCart({...food, count:1});
     };
 

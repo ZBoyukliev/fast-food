@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FoodContext } from '../context/FoodContext';
 
 import * as menuService from '../../services/menuService';
 import styles from './FoodDetails.module.css';
@@ -13,6 +14,12 @@ const FoodDetails = () => {
     const { foodId } = useParams();
     const [food, setFood] = useState({});
     const navigate = useNavigate();
+
+    const { onAddToCart } = useContext(FoodContext);
+
+    const onAddItem = () => {
+        onAddToCart({ ...food, count: 1, newPrice: food.price });
+    };
 
     useEffect(() => {
         menuService.getById(foodId)
@@ -49,8 +56,8 @@ const FoodDetails = () => {
                         </div>
                     </div>
                     <div className={styles['footer']}>
-                        <button className={styles['footer-btn']}>ДОБАВИ</button>
-                        <button className={styles['footer-btn']}>ИЗБЕРИ МЕНЮ</button>
+                        <button onClick={onAddItem} className={styles['footer-btn']}>ДОБАВИ</button>
+                        {/* <button className={styles['footer-btn']}>ИЗБЕРИ МЕНЮ</button> */}
                     </div>
                 </section>
             </section>
