@@ -10,7 +10,7 @@ const Header = () => {
 
     const { user } = useContext(AuthContext);
     const [search, setSearch] = useState({ search: '' });
-    const { onSearch } = useContext(FoodContext);
+    const { onSearch, totalPrice } = useContext(FoodContext);
 
     const onChangeHandler = (e) => {
         setSearch(state => ({ ...state, [e.target.name]: e.target.value }));
@@ -75,7 +75,7 @@ const Header = () => {
                         onChange={onChangeHandler}
                         placeholder="Търси" />
                 </form>
-                <Link className={styles['order']} to="/">ПОРЪЧАЙ</Link>
+                <Link className={styles['order']} to="/createorder">ПОРЪЧАЙ {totalPrice > 0 ? totalPrice.toFixed(2) + 'лв.' : ''}</Link>
             </nav>
         </header>
     );
