@@ -1,6 +1,6 @@
 
 import { useContext } from 'react';
-import { FoodContext } from '../context/FoodContext';
+import { FoodContext } from '../../context/FoodContext';
 
 import styles from './CreateOrder.module.css';
 
@@ -9,7 +9,6 @@ const CreateOrderItem = () => {
     const { cartItem, onRemoveFromCart, onAddToCart, onRemoveOneItem } = useContext(FoodContext);
 
     const onAddItem = (food) => {
-        console.log(food);
         onAddToCart({...food, count:1});
     };
 
@@ -24,7 +23,6 @@ const CreateOrderItem = () => {
                 <div className={styles['cart-row-counter']}>
 
                     <button onClick={() => removeItem(c)} className={styles['add-remove-btn']}> - </button>
-                    {/* <input className={styles['cart-input']} value={c.count} /> */}
                     <span>{c.count}</span>
                     <button onClick={() => onAddItem(c)} className={styles['add-remove-btn']}> + </button>
                 </div>

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import * as menuService from '../../services/menuService';
+import * as menuService from '../services/menuService';
 
 export const FoodContext = createContext();
 

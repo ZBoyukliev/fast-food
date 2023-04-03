@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './components/context/AuthContext';
-import { FoodProvider } from './components/context/FoodContext';
+import { AuthProvider } from './context/AuthContext';
+import { FoodProvider } from './context/FoodContext';
 
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';

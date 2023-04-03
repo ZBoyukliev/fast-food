@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FoodContext } from '../context/FoodContext';
+import { FoodContext } from '../../context/FoodContext';
 import Trolley from '../Trolley/Trolley';
 import styles from '../Menu/SideOrders/SideOrders.module.css';
 import MainFoodItem from '../Menu/SideOrders/SideOrderItem/SideOrderItem';

@@ -1,8 +1,8 @@
 
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 import { useContext, useState } from 'react';
-import { FoodContext } from '../context/FoodContext';
+import { FoodContext } from '../../context/FoodContext';
 
 import styles from './Header.module.css';
 

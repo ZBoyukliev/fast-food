@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FoodContext } from '../context/FoodContext';
+import { FoodContext } from '../../context/FoodContext';
 
 import * as menuService from '../../services/menuService';
 import styles from './FoodDetails.module.css';
