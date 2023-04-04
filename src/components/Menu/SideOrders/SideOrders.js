@@ -8,7 +8,6 @@ import styles from './SideOrders.module.css';
 import SideOrderItem from './SideOrderItem/SideOrderItem';
 import Spinner from '../../Spinner/Spinner';
 
-
 const Drinks = ({ src, type }) => {
 
     const location = useLocation();
@@ -48,6 +47,7 @@ const Drinks = ({ src, type }) => {
 
                             </div>
                         </section>
+
                     </main>
                 </>
             }

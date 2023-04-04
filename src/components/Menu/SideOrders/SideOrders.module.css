@@ -23,7 +23,7 @@
 /* menu-sec */
 
 .menu {
-    height: 100%;
+    min-height: 78vh;
     width: 100%;
     background-image: url('/public/images/bg.jpg');
 }

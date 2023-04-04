@@ -1,43 +1,44 @@
 import { AuthContext } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 import * as authService from '../../services/authService';
 import styles from './Login.module.css';
+import { useForm } from '../../hooks/useForm';
+import { useError } from '../../hooks/useError';
 
 const Login = () => {
 
-    const [userData, setUserData] = useState({ email: '', password: '' });
-    const [error, setError] = useState(false);
-    const [errorMsg, setErrorMsg] = useState('');
+    const {
+        error,
+        errMsg,
+        onHandleError
+    } = useError();
 
-    const onChangeHandler = (e) => {
-        setUserData(state => ({ ...state, [e.target.name]: e.target.value }));
-    };
+    const { values, onChangeHandler, changeValues } = useForm({
+        email: '',
+        password: ''
+    });
 
     const { userLogin } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onSubmit = (e) => {
-        const { email, password } = userData;
         e.preventDefault();
+        const { email, password } = values;
         authService.login(email, password)
             .then(authData => {
                 userLogin(authData);
                 navigate(-1);
             })
             .catch((error) => {
-                setError(true);
-                setErrorMsg(error.message);
-                setTimeout(() => {
-                    setError(false);
-                }, 3000);
+               onHandleError(error.message);
                 return;
             });
     };
 
     const onClearHandler = () => {
-        setUserData({ email: '', password: '' });
+     changeValues({email:'',password:''});
     };
 
     return (
@@ -53,7 +54,7 @@ const Login = () => {
                             type="email"
                             id="email"
                             name="email"
-                            value={userData.email}
+                            value={values.email}
                             onChange={onChangeHandler} />
                     </div>
                     <div>
@@ -62,11 +63,11 @@ const Login = () => {
                             type="password"
                             id="password"
                             name="password"
-                            value={userData.password}
+                            value={values.password}
                             onChange={onChangeHandler} />
 
                     </div>
-                    {error && <p className={styles['error-msg']}>{errorMsg}</p>}
+                    {error && <p className={styles['error-msg']}>{errMsg}</p>}
                     <div className={styles['buttons']}>
                         <input className={styles['confrim']} type="submit" value="&#10003; ПОТВЪРДИ" />
                         <input onClick={onClearHandler} className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" />

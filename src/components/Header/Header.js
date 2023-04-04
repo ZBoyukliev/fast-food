@@ -16,6 +16,7 @@ const Header = () => {
         setSearch(state => ({ ...state, [e.target.name]: e.target.value }));
     };
 
+
     const onSearchSubmit = (e) => {
         onSearch(e, search);
         setSearch({search: ''});
