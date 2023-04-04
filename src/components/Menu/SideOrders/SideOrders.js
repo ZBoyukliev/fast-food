@@ -8,7 +8,7 @@ import styles from './SideOrders.module.css';
 import SideOrderItem from './SideOrderItem/SideOrderItem';
 import Spinner from '../../Spinner/Spinner';
 
-const Drinks = ({ src, type }) => {
+const SideOrders = ({ src, type }) => {
 
     const location = useLocation();
     const [menu, setMenu] = useState([]);
@@ -55,4 +55,4 @@ const Drinks = ({ src, type }) => {
     );
 };
 
-export default Drinks;
+export default SideOrders;

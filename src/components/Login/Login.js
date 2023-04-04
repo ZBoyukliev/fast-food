@@ -26,19 +26,20 @@ const Login = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         const { email, password } = values;
+
         authService.login(email, password)
             .then(authData => {
                 userLogin(authData);
                 navigate(-1);
             })
             .catch((error) => {
-               onHandleError(error.message);
+                onHandleError(error.message);
                 return;
             });
     };
 
     const onClearHandler = () => {
-     changeValues({email:'',password:''});
+        changeValues({ email: '', password: '' });
     };
 
     return (

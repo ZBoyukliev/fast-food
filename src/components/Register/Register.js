@@ -1,54 +1,46 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
 import * as authService from '../../services/authService';
 import styles from './Register.module.css';
+import { useForm } from '../../hooks/useForm';
+import { useError } from '../../hooks/useError';
 
 const Register = () => {
 
-    const [userData, setUserData] = useState({ email: '', password: '', repass: '' });
-    const [error, setError] = useState(false);
-    const [errorMsg, setErrorMsg] = useState('');
+    const {
+        error,
+        errMsg,
+        onHandleError
+    } = useError();
 
-    const onChangeHandler = (e) => {
-        setUserData(state => ({ ...state, [e.target.name]: e.target.value }));
-    };
+    const { values, onChangeHandler, changeValues } = useForm({
+        email: '',
+        password: '',
+        repass: ''
+    });
 
     const { userLogin } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const { email, password, repass } = userData;
+        const { email, password, repass } = values;
 
-        if (password !== repass) {
-            setError(true);
-            setErrorMsg('passwords dont match');
-            setTimeout(() => {
-                setError(false);
-            }, 3000);
-            return;
-        };
-
-        if(email === '' || password === '' || repass === '') {
-            setError(true);
-            setErrorMsg('all fields are required');
-            setTimeout(() => {
-                setError(false);
-            }, 3000);
-            return;
-        };
-        
-        authService.register(email, password)
+        authService.register(email, password, repass)
             .then(authData => {
                 userLogin(authData);
                 navigate(-1);
+            })
+            .catch((error) => {
+                onHandleError(error.message);
+                return;
             });
     };
 
     const onClearHandler = () => {
-        setUserData({ email: '', password: '', repass: '' });
+        changeValues({ email: '', password: '', repass: '' });
     };
 
     return (
@@ -64,7 +56,7 @@ const Register = () => {
                             type="email"
                             id="email"
                             name="email"
-                            value={userData.email}
+                            value={values.email}
                             onChange={onChangeHandler} />
                     </div>
                     <div>
@@ -73,7 +65,7 @@ const Register = () => {
                             type="password"
                             id="password"
                             name="password"
-                            value={userData.password}
+                            value={values.password}
                             onChange={onChangeHandler} />
                     </div>
                     <div>
@@ -82,11 +74,11 @@ const Register = () => {
                             type="password"
                             id="re-password"
                             name="repass"
-                            value={userData.repass}
+                            value={values.repass}
                             onChange={onChangeHandler} />
 
                     </div>
-                    {error && <p className={styles['error-msg']}>{errorMsg}</p>}
+                    {error && <p className={styles['error-msg']}>{errMsg}</p>}
                     <div className={styles['buttons']}>
                         <input className={styles['confrim']} type="submit" value="&#10003; ПОТВЪРДИ" />
                         <input onClick={onClearHandler} className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" />
