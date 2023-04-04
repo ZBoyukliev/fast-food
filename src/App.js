@@ -17,6 +17,8 @@ import WhatsNew from './components/WhatsNew/WhatsNew';
 import Search from './components/Header/Search';
 import CreateOrder from './components/CreateOrder/CreateOrder';
 import { Logout } from './components/Logout/Logout';
+import {  RouteGuard } from './components/commons/RouteGuard';
+import { LogoutGuard } from './components/commons/LogoutGuard';
 
 function App() {
 
@@ -29,9 +31,6 @@ function App() {
           <div className="App">
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
-              <Route path='/logout' element={<Logout />} />
               <Route path='/menu' element={<MenuNavPage src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
               <Route path='/menu/:category' element={<SideOrders src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
               <Route path='/menu/burger' element={<SideOrders src={'/images/slide-picture-burger1.jpg'} type={'БУРГЕР'} />} />
@@ -42,11 +41,21 @@ function App() {
               <Route path='/menu/drinks' element={<SideOrders src={'/images/drinks/coca-cola-fizzy-drinks1.jpg'} type={'НАПИТКИ'} />} />
               <Route path='/menu/deserts' element={<SideOrders src={'/images/deserts/bgmuffins1.jpg'} type={'ДЕСЕРТИ'} />} />
               <Route path='/menu/kids' element={<SideOrders src={'/images/kids/maxresdefault1.jpg'} type={'ДЕТСКО МЕНЮ'} />} />
+              <Route path='/coments' element={<Comments />} />
+
+              <Route element={<RouteGuard />}>
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
+              </Route>
+
+              <Route element={<LogoutGuard />}>
+                <Route path='/logout' element={<Logout />} />
+              </Route>
+
               <Route path='/offers' element={<OffersPage />} />
               <Route path='/news' element={<WhatsNew src={'/images/pizza/pizza-news.jpg'} />} />
               <Route path='/offers/:offerId' element={<OffersPageItem />} />
               <Route path='/menu/:category/:foodId' element={<FoodDetails />} />
-              <Route path='/coments' element={<Comments />} />
               <Route path='/search' element={<Search />} />
               <Route path='/createorder' element={<CreateOrder />} />
             </Routes>

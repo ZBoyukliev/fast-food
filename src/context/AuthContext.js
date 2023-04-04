@@ -15,7 +15,8 @@ export const AuthProvider = ({
             accessToken: authData.accessToken,
             email: authData.email,
             userId: authData._id,
-            ownerId: authData._ownerId
+            ownerId: authData._ownerId,
+            isAuthenticated: !!authData.accessToken,
         });
     };
 

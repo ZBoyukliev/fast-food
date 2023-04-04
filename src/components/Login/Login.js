@@ -25,7 +25,6 @@ const Login = () => {
             .then(authData => {
                 userLogin(authData);
                 navigate(-1);
-
             })
             .catch((error) => {
                 setError(true);
