@@ -33,13 +33,11 @@
 .address-from .firstname,
 .address-from .surename,
 .address-from .town,
-.address-from .phonenumber {
+.address-from .phonenumber,
+.address-from .address,
+.address-from .email,
+.address-from .code {
     width: 45%
-}
- 
- 
-.address-from .address {
-    width:100%
 }
  
  

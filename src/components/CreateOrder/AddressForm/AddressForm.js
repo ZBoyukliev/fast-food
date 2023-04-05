@@ -1,33 +1,99 @@
+import { useContext } from 'react';
 import styles from './AddressForm.module.css';
- 
+import { FoodContext } from '../../../context/FoodContext';
+import { AuthContext } from '../../../context/AuthContext';
+import { useForm } from '../../../hooks/useForm';
+
 const AddressForm = () => {
+
+    const { onDiscountSubmit } = useContext(FoodContext);
+    const { user } = useContext(AuthContext);
+
+    const { values, onChangeHandler } = useForm({
+        firstname: '',
+        surename: '',
+        phonenumber: '',
+        email: user.email,
+        towm: '',
+        address: '',
+        code: ''
+    });
+
+    const onDiscount = (e) => {
+        onDiscountSubmit(e, values);
+    };
+
     return (<>
         <h3 className={styles['address-title']}>Адрес за доставка</h3>
-        <form className={styles['address-from']}>
+        <form onSubmit={onDiscount} className={styles['address-from']}>
             <div className={styles['firstname']}>
                 <label htmlFor="firstname">Име</label>
-                <input type="firstname" id="firstname" name="firstname" />
+                <input 
+                type="firstname" 
+                id="firstname" 
+                name="firstname" 
+                value={values.firstname}
+                onChange={onChangeHandler}/>
             </div>
             <div className={styles['surename']}>
                 <label htmlFor="surename">Фамилия</label>
-                <input type="text" id="surename" name="surename" />
+                <input 
+                type="text" 
+                id="surename" 
+                name="surename"
+                value={values.surename}
+                onChange={onChangeHandler} />
             </div>
             <div className={styles['phonenumber']}>
                 <label htmlFor="phonenumber">Телефон</label>
-                <input type="text" id="phonenumber" name="phonenumber" />
+                <input 
+                type="text" 
+                id="phonenumber" 
+                name="phonenumber"
+                value={values.phonenumber}
+                onChange={onChangeHandler} />
+            </div>
+            <div className={styles['email']}>
+                <label htmlFor="email">email</label>
+                <input 
+                type="text" 
+                id="email" 
+                name="email"
+                value={values.email}
+                onChange={onChangeHandler} />
             </div>
             <div className={styles['town']}>
                 <label htmlFor="town">Град</label>
-                <input type="text" id="town" name="town" />
+                <input 
+                type="text"
+                 id="town" 
+                name="town" 
+                value={values.towm}
+                onChange={onChangeHandler}/>
             </div>
             <div className={styles['address']}>
                 <label htmlFor="address">Адрес</label>
-                <input type="text" id="address" name="address" />
+                <input 
+                type="text" 
+                id="address" 
+                name="address" 
+                value={values.address}
+                onChange={onChangeHandler}/>
             </div>
+            <div className={styles['code']}>
+                <label htmlFor="code">Код за отстъпка</label>
+                <input 
+                type="text" 
+                id="code" 
+                name="code" 
+                value={values.code}
+                onChange={onChangeHandler}/>
+            </div>
+            
             <input className={styles['order-btn']} type="submit" value="ПОРЪЧАЙ" />
         </form>
     </>
     );
 };
- 
+
 export default AddressForm;

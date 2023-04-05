@@ -8,7 +8,9 @@ export const FoodProvider = ({
 
     const [cartItem, setCartItem] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [showDiscount, setShowDiscount] = useState(true);
+    const [hasOrder, setHasOrder] = useState(false);
+    const [reseiptInfo, setReceiptInfo] = useState({});
+    const [receiptItems, setReceiptItems] = useState([]);
 
     useEffect(() => {
         let sum = 0;
@@ -32,16 +34,29 @@ export const FoodProvider = ({
         });
     };
 
-    const onDiscountCheck = (input) => {
-        if (input === 'DISC20') {
-            setTotalPrice(state => state *= 0.8);
-            setShowDiscount(false);
+    const onDiscountSubmit = (e , values) => {
+        e.preventDefault();
+
+        let finalPrice = totalPrice;
+        let discount = 0;
+
+        if (values.code === 'DISC20') {
+            discount = finalPrice * 0.2;
+            finalPrice *= 0.8;
         };
-        if (input === 'DISC10') {
-            setTotalPrice(state => state *= 0.9);
-            setShowDiscount(false);
+        if (values.code === 'DISC10') {
+            discount = finalPrice * 0.1;
+            finalPrice *= 0.9;
         };
 
+        setHasOrder(true);
+        setReceiptInfo({...values, finalPrice, discount});
+        setReceiptItems(cartItem);
+        setCartItem([]);
+    };
+
+    const onClose = () => {
+        setHasOrder(false);
     };
 
     const onRemoveOneItem = (food) => {
@@ -62,9 +77,7 @@ export const FoodProvider = ({
             } else {
                 return [...state, food];
             }
-
         });
-
     };
 
     const onRemoveFromCart = (id) => {
@@ -75,11 +88,14 @@ export const FoodProvider = ({
         <FoodContext.Provider value={{
             cartItem,
             totalPrice,
-            showDiscount,
+            hasOrder,
+            reseiptInfo,
+            receiptItems,
             onAddToCart,
             onRemoveFromCart,
             onRemoveOneItem,
-            onDiscountCheck
+            onDiscountSubmit,
+            onClose
         }}>
             {children}
         </FoodContext.Provider>
