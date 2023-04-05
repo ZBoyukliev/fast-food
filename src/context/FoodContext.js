@@ -12,6 +12,7 @@ export const FoodProvider = ({
     const [searchFood, setSearchFood] = useState([]);
     const [cartItem, setCartItem] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [showDiscount, setShowDiscount] = useState(true);
     const navigate = useNavigate();
 
 
@@ -30,13 +31,23 @@ export const FoodProvider = ({
             if (item) {
                 count = item.count + 1;
                 price += item.newPrice;
-                console.log(item.newPrice);
-                console.log(item.price);
                 return state.map(f => f._id === item._id ? { ...f, count: count, newPrice: price } : f);
             } else {
                 return [...state, food];
             }
         });
+    };
+
+    const onDiscountCheck = (input) => {
+        if (input === 'DISC20') {
+            setTotalPrice(state => state *= 0.8);
+            setShowDiscount(false);
+        };
+        if (input === 'DISC10') {
+            setTotalPrice(state => state *= 0.9);
+            setShowDiscount(false);
+        };
+
     };
 
     const onRemoveOneItem = (food) => {
@@ -45,13 +56,13 @@ export const FoodProvider = ({
             let count = food.count;
 
             if (item) {
-             
+
                 count = item.count - 1;
                 item.newPrice -= item.price;
 
                 if (count <= 0) {
                     onRemoveFromCart(food._id);
-                 }
+                }
 
                 return state.map(f => f._id === item._id ? { ...f, count: count, newPrice: item.newPrice } : f);
             } else {
@@ -77,7 +88,17 @@ export const FoodProvider = ({
     };
 
     return (
-        <FoodContext.Provider value={{ onSearch, onAddToCart, searchFood, cartItem, onRemoveFromCart, totalPrice, onRemoveOneItem }}>
+        <FoodContext.Provider value={{
+            searchFood, 
+            cartItem,
+            totalPrice,
+            showDiscount,
+            onSearch,
+            onAddToCart,
+            onRemoveFromCart,
+            onRemoveOneItem,
+            onDiscountCheck
+        }}>
             {children}
         </FoodContext.Provider>
     );

@@ -126,7 +126,7 @@
 }
 
 .prices .discount-code .discount-code-btn {
-    background-color:#195e33;
+    background-color: #195e33;
     color: white;
     border: none;
     padding: 6px 14px;
@@ -162,7 +162,14 @@
     font-weight: 600;
 }
 
-.menu .continue {
-    padding: 20px;
-    display: flex;
+.main .menu .continue  {
+    padding: 30px;
+    height: 30px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.main .menu .continue .continue-btn {
+    text-decoration: none;
+    cursor: pointer;
 }

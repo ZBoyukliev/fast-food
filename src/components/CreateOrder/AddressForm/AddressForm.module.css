@@ -1,0 +1,56 @@
+
+.address-from {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    gap:8px;
+    padding: 24px 0px;
+}
+ 
+.address-title {
+    width:200px;
+    text-align: center;
+    background-color:#195e33;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 600;
+    font-family:sans-serif;
+}
+ 
+.address-from div input{
+    margin-top: 4px;
+    height:30px;
+    width:100%
+}
+ 
+.address-from .firstname,
+.address-from .surename,
+.address-from .town,
+.address-from .phonenumber {
+    width: 45%
+}
+ 
+ 
+.address-from .address {
+    width:100%
+}
+ 
+ 
+.address-from .order-btn {
+    background-color:#195e33;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 600;
+    font-family:sans-serif;
+    margin-top: 12px;
+}
