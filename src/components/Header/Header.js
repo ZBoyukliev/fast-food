@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import { useContext, useState } from 'react';
 import { FoodContext } from '../../context/FoodContext';
+import { SearchContext } from '../../context/SearchContext';
 
 import styles from './Header.module.css';
 
@@ -10,7 +11,8 @@ const Header = () => {
 
     const { user } = useContext(AuthContext);
     const [search, setSearch] = useState({ search: '' });
-    const { onSearch, totalPrice } = useContext(FoodContext);
+    const { totalPrice } = useContext(FoodContext);
+    const { onSearch } = useContext(SearchContext);
 
     const onChangeHandler = (e) => {
         setSearch(state => ({ ...state, [e.target.name]: e.target.value }));
@@ -57,7 +59,7 @@ const Header = () => {
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/news">КАКВО НОВО</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} to="/kids">А!СТАНДАРТ</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/astandarts">А!СТАНДАРТ</NavLink>
                     </li>
                     <li className={styles['nav-link']}>
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} to="/kids">ПИШИ НИ</NavLink>

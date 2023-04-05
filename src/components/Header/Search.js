@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FoodContext } from '../../context/FoodContext';
+import { SearchContext } from '../../context/SearchContext';
 
 import Trolley from '../Trolley/Trolley';
 import styles from '../Menu/SideOrders/SideOrders.module.css';
@@ -8,8 +8,7 @@ import MainFoodItem from '../Menu/SideOrders/SideOrderItem/SideOrderItem';
 
 const Search = () => {
 
-    const { searchFood } = useContext(FoodContext);
-
+    const { searchFood } = useContext(SearchContext);
 
     return (
         <>
