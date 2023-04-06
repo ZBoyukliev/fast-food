@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import * as commentsService from '../../services/commentsService';
 import styles from './Comments.module.css';
+
 import AddCommentForm from './AddCommentForm';
 import EditCommentForm from './EditCommentForm';
 import CommentItem from './CommentItem';
@@ -13,13 +14,14 @@ import Spinner from '../Spinner/Spinner';
 
 
 const Comments = () => {
-    const [comments, setComments] = useState([]);
-    const [editForm, setShowEditForm] = useState(false);
-    const [editComment, setEditComment] = useState({});
-    const [review, setReview] = useState({ username: '', imageUrl: '', comment: '' });
-    const [isLoading, setIsLoading] = useState(false);
 
     const { user } = useContext(AuthContext);
+
+    const [comments, setComments] = useState([]);
+    const [editComment, setEditComment] = useState({});
+    const [editForm, setShowEditForm] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [review, setReview] = useState({ username: '', imageUrl: '', comment: '' });
 
     useEffect(() => {
         setIsLoading(true);

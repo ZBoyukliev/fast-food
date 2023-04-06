@@ -20,9 +20,3 @@ export const edit = (foodId, foodData) => request.put(`${baseUrl}/menu/${foodId}
 export const pagination = (skip, foodCategory) => request.get(`${baseUrl}/menu?where=category%3D%22${foodCategory}%22?offset=${skip}&pageSize=6`);
  
 
-// export const favouriteBook = (foodId) => request.post(`${baseUrl}/favourites`, { foodId });
- 
-// export const getMyFavouritesByfoodId = (foodId, userId) => request.get(`${baseUrl}/favourites?where=foodId%3D%22${foodId}%22%20and%20_ownerId%3D%22${userId}%22&count`);
- 
-// export const removeFavourite = (newId) => request.del(`${baseUrl}/favourites/${newId}`);
-

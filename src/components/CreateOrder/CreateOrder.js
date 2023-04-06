@@ -1,19 +1,21 @@
 
-import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import { FoodContext } from '../../context/FoodContext';
+
+import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './CreateOrder.module.css';
 import CreateOrderItem from './CreateOrderItem';
 import AddressForm from './AddressForm/AddressForm';
-import { AuthContext } from '../../context/AuthContext';
 import Receipt from './Receipt';
-import { Link } from 'react-router-dom';
 
 const CreateOrder = () => {
 
     const { totalPrice, hasOrder } = useContext(FoodContext);
     const { user } = useContext(AuthContext);
     const { cartItem } = useContext(FoodContext);
+    
     const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {

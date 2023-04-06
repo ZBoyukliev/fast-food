@@ -9,20 +9,11 @@ export const useForm = (initialValue) => {
         setValues(state => ({...state, [e.target.name]: e.target.value}));
     };
 
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     onSubmitHandler(values);
-
-    //     setValues(initialValue);
-    // };
-
     const changeValues = (newVaues) => {
         setValues(newVaues);
     };
 
     return {
-
         values,
         onChangeHandler,
         changeValues

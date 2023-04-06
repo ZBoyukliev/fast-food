@@ -1,9 +1,9 @@
-
-import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-import { useContext, useState } from 'react';
 import { FoodContext } from '../../context/FoodContext';
 import { SearchContext } from '../../context/SearchContext';
+
+import { useContext, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 import styles from './Header.module.css';
 

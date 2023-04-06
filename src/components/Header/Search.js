@@ -1,5 +1,5 @@
-import { useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
+import { useContext } from 'react';
 
 import Trolley from '../Trolley/Trolley';
 import styles from '../Menu/SideOrders/SideOrders.module.css';

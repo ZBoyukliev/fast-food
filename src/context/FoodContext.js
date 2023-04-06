@@ -7,10 +7,10 @@ export const FoodProvider = ({
 }) => {
 
     const [cartItem, setCartItem] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [hasOrder, setHasOrder] = useState(false);
-    const [reseiptInfo, setReceiptInfo] = useState({});
     const [receiptItems, setReceiptItems] = useState([]);
+    const [reseiptInfo, setReceiptInfo] = useState({});
+    const [hasOrder, setHasOrder] = useState(false);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
         let sum = 0;

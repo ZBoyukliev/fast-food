@@ -1,14 +1,17 @@
-import { useContext } from 'react';
-import styles from './AddressForm.module.css';
 import { FoodContext } from '../../../context/FoodContext';
 import { AuthContext } from '../../../context/AuthContext';
+import { useContext } from 'react';
+
 import { useForm } from '../../../hooks/useForm';
 import { useError } from '../../../hooks/useError';
+
+import styles from './AddressForm.module.css';
 
 const AddressForm = () => {
 
     const { onDiscountSubmit } = useContext(FoodContext);
     const { user } = useContext(AuthContext);
+
     const { error, errMsg, onHandleError } = useError();
 
     const { values, onChangeHandler } = useForm({

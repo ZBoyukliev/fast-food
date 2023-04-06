@@ -1,6 +1,6 @@
 
-import { useContext } from 'react';
 import { FoodContext } from '../../context/FoodContext';
+import { useContext } from 'react';
 
 import styles from './Trolley.module.css';
 

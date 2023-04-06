@@ -4,9 +4,9 @@ const Astandarts = () => {
     return (
         <main className={styles['main']}>
             <section className={styles['container']}>
-                {/* <img src="/images/slide-picture-burger.jpg" alt="burger" /> */}
+                
             </section>
-            {/* <Offers /> */}
+
             <section className={styles['offers']}>
                 <div className={styles['offers-pictures']}>
                     <div className={styles['text']}>

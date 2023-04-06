@@ -1,7 +1,9 @@
 import styles from './News.module.css';
 
 const News = () => {
+
     return (
+
         <section className={styles['news']}>
         <div className={styles['news-title']}>
             <h3>НОВИНИ</h3>
@@ -27,6 +29,7 @@ const News = () => {
             </div>
         </div>
     </section>
+    
     );
 };
 

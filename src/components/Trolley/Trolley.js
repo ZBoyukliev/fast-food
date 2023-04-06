@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
 import { FoodContext } from '../../context/FoodContext';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './Trolley.module.css';
 import TrolleyItem from './TrolleyItem';

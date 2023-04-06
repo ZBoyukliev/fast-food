@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import * as menuService from '../../services/menuService';
+
 import styles from './OffersPageItem.module.css';
 
 const OffersPageItem = () => {
 
-    const { offerId } = useParams();
     const [offer, setOffer] = useState({});
+    
+    const { offerId } = useParams();
 
     useEffect(() => {
         menuService.getById(offerId)

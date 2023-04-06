@@ -1,27 +1,29 @@
 import { AuthContext } from '../../context/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-import * as authService from '../../services/authService';
-import styles from './Login.module.css';
 import { useForm } from '../../hooks/useForm';
 import { useError } from '../../hooks/useError';
 
+import * as authService from '../../services/authService';
+import styles from './Login.module.css';
+
 const Login = () => {
 
-    const {
-        error,
-        errMsg,
-        onHandleError
-    } = useError();
+    const { userLogin } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const { values, onChangeHandler, changeValues } = useForm({
         email: '',
         password: ''
     });
 
-    const { userLogin } = useContext(AuthContext);
-    const navigate = useNavigate();
+    const {
+        error,
+        errMsg,
+        onHandleError
+    } = useError();
 
     const onSubmit = (e) => {
         e.preventDefault();

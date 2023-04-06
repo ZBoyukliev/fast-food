@@ -1,11 +1,12 @@
+import { AuthContext } from '../../context/AuthContext';
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext';
+
+import { useForm } from '../../hooks/useForm';
+import { useError } from '../../hooks/useError';
 
 import * as authService from '../../services/authService';
 import styles from './Register.module.css';
-import { useForm } from '../../hooks/useForm';
-import { useError } from '../../hooks/useError';
 
 const Register = () => {
 

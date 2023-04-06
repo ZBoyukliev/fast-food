@@ -57,13 +57,13 @@
     /* margin-right: 300px; */
     margin: 20px auto;
     padding: 20px;
-    margin-right: 300px;  
+    margin-right: 300px;
 }
 
 .main-details .photo .footer {
     margin-left: 80px;
     display: flex;
-    width: 280px;
+    width: 380px;
     justify-content: space-between;
     align-items: center;
 }
@@ -148,30 +148,30 @@
 /* ---------------------------------- */
 /* likes btn */
 
-button.like{
-	width: 40px;
-	height: 40px;
-	margin: 0 auto;
-	line-heigth: 50px;
-	border-radius: 50%;
-	color: #195e33;
-	background-color:rgba(38,166,154 ,0.1);
-	border-width: 1px;
-	font-size: 15px;
+button.like {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    line-heigth: 50px;
+    border-radius: 50%;
+    color: #195e33;
+    background-color: rgba(38, 166, 154, 0.1);
+    border-width: 1px;
+    font-size: 15px;
     cursor: pointer;
     border: none;
 }
- 
-button.dislike{
-	width: 40px;
-	height: 40px;
-	margin: 0 auto;
-	line-heigth: 50px;
-	border-radius: 50%;
-	color: #195e33;
-	background-color: rgba(255,138,128 ,0.1);
-	border-width: 1px;
-	font-size: 15px;
+
+button.dislike {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    line-heigth: 50px;
+    border-radius: 50%;
+    color: #195e33;
+    background-color: rgba(255, 138, 128, 0.1);
+    border-width: 1px;
+    font-size: 15px;
     cursor: pointer;
     border: none;
 }
@@ -181,4 +181,13 @@ button.dislike{
     color: #195e33;
     padding: 0;
     margin: 0;
+    margin-left: 4px;
+}
+
+.count-p2 {
+    font-size: 24px;
+    color: #195e33;
+    padding: 0;
+    margin: 0;
+    margin-left: 2px;
 }
