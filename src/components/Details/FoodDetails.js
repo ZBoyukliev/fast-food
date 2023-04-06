@@ -2,8 +2,10 @@ import { Link, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FoodContext } from '../../context/FoodContext';
+import { AuthContext } from '../../context/AuthContext';
 
 import * as menuService from '../../services/menuService';
+import * as likeService from '../../services/likeService';
 import styles from './FoodDetails.module.css';
 import Subnav from '../Subnav/Subnav';
 import Trolley from '../Trolley/Trolley';
@@ -14,19 +16,47 @@ const FoodDetails = () => {
     const { foodId } = useParams();
     const [food, setFood] = useState({});
     const navigate = useNavigate();
+    const [likes, setLikes] = useState([]);
+    const [totalLikes, setTotalLikes] = useState(0);
+    const [hasLike, setHasLike] = useState(0);
 
     const { onAddToCart } = useContext(FoodContext);
+    const { user } = useContext(AuthContext);
 
     const onAddItem = () => {
         onAddToCart({ ...food, count: 1, newPrice: food.price });
     };
 
     useEffect(() => {
-        menuService.getById(foodId)
-            .then(result => {
-                setFood(result);
-            });
-    }, [foodId]);
+        const allPromises = Promise.all([
+            menuService.getById(foodId),
+            likeService.getAllLikes(),
+            likeService.getLikesByFoodId(foodId),
+            likeService.getMyLikeByFoodId(foodId, user.userId),
+        ]);
+        allPromises.then(result => {
+            const [food, likes, totalLikes, hasLike] = result;
+            setFood(food);
+            setLikes(likes);
+            setTotalLikes(totalLikes);
+            setHasLike(hasLike);
+            console.log(result);
+        });
+    }, [foodId, user]);
+
+    const onLike = async () => {
+        const result = await likeService.likeFood(foodId);
+        setLikes(state => [...state, result]);
+        setHasLike(1);
+        setTotalLikes(state => state + 1);
+    };
+
+    const onDislike = async () => {
+        setHasLike(0);
+        setTotalLikes(state => state - 1);
+        const food = likes.filter(f => f.foodId === foodId && f._ownerId === user.userId)[0];
+        await likeService.dislikeFood(food._id);
+    };
 
     return (
         <div>
@@ -58,6 +88,15 @@ const FoodDetails = () => {
                     <div className={styles['footer']}>
                         <button onClick={onAddItem} className={styles['footer-btn']}>ДОБАВИ</button>
                         {/* <button className={styles['footer-btn']}>ИЗБЕРИ МЕНЮ</button> */}
+                        {hasLike < 1 ?
+                            (<button onClick={onLike} className={styles['like']}>
+                                <i className="fa-regular fa-thumbs-up fa-2x"></i>
+                            </button>) :
+                            (<button onClick={onDislike} className={styles['dislike']}>
+                                <i className="fa-solid fa-thumbs-up fa-2x"></i>
+                            </button>)
+                        }
+                        <p className={styles['count-p']}>{totalLikes}</p>
                     </div>
                 </section>
             </section>

@@ -62,6 +62,10 @@
 
 .main-details .photo .footer {
     margin-left: 80px;
+    display: flex;
+    width: 280px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main-details .photo .footer-btn {
@@ -138,4 +142,43 @@
     font-weight: 600;
     padding-top: 16px;
     margin-left: 80px;
+}
+
+
+/* ---------------------------------- */
+/* likes btn */
+
+button.like{
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	line-heigth: 50px;
+	border-radius: 50%;
+	color: #195e33;
+	background-color:rgba(38,166,154 ,0.1);
+	border-width: 1px;
+	font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
+ 
+button.dislike{
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	line-heigth: 50px;
+	border-radius: 50%;
+	color: #195e33;
+	background-color: rgba(255,138,128 ,0.1);
+	border-width: 1px;
+	font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+.count-p {
+    font-size: 20px;
+    color: #195e33;
+    padding: 0;
+    margin: 0;
 }
