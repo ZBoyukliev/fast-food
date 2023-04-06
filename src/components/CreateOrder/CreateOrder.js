@@ -1,5 +1,5 @@
 
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { FoodContext } from '../../context/FoodContext';
 
 import styles from './CreateOrder.module.css';
@@ -7,6 +7,7 @@ import CreateOrderItem from './CreateOrderItem';
 import AddressForm from './AddressForm/AddressForm';
 import { AuthContext } from '../../context/AuthContext';
 import Receipt from './Receipt';
+import { Link } from 'react-router-dom';
 
 const CreateOrder = () => {
 
@@ -15,6 +16,12 @@ const CreateOrder = () => {
     const { cartItem } = useContext(FoodContext);
     const [showForm, setShowForm] = useState(false);
 
+    useEffect(() => {
+        if (totalPrice === 0) {
+            setShowForm(false);
+        }
+    }, [totalPrice]);
+
     const onContinue = () => {
         setShowForm(true);
     };
@@ -22,7 +29,7 @@ const CreateOrder = () => {
 
     return (
         <>
-        {!hasOrder ?    <main className={styles['main']}>
+            {!hasOrder ? <main className={styles['main']}>
                 <section className={styles['container']}>
                     <img src="/images/pizza/order.jpg" alt="drinks" />
                 </section>
@@ -43,15 +50,19 @@ const CreateOrder = () => {
 
                     </section>
                     {user.userId ? (!showForm ? <div className={styles['continue']}>
-                        <button onClick={onContinue} className={styles['continue-btn']}>ПРОДЪЛЖИ</button>
+                        {totalPrice === 0 ? null : <button onClick={onContinue} className={styles['continue-btn']}>ПРОДЪЛЖИ</button>}
                     </div> :
-                        <AddressForm />) : <h4>ЗА ДА ПОРЪЧАТЕ МОЛЯ ВЛЕЗТЕ В СВОЯ ПРОФИЛ</h4>}
+                        <AddressForm />) : <h4
+                            className={styles['warning-title']}>
+                        ЗА ДА ПОРЪЧАТЕ МОЛЯ ВЛЕЗТЕ В СВОЯ ПРОФИЛ
+                        <Link to='/login'>ТУК</Link>
+                    </h4>}
 
                 </section>
-            </main> : 
-            <Receipt />
+            </main> :
+                <Receipt />
             }
-         
+
         </>
     );
 };

@@ -173,3 +173,84 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.menu .warning-title {
+    text-align: center;
+    padding: 0 50px 40px 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.menu .warning-title a {
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+/* ----------------------------------------------- */
+/* final oreder */
+
+.main .final-order {
+    min-height: 80vh;
+    width: 100%;
+    background-image: url('/public/images/bg.jpg');
+    padding: 30px 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.main .final-order .final-order-title {
+    font-size: 40px;
+    font-weight: 500;
+    padding: 30px;
+    padding-bottom: 50px;
+}
+
+.main .final-order .final-order-p {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.main .final-order .final-order-ul {
+    margin-bottom: 30px;
+}
+
+.main .final-order .final-order-li {
+    background-color: aliceblue;
+    border: 1px solid black;
+    width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.main .final-order .final-order-li i {
+    color: #195e33;
+    font-size: 20px;
+    padding: 4px;
+    padding-left: 12px;
+}
+
+.main .final-order .final-order-li .final-order-sp1,
+.main .final-order .final-order-li .final-order-sp2,
+.main .final-order .final-order-li .final-order-sp3 {
+    padding-left: 12px;
+}
+
+.main .final-order .final-order-disc {
+    font-size: 40px;
+    font-weight: 500;
+    margin: 30px;
+}
+
+.main .final-order .final-order-total {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 30px;
+}
+
+.main .final-order .final-order-btn {
+    background-color: red;
+    color: white;
+    padding: 8px 26px;
+    font-size: 32px;
+    margin-top: 60px;
+}

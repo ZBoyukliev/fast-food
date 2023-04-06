@@ -52,3 +52,9 @@
     font-family:sans-serif;
     margin-top: 12px;
 }
+
+.error-msg {
+    color: red;
+    text-align: center;
+    padding: 14px;
+}
