@@ -61,9 +61,9 @@ const Header = () => {
                     <li className={styles['nav-link']}>
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/astandarts">А!СТАНДАРТ</NavLink>
                     </li>
-                    <li className={styles['nav-link']}>
+                    {/* <li className={styles['nav-link']}>
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} to="/kids">ПИШИ НИ</NavLink>
-                    </li>
+                    </li> */}
                 </ul>
 
                 <div className={styles['phone-number']}>
@@ -78,7 +78,8 @@ const Header = () => {
                         onChange={onChangeHandler}
                         placeholder="Търси" />
                 </form>
-                <Link className={styles['order']} to="/createorder">ПОРЪЧАЙ {totalPrice > 0 ? totalPrice.toFixed(2) + 'лв.' : ''}</Link>
+                <Link className={styles['order']} to="/createorder">ПОРЪЧАЙ </Link>
+                {/* {totalPrice > 0 ? totalPrice.toFixed(2) + 'лв.' : ''} */}
             </nav>
         </header>
     );

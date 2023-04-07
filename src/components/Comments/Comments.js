@@ -81,7 +81,7 @@ const Comments = () => {
                             {
                                 comments.length === 0 &&
                                 <div className={styles['no-comments-d']}>
-                                    <h2 className={styles['no-comments']}>Все още няма коментари. Осотави първия коментар.</h2>
+                                    <h2 className={styles['no-comments']}>Все още няма коментари. Остави първия коментар.</h2>
                                     <p className={styles['no-comments-p']}>За да оставиш твоя коментар моля влез в профила си <Link to={'/login'}>тук </Link> или
                                         се регистрирай  <Link to={'/login'}>тук</Link>
                                     </p>
