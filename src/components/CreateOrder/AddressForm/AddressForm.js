@@ -27,7 +27,7 @@ const AddressForm = () => {
     const onDiscount = (e) => {
         if (values.firstname === '' || values.surename === '' || values.phonenumber === '' || values.email === '' || values.town === '' || values.address === '') {
             e.preventDefault();
-            onHandleError('ВСИЧК ИПОЛЕТА СЪС ЗВЕЗДИЧКА СА ЗАДЪЛЖИТЕЛНИ!');
+            onHandleError('ВСИЧКИ ИПОЛЕТА СЪС ЗВЕЗДИЧКА СА ЗАДЪЛЖИТЕЛНИ!');
             return;
         };
         onDiscountSubmit(e, values);

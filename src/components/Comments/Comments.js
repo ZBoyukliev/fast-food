@@ -3,6 +3,7 @@ import { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
+import { useError } from '../../hooks/useError';
 
 import * as commentsService from '../../services/commentsService';
 import styles from './Comments.module.css';
@@ -16,6 +17,7 @@ import Spinner from '../Spinner/Spinner';
 const Comments = () => {
 
     const { user } = useContext(AuthContext);
+    const { error, errMsg, onHandleError } = useError();
 
     const [comments, setComments] = useState([]);
     const [editComment, setEditComment] = useState({});
@@ -38,6 +40,12 @@ const Comments = () => {
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
+        
+        if( review.comment === '' ||  review.username === '' || review.imageUrl === '') {
+            onHandleError('ВСИЧКИ ИПОЛЕТА СЪС ЗВЕЗДИЧКА СА ЗАДЪЛЖИТЕЛНИ!');
+            return;
+        }
+
         let result = await commentsService.postComment(user.userId, review.comment, review.username, review.imageUrl);
         setComments(state => [...state, result]);
         setReview({ username: '', imageUrl: '', comment: '' });
@@ -103,6 +111,7 @@ const Comments = () => {
                                 Остави твоя коментар тук
                                 <i className="fa-solid fa-circle-arrow-down"></i>
                             </h2>
+                            {error ? <p className={styles['error-msg']}>{errMsg}</p> : null} 
                             <AddCommentForm onChangeHandler={onChangeHandler} review={review} onSubmitHandler={onSubmitHandler} />
                         </>}
 

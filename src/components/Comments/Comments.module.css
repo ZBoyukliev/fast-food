@@ -197,5 +197,9 @@
     display: block;
     margin: 0 auto;
     width: 170px;
+}
 
+.comment .error-msg {
+    text-align: center;
+    color: #db0000;
 }
