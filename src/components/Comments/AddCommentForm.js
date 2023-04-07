@@ -11,7 +11,7 @@ const AddCommentForm = ({
     return (
         <form className={styles['comments-form']} onSubmit={onSubmitHandler}>
             <div className={styles['username']}>
-                <label htmlFor="username">Псевдоним</label>
+                <label htmlFor="username">Псевдоним*</label>
                 <input
                     type="text"
                     id="username"
@@ -21,7 +21,7 @@ const AddCommentForm = ({
                 />
             </div>
             <div className={styles['image']}>
-                <label htmlFor="image">Снимка</label>
+                <label htmlFor="image">Снимка*</label>
                 <input
                     type="text"
                     id="image"
@@ -31,7 +31,7 @@ const AddCommentForm = ({
                 />
             </div>
             <div className={styles['comment-text']}>
-                <label htmlFor="comment">Коментар</label>
+                <label htmlFor="comment">Коментар*</label>
                 <textarea
                     type="text"
                     id="comment"
