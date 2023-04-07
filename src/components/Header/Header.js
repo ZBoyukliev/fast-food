@@ -1,5 +1,4 @@
 import { AuthContext } from '../../context/AuthContext';
-import { FoodContext } from '../../context/FoodContext';
 import { SearchContext } from '../../context/SearchContext';
 
 import { useContext, useState } from 'react';
@@ -11,7 +10,6 @@ const Header = () => {
 
     const { user } = useContext(AuthContext);
     const [search, setSearch] = useState({ search: '' });
-    const { totalPrice } = useContext(FoodContext);
     const { onSearch } = useContext(SearchContext);
 
     const onChangeHandler = (e) => {
