@@ -1,3 +1,12 @@
+Fast-food(Aladin) app is platform for fast-food where you can order food for home.
+You have multiple choices of food and offers. Check reviews and comments from other clients.
+
+It has been deployed in firebase and works with SoftUni practice serve.
+Download server to your machine to use it.
+The server is in folder server. To start the server go to server folder and use command
+'node server.js'. 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

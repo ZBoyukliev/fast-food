@@ -80,6 +80,10 @@
     /* font-weight: 600; */
 }
 
+.main-details .photo .footer-btn:hover {
+    cursor: pointer;
+}
+
 .main-details .photo .menu-sec-product {
     position: relative;
 }
