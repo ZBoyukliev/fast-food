@@ -1,25 +1,22 @@
 import { AuthContext } from '../../context/AuthContext';
 import { SearchContext } from '../../context/SearchContext';
 
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import styles from './Header.module.css';
+import { useForm } from '../../hooks/useForm';
 
 const Header = () => {
 
     const { user } = useContext(AuthContext);
-    const [search, setSearch] = useState({ search: '' });
     const { onSearch } = useContext(SearchContext);
 
-    const onChangeHandler = (e) => {
-        setSearch(state => ({ ...state, [e.target.name]: e.target.value }));
-    };
-
+    const { values, onChangeHandler } = useForm({ search: '' });
 
     const onSearchSubmit = (e) => {
-        onSearch(e, search);
-        setSearch({search: ''});
+        onSearch(e, values.search);
+        values.search = '';
     };
 
     return (
@@ -59,9 +56,7 @@ const Header = () => {
                     <li className={styles['nav-link']}>
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/astandarts">А!СТАНДАРТ</NavLink>
                     </li>
-                    {/* <li className={styles['nav-link']}>
-                        <NavLink className={({ isActive }) => isActive ? styles['nav-active--'] : ''} to="/kids">ПИШИ НИ</NavLink>
-                    </li> */}
+
                 </ul>
 
                 <div className={styles['phone-number']}>
@@ -72,7 +67,7 @@ const Header = () => {
                     <input className={styles['search']}
                         type="text"
                         name="search"
-                        value={search.search}
+                        value={values.search}
                         onChange={onChangeHandler}
                         placeholder="Търси" />
                 </form>

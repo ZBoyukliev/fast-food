@@ -9,21 +9,22 @@ export const SearchContext = createContext();
 export const SearchProvider = ({ children }) => {
 
     const [searchFood, setSearchFood] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     
     const navigate = useNavigate();
 
-    const onSearch = async (e, search) => {
+    const onSearch = async (e, foodName) => {
         e.preventDefault();
-
-        const foodName = search.search;
+        setIsLoading(true);
         const result = await menuService.searchFood(foodName);
 
         setSearchFood(result);
         navigate('/search');
+        setIsLoading(false);
     };
 
     return (
-        <SearchContext.Provider value={{ onSearch, searchFood }}>
+        <SearchContext.Provider value={{ onSearch, searchFood, isLoading }}>
             {children}
         </SearchContext.Provider>
     );

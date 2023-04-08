@@ -4,11 +4,12 @@ import { useContext } from 'react';
 import Trolley from '../Trolley/Trolley';
 import styles from '../Menu/SideOrders/SideOrders.module.css';
 import MainFoodItem from '../Menu/SideOrders/SideOrderItem/SideOrderItem';
+import Spinner from '../Spinner/Spinner';
 
 
 const Search = () => {
 
-    const { searchFood } = useContext(SearchContext);
+    const { searchFood, isLoading } = useContext(SearchContext);
 
     return (
         <>
@@ -20,9 +21,11 @@ const Search = () => {
                         {searchFood.length === 0 &&
                             <>
                                 <h1 className={styles['menu-sec-title']}>НЯМА НАМЕРЕНИ РЕЗУЛТАТИ!</h1>
-                                <h2 className={styles['menu-sec-title2']}>МОЛЯ ОПИТАИТЕ ОТНОВО НА КИРИЛИЦА!</h2>
+                                <h2 className={styles['menu-sec-title2']}>МОЛЯ ОПИТАИТЕ ОТНОВО!</h2>
                             </>}
-                        {searchFood.map(f => <MainFoodItem key={f._id} food={f} />)}
+                            {isLoading ? <Spinner/> : 
+                            searchFood.map(f => <MainFoodItem key={f._id} food={f} />)}
+                         
 
                     </div>
                 </section>
