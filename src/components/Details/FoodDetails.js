@@ -43,7 +43,6 @@ const FoodDetails = () => {
             setLikes(likes);
             setTotalLikes(totalLikes);
             setHasLike(hasLike);
-            console.log(result);
         });
     }, [foodId, user]);
 
@@ -72,7 +71,7 @@ const FoodDetails = () => {
                     <h4>Съдаржание</h4>
                     <ul>
                         {food.content?.map(c => (
-                            <li>{c}</li>
+                            <li key={c}>{c}</li>
                         )) || []}
                     </ul>
                 </aside>

@@ -29,6 +29,34 @@ const Register = () => {
         e.preventDefault();
         const { email, password, repass } = values;
 
+        if (password.length < 6 || password.length > 12) {
+            onHandleError('Your password must be between 6 and 12 characters!');
+            return;
+        }
+ 
+        if (password.search(/[a-z][A-Z]/i) < 0){
+            onHandleError('password should contain atleast one lowercase letter and one uppercase letter');
+            return ;
+        }
+ 
+        if (password.search(/[0-9]/i) < 0){
+            onHandleError('password should contain atleast one digit');
+            return ;
+        }
+ 
+        if (password !== repass) {
+            onHandleError('Passwords don`t match!');
+            return;
+        }
+        // if (password.length < 6 || repass.length < 6) {
+        //     onHandleError('ПАРОЛАТА ТРЯБВА ДА СЪДЪРЖА ПОНЕ 6 СИМВОЛА!');
+        //     return;
+        // };
+        // if (password !== repass) {
+        //     onHandleError('ПАРОЛИТЕ НЕ СЪВПАДАТ!');
+        //     return;
+        // }
+
         authService.register(email, password, repass)
             .then(authData => {
                 userLogin(authData);

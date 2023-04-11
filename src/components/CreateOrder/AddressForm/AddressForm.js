@@ -30,7 +30,12 @@ const AddressForm = () => {
             onHandleError('ВСИЧКИ ИПОЛЕТА СЪС ЗВЕЗДИЧКА СА ЗАДЪЛЖИТЕЛНИ!');
             return;
         };
-        onDiscountSubmit(e, values);
+        if(values.phonenumber.search(/08[7|8|9][0-9]{7}$/i)) {
+            e.preventDefault();
+            onHandleError('НЕВАЛИДЕН ТЕЛЕФОНЕН НОМЕР!');
+            return;
+        }
+        onDiscountSubmit(e, values); 
     };
 
     return (
@@ -68,7 +73,7 @@ const AddressForm = () => {
             <div className={styles['email']}>
                 <label htmlFor="email">email*</label>
                 <input
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     value={values.email}

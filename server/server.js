@@ -1323,7 +1323,8 @@
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
                 email: "zarko@abv.bg",
-                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+                admin: true
             },
         },
         sessions: {

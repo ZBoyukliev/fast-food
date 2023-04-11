@@ -17,6 +17,7 @@ export const AuthProvider = ({
             userId: authData._id,
             ownerId: authData._ownerId,
             isAuthenticated: !!authData.accessToken,
+            admin: authData.admin || false
         });
     };
 
