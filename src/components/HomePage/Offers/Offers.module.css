@@ -63,3 +63,10 @@
 .offers .offers-pictures>div:hover .offers-img2 {
     transform: scale(1.1);
 }
+
+.offers .offer-sec-title {
+    font-size: 60px;
+    font-weight: 600;
+    margin: 100px auto;
+    color: #514c46;
+}

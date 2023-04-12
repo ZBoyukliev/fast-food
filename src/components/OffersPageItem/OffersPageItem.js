@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import * as menuService from '../../services/menuService';
 
@@ -8,15 +8,19 @@ import styles from './OffersPageItem.module.css';
 const OffersPageItem = () => {
 
     const [offer, setOffer] = useState({});
-    
+
     const { offerId } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         menuService.getById(offerId)
             .then(result => {
                 setOffer(result);
+            })
+            .catch((error) => {
+                navigate('/404');
             });
-    }, [offerId]);
+    }, [offerId, navigate]);
 
     return (
         <main className={styles['main']}>

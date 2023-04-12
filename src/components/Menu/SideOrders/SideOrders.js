@@ -24,6 +24,10 @@ const SideOrders = ({ src, type }) => {
             .then(res => {
                 setMenu(res);
                 setIsLoading(false);
+            })
+            .catch((error) => {
+               setIsLoading(false);
+               setMenu([]);
             });
     }, [category]);
 
@@ -31,7 +35,9 @@ const SideOrders = ({ src, type }) => {
         <>
             {isLoading ? <Spinner /> :
                 <>
+                
                     <Subnav />
+                    {menu.length > 0 ?  
                     <main className={styles['main']}>
                         <Trolley />
                         <section className={styles['container']}>
@@ -50,7 +56,25 @@ const SideOrders = ({ src, type }) => {
                             </div>
                         </section>
 
-                    </main>
+                    </main>  :
+                      <main className={styles['main']}>
+                      <Trolley />
+                      <section className={styles['container']}>
+                          <img src={src} alt="drinks" />
+                      </section>
+
+                      <section className={styles['menu']}>
+                          <div className={styles['menu-title']}>
+                              <h3>{type}</h3>
+                          </div>
+
+                          <div className={styles['menu-sec']}>
+                             <h2 className={styles['menu-sec-title']}>В МОМЕНТА НЯМА НАЛИЧНИ ПРОДУКТИ.</h2>
+                          </div>
+                      </section>
+
+                  </main>
+                    }
                 </>
             }
         </>
