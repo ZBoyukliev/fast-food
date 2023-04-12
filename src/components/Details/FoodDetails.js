@@ -43,8 +43,11 @@ const FoodDetails = () => {
             setLikes(likes);
             setTotalLikes(totalLikes);
             setHasLike(hasLike);
+        })
+        .catch((error) => {
+            navigate('/404');
         });
-    }, [foodId, user]);
+    }, [foodId, user, navigate]);
 
     const onLike = async () => {
         const result = await likeService.likeFood(foodId);

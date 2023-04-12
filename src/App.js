@@ -1,7 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { FoodProvider } from './context/FoodContext';
+import { SearchProvider } from './context/SearchContext';
 
+import { RouteGuard } from './components/commons/RouteGuard';
+import { LogoutGuard } from './components/commons/LogoutGuard';
+
+import { Logout } from './components/Logout/Logout';
+import CreateOrder from './components/CreateOrder/CreateOrder';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
@@ -15,12 +21,8 @@ import OffersPageItem from './components/OffersPageItem/OffersPageItem';
 import Comments from './components/Comments/Comments';
 import WhatsNew from './components/WhatsNew/WhatsNew';
 import Search from './components/Header/Search';
-import CreateOrder from './components/CreateOrder/CreateOrder';
-import { Logout } from './components/Logout/Logout';
-import { RouteGuard } from './components/commons/RouteGuard';
-import { LogoutGuard } from './components/commons/LogoutGuard';
-import { SearchProvider } from './context/SearchContext';
 import Astandarts from './components/Astandarts/Astandarts';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
 
@@ -62,6 +64,8 @@ function App() {
                 <Route path='/search' element={<Search />} />
                 <Route path='/createorder' element={<CreateOrder />} />
                 <Route path='/astandarts' element={<Astandarts />} />
+                <Route path='*' element={<NotFound />} />
+                <Route path='/404' element={<NotFound />} />
               </Routes>
             </div>
             <Footer />
