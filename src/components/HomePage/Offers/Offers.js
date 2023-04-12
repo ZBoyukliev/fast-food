@@ -16,6 +16,7 @@ const Offers = () => {
         menuService.getOffers()
             .then(res => {
                 setOffer(res);
+                setIsLoading(false);
             })
             .catch((error) => {
                 setOffer([]);
@@ -31,7 +32,7 @@ const Offers = () => {
                     <div className={styles['offers-pictures']}>
                         {isLoading ? <Spinner /> :
 
-                        offer.length > 0 ? 
+                        (offer.length > 0 ? 
                             offer.map(o =>
 
                                 <div key={o._id}>
@@ -42,7 +43,7 @@ const Offers = () => {
                                         </div>
                                     </Link>
                                 </div>
-                            ) : <h2 className={styles['offer-sec-title']}>В МОМЕНТА НЯМА НАЛИЧНИ ПРОМОЦИИ.</h2> 
+                            ) : <h2 className={styles['offer-sec-title']}>В МОМЕНТА НЯМА НАЛИЧНИ ПРОМОЦИИ.</h2> )
                         }
                     
                     </div>
