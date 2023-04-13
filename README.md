@@ -1,10 +1,9 @@
-Fast-food(Aladin) app is platform for fast-food where you can order food for home.
-You have multiple choices of food and offers. Check reviews and comments from other clients.
+Aladin App The e-Shop App is an open-source platform built using React and softUni practice server.
+The app allows you to search for your favorite food and check reviews of other customers.
+Only loged users are allowed to add, edit and delete reviews.All users can add products to 
+the basket so they can check final price to pay, but only loget users can complete the order.
 
-It has been deployed in firebase and works with SoftUni practice serve.
-Download server to your machine to use it.
-The server is in folder server. To start the server go to server folder and use command
-'node server.js'. 
+Project is deployed in firebase on: https://aladin-react-project.web.app/ To run the app you need to dowload folder "server" from the repository and to start it local from there with file server.js (node server.js); 
 
 
 # Getting Started with Create React App

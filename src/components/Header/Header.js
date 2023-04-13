@@ -26,7 +26,7 @@ const Header = () => {
                 <p className={styles['working-time']}>РАБОТНО ВРЕМЕ 10:55 - 00:55</p>
                 <div className={styles['login']}>
                     {user.email && <span>Wellcome {user.email} </span>}
-                    {user.admin && <Link>АДМИН</Link>}
+                    {/* {user.admin && <Link>АДМИН</Link>} */}
                     {user.email ?
                         <Link to="/logout">Изход</Link>
                         :
