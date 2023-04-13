@@ -43,7 +43,7 @@ const Admin = () => {
                                         </div>
                                         <div className={styles['div-btn']}>
                                             <Link to={`/menu/${d.category}/${d._id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
-                                            <button onClick={''} className={styles['btn']}>РЕДАКТИРАЙ</button>
+                                            <button className={styles['btn']}>РЕДАКТИРАЙ</button>
                                         </div>
                                     </div>
                                 )};
