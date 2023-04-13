@@ -23,6 +23,7 @@ import WhatsNew from './components/WhatsNew/WhatsNew';
 import Search from './components/Header/Search';
 import Astandarts from './components/Astandarts/Astandarts';
 import NotFound from './components/NotFound/NotFound';
+import Admin from './components/Admin/Admin';
 
 function App() {
 
@@ -56,7 +57,7 @@ function App() {
                 <Route element={<LogoutGuard />}>
                   <Route path='/logout' element={<Logout />} />
                 </Route>
-
+                <Route path='/admin' element={<Admin />} />
                 <Route path='/offers' element={<OffersPage />} />
                 <Route path='/news' element={<WhatsNew src={'/images/pizza/pizza-news.jpg'} />} />
                 <Route path='/offers/:offerId' element={<OffersPageItem />} />

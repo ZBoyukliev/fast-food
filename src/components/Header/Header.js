@@ -26,7 +26,7 @@ const Header = () => {
                 <p className={styles['working-time']}>РАБОТНО ВРЕМЕ 10:55 - 00:55</p>
                 <div className={styles['login']}>
                     {user.email && <span>Wellcome {user.email} </span>}
-                    {/* {user.admin && <Link>АДМИН</Link>} */}
+                    {user.admin && <Link>АДМИН</Link>}
                     {user.email ?
                         <Link to="/logout">Изход</Link>
                         :
@@ -56,6 +56,11 @@ const Header = () => {
                     <li className={styles['nav-link']}>
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/astandarts">А!СТАНДАРТ</NavLink>
                     </li>
+                    {user.admin && 
+                       <li className={styles['nav-link']}>
+                       <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/admin">АДМИН</NavLink>
+                   </li>}
+                 
 
                 </ul>
 

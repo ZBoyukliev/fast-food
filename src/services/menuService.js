@@ -13,9 +13,9 @@ export const searchFood = (query) => request.get(`${baseUrl}/menu?where=title%20
  
 export const getById = (foodId) => request.get(`${baseUrl}/menu/${foodId}`);
  
-// export const create = (foodData) => request.post(`${baseUrl}/menu`, foodData);
+export const create = (foodData) => request.post(`${baseUrl}/menu`, foodData);
  
-// export const edit = (foodId, foodData) => request.put(`${baseUrl}/menu/${foodId}`, foodData);
+export const edit = (foodId, foodData) => request.put(`${baseUrl}/menu/${foodId}`, foodData);
 
 // export const pagination = (skip, foodCategory) => request.get(`${baseUrl}/menu?where=category%3D%22${foodCategory}%22?offset=${skip}&pageSize=6`);
  
