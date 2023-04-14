@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 
 import * as menuService from '../../services/menuService';
@@ -24,12 +25,19 @@ const Admin = () => {
             });
     }, []);
 
+    const onDeletProduct = (foodId) => {
+        menuService.remove(foodId);
+        setProduct(state => state.filter(x => x._id !== foodId));
+    };
+
     return (
         <>
+
             {isLoading ? <Spinner /> :
                 <main className={styles['main']}>
                     <div className={styles['menu-sec']}>
                         <section className={styles['menu']}>
+                            <Link className={styles['div-btn-add']} to={'/admin/create'}>ДОБАВИ ПРОДУКТ</Link>
                             <div className={styles['menu-sec']}>
 
                                 {product.map(d =>
@@ -42,8 +50,9 @@ const Admin = () => {
                                             <span>лв.</span>
                                         </div>
                                         <div className={styles['div-btn']}>
-                                            <Link to={`/menu/${d.category}/${d._id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
+                                            <Link to={`/admin/${d.category}/${d._id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
                                             <button className={styles['btn']}>РЕДАКТИРАЙ</button>
+                                            <button onClick={() =>  window.confirm(`Сигурни ли сте че искате да изтриете ${d.title}?`) && onDeletProduct(d._id)} className={styles['btn-x']}>ИЗТРИЙ</button>
                                         </div>
                                     </div>
                                 )};

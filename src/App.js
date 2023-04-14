@@ -25,6 +25,7 @@ import Astandarts from './components/Astandarts/Astandarts';
 import NotFound from './components/NotFound/NotFound';
 import Admin from './components/Admin/Admin';
 import { AdminGuard } from './components/commons/AdminGuard';
+import CreateProductForm from './components/Admin/CreateProductForm/CreateProductForm';
 
 function App() {
 
@@ -69,6 +70,7 @@ function App() {
                 <Route path='/menu/:category/:foodId' element={<FoodDetails />} />
                 <Route path='/search' element={<Search />} />
                 <Route path='/createorder' element={<CreateOrder />} />
+                <Route path='/admin/create' element={<CreateProductForm />} />
                 <Route path='/astandarts' element={<Astandarts />} />
                 <Route path='*' element={<NotFound />} />
                 <Route path='/404' element={<NotFound />} />

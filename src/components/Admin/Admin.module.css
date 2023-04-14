@@ -22,6 +22,7 @@
     min-height: 78vh;
     width: 100%;
     background-image: url('/public/images/bg.jpg');
+    padding: 40px 0;
 }
 
 .menu .menu-title {
@@ -39,10 +40,32 @@
     margin-bottom: 30px;
 }
 
+.menu a {
+    width: 240px;
+    background-color: #195e33;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Oswald';
+    padding: 16px 44px;
+    font-size: 30px;
+    border: 0;
+    margin: 30px auto;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.menu .div-btn-add:hover {
+    cursor: pointer;
+}
+
 .menu .menu-sec {
     padding: 40px 120px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .menu .menu-sec-title {
@@ -62,7 +85,7 @@
 
 .menu .menu-sec .menu-sec-product {
     cursor: pointer;
-    width: 35%;
+    width: 34%;
     padding: 30px 20px;
     align-items: center;
     justify-content: center;
@@ -84,7 +107,7 @@
     transform: scale(1);
 }
 
-.menu .menu-sec .menu-sec-product img{
+.menu .menu-sec .menu-sec-product img {
     width: 440px;
     height: 360px;
     margin-top: 50px;
@@ -143,7 +166,8 @@
     height: 42px;
     border: none;
     background-color: #195e33;
-    color: white;;
+    color: white;
+    ;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -164,9 +188,21 @@
 
 .menu .menu-sec .menu-sec-product .div-btn .btn {
     height: 42px;
-    width: 140px;
+    width: 120px;
     border: none;
     background-color: #195e33;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0;
+}
+
+.menu .menu-sec .menu-sec-product .div-btn .btn-x {
+    height: 42px;
+    width: 100px;
+    border: none;
+    background-color: rgb(192, 0, 0);
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -186,5 +222,5 @@
     cursor: pointer;
     padding: 12px;
     box-sizing: border-box;
-    font-family: sans-serif ;
+    font-family: sans-serif;
 }
