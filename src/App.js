@@ -26,6 +26,7 @@ import NotFound from './components/NotFound/NotFound';
 import Admin from './components/Admin/Admin';
 import { AdminGuard } from './components/commons/AdminGuard';
 import CreateProductForm from './components/Admin/CreateProductForm/CreateProductForm';
+import EditProductForm from './components/Admin/EditProductForm/EditProductForm';
 
 function App() {
 
@@ -62,6 +63,8 @@ function App() {
 
                 <Route element={<AdminGuard />}>
                   <Route path='/admin' element={<Admin />} />
+                  <Route path='/create' element={<CreateProductForm />} />
+                  <Route path='/edit/:foodId' element={<EditProductForm />} />
                 </Route>
 
                 <Route path='/offers' element={<OffersPage />} />
@@ -70,7 +73,6 @@ function App() {
                 <Route path='/menu/:category/:foodId' element={<FoodDetails />} />
                 <Route path='/search' element={<Search />} />
                 <Route path='/createorder' element={<CreateOrder />} />
-                <Route path='/admin/create' element={<CreateProductForm />} />
                 <Route path='/astandarts' element={<Astandarts />} />
                 <Route path='*' element={<NotFound />} />
                 <Route path='/404' element={<NotFound />} />

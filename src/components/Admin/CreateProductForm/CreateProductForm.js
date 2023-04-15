@@ -13,8 +13,8 @@ const CreateProductForm = () => {
     const { values, onChangeHandler } = useForm({
         title: '',
         imageUrl: '',
-        price: '',
-        contents: '',
+        price: 0,
+        content: '',
         category: 'doner',
     });
 
@@ -40,12 +40,22 @@ const CreateProductForm = () => {
             return;
         };
 
+        if ( values.price === 0 ) {
+            onHandleError('ЦЕНАТА ТРЯБВА ДА Е ПО ГОЛЯМА ОТ НУЛА!');
+            return;
+        };
+
         let [priceLv, priceSt] = Number(values.price).toFixed(2).split('.');
         let content = [];
-        content.push(values.contents);
+
+        if(values.content.includes(',')) {
+            let items = values.content.split(',');
+            items.forEach(i => content.push(i.trim()));
+        } else {
+            content.push(values.content);
+        };
 
         menuService.create({ ...values, priceLv: priceLv + '.', priceSt, content, category1 });
-        alert('NEW ITEM');
         navigate('/admin');
     };
 
@@ -72,7 +82,7 @@ const CreateProductForm = () => {
                                 type="text"
                                 id="imageUrl"
                                 name="imageUrl"
-                                value={values.image}
+                                value={values.imageUrl}
                                 onChange={onChangeHandler}
                             />
                         </div>
@@ -92,10 +102,10 @@ const CreateProductForm = () => {
                             <label htmlFor="content">Съставки</label>
                             <input className={styles['form-control']}
                                 type="text"
-                                id="contents"
-                                name="contents"
+                                id="content"
+                                name="content"
                                 placeholder='домати, краставици, лук ...'
-                                value={values.contents}
+                                value={values.content}
                                 onChange={onChangeHandler}
                             />
                         </div>

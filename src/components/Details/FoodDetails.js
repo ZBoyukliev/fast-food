@@ -66,7 +66,8 @@ const FoodDetails = () => {
     return (
         <div>
             <Subnav />
-            <Trolley />
+            {!user.admin &&  <Trolley />}
+           
             <section className={styles['main-details']}>
                 <aside className={styles['info']}>
                     <Link onClick={() => navigate(-1)}><i className="fa-solid fa-chevron-left"></i>Обратно</Link>
@@ -91,17 +92,19 @@ const FoodDetails = () => {
                         </div>
                     </div>
                     <div className={styles['footer']}>
-                        <button onClick={onAddItem} className={styles['footer-btn']}>ДОБАВИ</button>
-                         {user.userId ? 
-                              hasLike < 1 ?
-                                (<button onClick={onLike} className={styles['like']}>
-                                    <i className="fa-regular fa-thumbs-up fa-2x"></i>
-                                </button>) :
-                                (<button onClick={onDislike} className={styles['dislike']}>
-                                    <i className="fa-solid fa-thumbs-up fa-2x"></i>
-                                </button>)
-                             : null
-                        }
+                       {!user.admin && <button onClick={onAddItem} className={styles['footer-btn']}>ДОБАВИ</button>} 
+                        {!user.admin ? 
+                           (user.userId ? 
+                            hasLike < 1 ?
+                              (<button onClick={onLike} className={styles['like']}>
+                                  <i className="fa-regular fa-thumbs-up fa-2x"></i>
+                              </button>) :
+                              (<button onClick={onDislike} className={styles['dislike']}>
+                                  <i className="fa-solid fa-thumbs-up fa-2x"></i>
+                              </button>)
+                           : null) : null}
+                      
+                        
                         <p className={styles['count-p']}>ХАРЕСВАНИЯ - </p>
                         <p className={styles['count-p2']}>{totalLikes}</p>
                     </div>

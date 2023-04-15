@@ -68,6 +68,13 @@
     align-items: center;
 }
 
+.menu .menu-sec .no-products-msg {
+    margin: 0 auto;
+    font-size: 60px;
+    font-weight: 600;
+    color: #514c46;
+}
+
 .menu .menu-sec-title {
     font-size: 70px;
     font-weight: 600;
@@ -191,7 +198,7 @@
 
 .menu .menu-sec .menu-sec-product .div-btn .btn {
     height: 42px;
-    width: 120px;
+    width: 140px;
     border: none;
     background-color: #195e33;
     color: white;
@@ -212,14 +219,14 @@
     cursor: pointer;
 }
 
-.menu .menu-sec .menu-sec-product a {
+.menu .menu-sec .menu-sec-product .div-btn a {
     text-decoration: none;
     text-align: center;
     height: 42px;
     width: 100px;
     border: none;
-    background-color: #195e33;
-    color: white;
+    background-color: #9db7a7;
+    color: rgb(75, 52, 52);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;

@@ -25,6 +25,7 @@ const Admin = () => {
             });
     }, []);
 
+
     const onDeletProduct = (foodId) => {
         menuService.remove(foodId);
         setProduct(state => state.filter(x => x._id !== foodId));
@@ -34,13 +35,14 @@ const Admin = () => {
         <>
 
             {isLoading ? <Spinner /> :
+
                 <main className={styles['main']}>
                     <div className={styles['menu-sec']}>
                         <section className={styles['menu']}>
-                            <Link className={styles['div-btn-add']} to={'/admin/create'}>ДОБАВИ ПРОДУКТ</Link>
+                            <Link className={styles['div-btn-add']} to={'/create'}>ДОБАВИ ПРОДУКТ</Link>
                             <div className={styles['menu-sec']}>
 
-                                {product.map(d =>
+                                {product.length > 0 ? product.map(d =>
                                     <div key={d._id} className={styles['menu-sec-product']}>
                                         <h3 className={styles['menu-sec-title']}>{d.title}</h3>
                                         <img src={d.imageUrl} alt='meal' />
@@ -50,12 +52,14 @@ const Admin = () => {
                                             <span>лв.</span>
                                         </div>
                                         <div className={styles['div-btn']}>
-                                            <Link to={`/admin/${d.category}/${d._id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
-                                            <button className={styles['btn']}>РЕДАКТИРАЙ</button>
-                                            <button onClick={() =>  window.confirm(`Сигурни ли сте че искате да изтриете ${d.title} от менюто?`) && onDeletProduct(d._id)} className={styles['btn-x']}>ИЗТРИЙ</button>
+                                            <Link to={`/menu/${d.category}/${d._id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
+                                            <Link to={`/edit/${d._id}`} className={styles['btn']}>РЕДАКТИРАЙ</Link>
+                                            <button onClick={() => window.confirm(`Сигурни ли сте че искате да изтриете ${d.title} от менюто?`) && onDeletProduct(d._id)} className={styles['btn-x']}>ИЗТРИЙ</button>
                                         </div>
                                     </div>
-                                )};
+                                ) :
+                                    <h1 className={styles['no-products-msg']}>НЯМА НАЛИЧНИ ПРОДУКТИ.</h1>
+                                };
 
                             </div>
                         </section>
