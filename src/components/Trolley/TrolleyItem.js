@@ -7,7 +7,6 @@ import styles from './Trolley.module.css';
 const TrolleyItem = () => {
 
     const { cartItem, onRemoveFromCart } = useContext(FoodContext);
-    console.log(cartItem);
 
     return (
         <>

@@ -3,10 +3,12 @@ import { useForm } from '../../../hooks/useForm';
 
 import * as menuService from '../../../services/menuService';
 import styles from './CreateProductForm.module.css';
+import { useError } from '../../../hooks/useError';
 
 const CreateProductForm = () => {
 
     const navigate = useNavigate();
+    const { error, errMsg, onHandleError } = useError();
 
     const { values, onChangeHandler } = useForm({
         title: '',
@@ -32,12 +34,18 @@ const CreateProductForm = () => {
 
     const onProductSubmit = (e) => {
         e.preventDefault();
+
+        if (values.title === '' || values.imageUrl === '' || values.price === '' || values.contents === '') {
+            onHandleError('ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ');
+            return;
+        };
+
         let [priceLv, priceSt] = Number(values.price).toFixed(2).split('.');
         let content = [];
         content.push(values.contents);
 
         menuService.create({ ...values, priceLv: priceLv + '.', priceSt, content, category1 });
-        console.log(values);
+        alert('NEW ITEM');
         navigate('/admin');
     };
 
@@ -47,6 +55,7 @@ const CreateProductForm = () => {
                 <div className={styles['product']}>
 
                     <form className={styles['product-form']} onSubmit={onProductSubmit}>
+                        {error && <p className={styles['error-msg']}>{errMsg}</p>}
                         <div>
                             <label htmlFor="title">Име на продукта</label>
                             <input className={styles['form-control']}
@@ -78,16 +87,19 @@ const CreateProductForm = () => {
                                 onChange={onChangeHandler}
                             />
                         </div>
+
                         <div>
                             <label htmlFor="content">Съставки</label>
                             <input className={styles['form-control']}
                                 type="text"
                                 id="contents"
                                 name="contents"
+                                placeholder='домати, краставици, лук ...'
                                 value={values.contents}
                                 onChange={onChangeHandler}
                             />
                         </div>
+                        <p className={styles['important-msg']}>*След всяка съставка постави запетая!!!</p>
                         <div>
                             <label htmlFor="category">Категория</label>
                             <select className={styles['form-control']}
@@ -111,7 +123,7 @@ const CreateProductForm = () => {
 
                         <div className={styles['buttons']}>
                             <input className={styles['confrim']} type="submit" value="&#10003; ДОБАВИ" />
-                            <input className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" />
+                            {/* <input className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" /> */}
                         </div>
                     </form>
 

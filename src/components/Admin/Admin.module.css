@@ -92,6 +92,9 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    gap: 16px;
 }
 
 .menu .menu-sec .menu-sec-product .menu-sec-title {
@@ -108,9 +111,9 @@
 }
 
 .menu .menu-sec .menu-sec-product img {
-    width: 440px;
-    height: 360px;
-    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    /* margin-top: 50px; */
 }
 
 .menu .menu-sec .menu-sec-product .menu-price {

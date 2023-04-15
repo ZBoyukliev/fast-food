@@ -22,6 +22,16 @@
     width: 100%;
 }
 
+.product .product-form .important-msg {
+    margin-left: 270px;
+    margin-top: 2px;
+}
+
+.product .product-form .error-msg{
+    color: rgb(175, 0, 0);
+}
+
+
 .product .product-form .error-msg{
     display: block;
     color: red;
@@ -35,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
  
 .product .product-form div .form-control {
@@ -61,6 +71,7 @@
     background-color: #195e33;
     color: white;
     border: none;
+    margin: 0 auto;
 }
 
 .product .product-form .buttons .confrim:hover {
