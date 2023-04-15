@@ -63,12 +63,15 @@
 .menu .menu-sec .menu-sec-product {
     cursor: pointer;
     width: 35%;
-    padding: 30px 20px;
+    padding: 20px 20px;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    gap: 16px;
 }
 
 .menu .menu-sec .menu-sec-product .menu-sec-title {
@@ -82,12 +85,6 @@
     background-color: rgba(0, 0, 0, 0.1);
     transition: ease-in-out 0.4s;
     transform: scale(1);
-}
-
-.menu .menu-sec .menu-sec-product img{
-    width: 440px;
-    height: 360px;
-    margin-top: 50px;
 }
 
 .menu .menu-sec .menu-sec-product .menu-price {
@@ -187,4 +184,9 @@
     padding: 12px;
     box-sizing: border-box;
     font-family: sans-serif ;
+}
+
+.menu .menu-sec .menu-sec-product img {
+    max-width: 300px;
+    max-height: 300px;
 }
