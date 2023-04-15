@@ -48,15 +48,7 @@ const Register = () => {
             onHandleError('Passwords don`t match!');
             return;
         }
-        // if (password.length < 6 || repass.length < 6) {
-        //     onHandleError('ПАРОЛАТА ТРЯБВА ДА СЪДЪРЖА ПОНЕ 6 СИМВОЛА!');
-        //     return;
-        // };
-        // if (password !== repass) {
-        //     onHandleError('ПАРОЛИТЕ НЕ СЪВПАДАТ!');
-        //     return;
-        // }
-
+    
         authService.register(email, password, repass)
             .then(authData => {
                 userLogin(authData);

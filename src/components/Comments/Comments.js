@@ -49,7 +49,6 @@ const Comments = () => {
         let result = await commentsService.postComment(user.userId, review.comment, review.username, review.imageUrl);
         setComments(state => [...state, result]);
         setReview({ username: '', imageUrl: '', comment: '' });
-        console.log(result);
     };
 
     const onDeleteHandler = (id) => {

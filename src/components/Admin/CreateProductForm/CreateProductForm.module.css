@@ -1,0 +1,78 @@
+.bg {
+    background-color: #ededed;
+    width: 100%;
+    height: 70vh;
+    padding: 50px 0;
+}
+
+.product {
+    width: 700px;
+    height: 380px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.product .product-form {
+    width: 100%;
+}
+
+.product .product-form .error-msg{
+    display: block;
+    color: red;
+    text-align: center;
+    margin: 20px auto;
+}
+ 
+.product .product-form div {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+ 
+.product .product-form div .form-control {
+    width: 60%;
+    height: 30px;
+}
+ 
+.product .product-form div label {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(44, 44, 44);
+}
+ 
+.product .product-form .buttons input{
+    width: 45%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+}
+ 
+.product .product-form .buttons .confrim {
+    background-color: #195e33;
+    color: white;
+    border: none;
+}
+
+.product .product-form .buttons .confrim:hover {
+   cursor: pointer;
+}
+ 
+.product .product-form .buttons .clear {
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+}
+
+.product .product-form .buttons .clear:hover {
+    cursor: pointer;
+}

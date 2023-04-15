@@ -52,7 +52,7 @@ const Admin = () => {
                                         <div className={styles['div-btn']}>
                                             <Link to={`/admin/${d.category}/${d._id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
                                             <button className={styles['btn']}>РЕДАКТИРАЙ</button>
-                                            <button onClick={() =>  window.confirm(`Сигурни ли сте че искате да изтриете ${d.title}?`) && onDeletProduct(d._id)} className={styles['btn-x']}>ИЗТРИЙ</button>
+                                            <button onClick={() =>  window.confirm(`Сигурни ли сте че искате да изтриете ${d.title} от менюто?`) && onDeletProduct(d._id)} className={styles['btn-x']}>ИЗТРИЙ</button>
                                         </div>
                                     </div>
                                 )};

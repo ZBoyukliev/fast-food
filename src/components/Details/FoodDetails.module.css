@@ -1,7 +1,7 @@
 /* ------------------------------------------------------- */
 .main-details {
     background-image: url('/public/images/bg.jpg');
-    height: 100%;
+    height: 90vh;
     width: 89.4%;
     padding: 20px 80px;
     display: flex;
@@ -86,6 +86,12 @@
 
 .main-details .photo .menu-sec-product {
     position: relative;
+   
+}
+
+.main-details .photo .menu-sec-product img{
+    max-width: 500px;
+    max-height: 500px;
 }
 
 
@@ -93,7 +99,7 @@
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 270px;
+    top: 160px;
     right: 10px;
     background-color: #195e33;
     color: white;

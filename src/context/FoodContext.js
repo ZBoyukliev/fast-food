@@ -14,7 +14,7 @@ export const FoodProvider = ({
 
     useEffect(() => {
         let sum = 0;
-        cartItem.forEach(c => sum += c.newPrice);
+        cartItem.forEach(c => sum += Number(c.newPrice));
         setTotalPrice(sum);
     }, [cartItem, setTotalPrice]);
 
@@ -22,11 +22,11 @@ export const FoodProvider = ({
         setCartItem(state => {
             const item = state.find(i => i._id === food._id);
             let count = food.count;
-            let price = food.price;
+            let price = Number(food.price);
 
             if (item) {
                 count = item.count + 1;
-                price += item.newPrice;
+                price += Number(item.newPrice);
                 return state.map(f => f._id === item._id ? { ...f, count: count, newPrice: price } : f);
             } else {
                 return [...state, food];
