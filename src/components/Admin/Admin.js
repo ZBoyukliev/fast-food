@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react';
-
 import { Link } from 'react-router-dom';
 
 import * as menuService from '../../services/menuService';
@@ -26,7 +25,6 @@ const Admin = () => {
             });
     }, []);
 
-
     const onDeletProduct = (foodId) => {
         menuService.remove(foodId);
         setProduct(state => state.filter(x => x._id !== foodId));
@@ -44,7 +42,7 @@ const Admin = () => {
                             <Link className={styles['div-btn-add']} to={'/create'}>ДОБАВИ ПРОДУКТ</Link>
                             <div className={styles['menu-sec']}>
 
-                                {product.length > 0 ? product.map(d =>
+                                { product.map(d =>
                                     <div key={d._id} className={styles['menu-sec-product']}>
                                         <h3 className={styles['menu-sec-title']}>{d.title}</h3>
                                         <img src={d.imageUrl} alt='meal' />
@@ -59,10 +57,10 @@ const Admin = () => {
                                             <button onClick={() => window.confirm(`Сигурни ли сте че искате да изтриете ${d.title} от менюто?`) && onDeletProduct(d._id)} className={styles['btn-x']}>ИЗТРИЙ</button>
                                         </div>
                                     </div>
-                                ) :
-                                    <h1 className={styles['no-products-msg']}>НЯМА НАЛИЧНИ ПРОДУКТИ.</h1>
-                                };
+                                )};
 
+                                {product.length === 0 && <h1 className={styles['no-products-msg']}>НЯМА НАЛИЧНИ ПРОДУКТИ.</h1>}
+                                  
                             </div>
                         </section>
                     </div>

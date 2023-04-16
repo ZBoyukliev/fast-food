@@ -87,7 +87,7 @@ const EditProductForm = () => {
                                 type="text"
                                 id="title"
                                 name="title"
-                                value={editProduct.title.toUpperCase()}
+                                value={editProduct.title}
                                 onChange={onEditProductChangeHandler}
                             />
                         </div>

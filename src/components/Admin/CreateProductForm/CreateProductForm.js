@@ -40,7 +40,7 @@ const CreateProductForm = () => {
             return;
         };
 
-        if (values.title.length < 3) {
+        if (values.title.length < 3 ) {
             onHandleError('ИМЕТО НА ПРОДУКТА ТРЯБВА ДА СЪДЪРЖА МИНИМУМ 3 СИМВОЛА');
             return;
         };
@@ -77,7 +77,7 @@ const CreateProductForm = () => {
                                 type="text"
                                 id="title"
                                 name="title"
-                                value={values.title.toUpperCase()}
+                                value={values.title}
                                 onChange={onChangeHandler}
                             />
                         </div>

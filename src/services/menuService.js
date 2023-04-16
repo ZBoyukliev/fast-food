@@ -19,6 +19,8 @@ export const edit = (foodId, foodData) => request.put(`${baseUrl}/menu/${foodId}
 
 export const remove = (foodId) => request.del(`${baseUrl}/menu/${foodId}`);
 
+export const pagination = (skip) => request.get(`${baseUrl}/menu?offset=${skip}&pageSize=8`);
+
 // export const pagination = (skip, foodCategory) => request.get(`${baseUrl}/menu?where=category%3D%22${foodCategory}%22?offset=${skip}&pageSize=6`);
  
 
