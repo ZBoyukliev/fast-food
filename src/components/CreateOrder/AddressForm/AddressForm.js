@@ -25,11 +25,25 @@ const AddressForm = () => {
     });
 
     const onDiscount = (e) => {
+
         if (values.firstname === '' || values.surename === '' || values.phonenumber === '' || values.email === '' || values.town === '' || values.address === '') {
             e.preventDefault();
             onHandleError('ВСИЧКИ ИПОЛЕТА СЪС ЗВЕЗДИЧКА СА ЗАДЪЛЖИТЕЛНИ!');
             return;
         };
+
+        if(values.firstname.length < 2 || values.surename.length < 2 || values.town.length < 2) {
+            e.preventDefault();
+            onHandleError('ИМЕ, ФАМИЛИЯ И ГРАД ТРЯБВА ДА СЪДЪРЖАТ МИНИМУМ 2 СИМВОЛА!');
+            return;
+        }
+
+        if(values.address.length < 3 ) {
+            e.preventDefault();
+            onHandleError('АДРЕС ТРЯБВА ДА СЪДЪРЖАТ МИНИМУМ 3 СИМВОЛА!');
+            return;
+        }
+
         if(values.phonenumber.search(/08[7|8|9][0-9]{7}$/i)) {
             e.preventDefault();
             onHandleError('НЕВАЛИДЕН ТЕЛЕФОНЕН НОМЕР!');

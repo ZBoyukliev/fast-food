@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import * as menuService from '../../services/menuService';
 import styles from './Admin.module.css';
 import Spinner from '../Spinner/Spinner';
+import ArrowToTop from '../ArrowToTop/ArrowToTop';
 
 const Admin = () => {
 
@@ -34,9 +35,10 @@ const Admin = () => {
     return (
         <>
 
-            {isLoading ? <Spinner /> :
 
+            {isLoading ? <Spinner /> :
                 <main className={styles['main']}>
+                    <ArrowToTop />
                     <div className={styles['menu-sec']}>
                         <section className={styles['menu']}>
                             <Link className={styles['div-btn-add']} to={'/create'}>ДОБАВИ ПРОДУКТ</Link>

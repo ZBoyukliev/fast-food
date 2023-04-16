@@ -1,0 +1,15 @@
+
+.top-arrow {
+    background-color: #195e33;
+    color: white;
+    font-size: 50px;
+    padding: 2px 2px;
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    top: 76%;
+    right: 12px;
+    z-index: 100;
+    border: 1px solid #195e33;
+    text-align: center;
+};

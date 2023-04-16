@@ -8,6 +8,7 @@ import Trolley from '../../Trolley/Trolley';
 import styles from './SideOrders.module.css';
 import SideOrderItem from './SideOrderItem/SideOrderItem';
 import Spinner from '../../Spinner/Spinner';
+import ArrowToTop from '../../ArrowToTop/ArrowToTop';
 
 const SideOrders = ({ src, type }) => {
 
@@ -40,6 +41,7 @@ const SideOrders = ({ src, type }) => {
                     {menu.length > 0 ?  
                     <main className={styles['main']}>
                         <Trolley />
+                        <ArrowToTop />
                         <section className={styles['container']}>
                             <img src={src} alt="drinks" />
                         </section>
