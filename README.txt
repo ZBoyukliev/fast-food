@@ -7,11 +7,14 @@ You can create comments only if you are loged in user.
 
 
  - Login page
-   -- There is 1 default registeret user 
-      --- zarko@abv.bg with password - 123456
+
+   -- There is 1 default registeret user wich is ADMIN ! --->  "zarko@abv.bg" with password - "123456"
+
+   -- Only if you are admin you can see admin button in navbar.From there the admin can create,
+      edit and delete food products and see the details.
 
  - Register page
-  --There is validation wich required minimum 6 digit password wich includes 1 lowercase and one uppercase letter.
+  --There is validation wich required minimum 6 digit password wich includes 1 lowercase and 1 uppercase letter.
 
  - Logout page
 

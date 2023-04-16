@@ -35,17 +35,17 @@ const CreateProductForm = () => {
     const onProductSubmit = (e) => {
         e.preventDefault();
 
-        if (values.title === '' || values.imageUrl === '' || values.price === '' || values.contents === '') {
+        if (values.title === '' || values.imageUrl === '' || values.price === '' || values.content === '') {
             onHandleError('ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ');
             return;
         };
 
-        if (values.title.length < 3 ) {
+        if (values.title.length < 3) {
             onHandleError('ИМЕТО НА ПРОДУКТА ТРЯБВА ДА СЪДЪРЖА МИНИМУМ 3 СИМВОЛА');
             return;
         };
 
-        if ( values.price === 0 ) {
+        if (values.price === 0) {
             onHandleError('ЦЕНАТА ТРЯБВА ДА Е ПО ГОЛЯМА ОТ НУЛА!');
             return;
         };
@@ -53,7 +53,7 @@ const CreateProductForm = () => {
         let [priceLv, priceSt] = Number(values.price).toFixed(2).split('.');
         let content = [];
 
-        if(values.content.includes(',')) {
+        if (values.content.includes(',')) {
             let items = values.content.split(',');
             items.forEach(i => content.push(i.trim()));
         } else {
@@ -77,7 +77,7 @@ const CreateProductForm = () => {
                                 type="text"
                                 id="title"
                                 name="title"
-                                value={values.title}
+                                value={values.title.toUpperCase()}
                                 onChange={onChangeHandler}
                             />
                         </div>

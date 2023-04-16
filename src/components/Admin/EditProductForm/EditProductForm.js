@@ -43,7 +43,7 @@ const EditProductForm = () => {
     const onEditProductSubmitHandler = (e) => {
         e.preventDefault();
 
-        if (editProduct.title === '' || editProduct.imageUrl === '' || editProduct.price === '' || editProduct.contents === '') {
+        if (editProduct.title === '' || editProduct.imageUrl === '' || editProduct.price === '' || editProduct.content === '') {
             onHandleError('ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ');
             return;
         };
@@ -87,7 +87,7 @@ const EditProductForm = () => {
                                 type="text"
                                 id="title"
                                 name="title"
-                                value={editProduct.title}
+                                value={editProduct.title.toUpperCase()}
                                 onChange={onEditProductChangeHandler}
                             />
                         </div>
