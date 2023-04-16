@@ -10,17 +10,17 @@ const EditProductForm = () => {
 
     const { error, errMsg, } = useError();
     const [editProduct, setEditSetProduct] = useState({});
-    const { onHandleError} = useError();
+    const { onHandleError } = useError();
 
     const { foodId } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
         menuService.getById(foodId)
-        .then(res => {
-            setEditSetProduct(res);
-        });
-    },[foodId]);
+            .then(res => {
+                setEditSetProduct(res);
+            });
+    }, [foodId]);
 
     const onEditProductChangeHandler = (e) => {
         setEditSetProduct(state => ({ ...state, [e.target.name]: e.target.value }));
@@ -42,27 +42,34 @@ const EditProductForm = () => {
 
     const onEditProductSubmitHandler = (e) => {
         e.preventDefault();
+
         if (editProduct.title === '' || editProduct.imageUrl === '' || editProduct.price === '' || editProduct.contents === '') {
             onHandleError('ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ');
             return;
         };
 
-        if ( editProduct.price === 0 ) {
+        if (editProduct.title.length < 3 ) {
+            onHandleError('ИМЕТО НА ПРОДУКТА ТРЯБВА ДА СЪДЪРЖА МИНИМУМ 3 СИМВОЛА');
+            return;
+        };
+
+        if (editProduct.price === 0) {
             onHandleError('ЦЕНАТА ТРЯБВА ДА Е ПО ГОЛЯМА ОТ НУЛА!');
             return;
         };
 
         let [priceLv, priceSt] = Number(editProduct.price).toFixed(2).split('.');
         let content = [];
-        if(editProduct.content.includes(',')) {
+
+        if (editProduct.content.includes(',')) {
             let items = editProduct.content.split(',');
             items.forEach(i => content.push(i.trim()));
         } else {
             content.push(editProduct.content);
         };
-     
 
-        menuService.edit(foodId ,{ ...editProduct, priceLv: priceLv + '.', priceSt, content, category1 });
+
+        menuService.edit(foodId, { ...editProduct, priceLv: priceLv + '.', priceSt, content, category1 });
         navigate('/admin');
     };
 

@@ -40,6 +40,11 @@ const CreateProductForm = () => {
             return;
         };
 
+        if (values.title.length < 3 ) {
+            onHandleError('ИМЕТО НА ПРОДУКТА ТРЯБВА ДА СЪДЪРЖА МИНИМУМ 3 СИМВОЛА');
+            return;
+        };
+
         if ( values.price === 0 ) {
             onHandleError('ЦЕНАТА ТРЯБВА ДА Е ПО ГОЛЯМА ОТ НУЛА!');
             return;
