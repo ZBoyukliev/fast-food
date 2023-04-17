@@ -53,8 +53,13 @@
     margin-top: 12px;
 }
 
+.address-from .order-btn:hover {
+    cursor: pointer;
+}
+
 .error-msg {
     color: red;
     text-align: center;
+    font-size: 18px;
     padding: 14px;
 }

@@ -21,7 +21,7 @@ const Receipt = () => {
 
 
                     <ul className={styles['final-order-ul']}>
-                        {receiptItems.map(i => <li
+                        {receiptItems.map(i => <li key={i._id}
                          className={styles['final-order-li']}>
                             <i className="fa-solid fa-check"></i>
                            <span className={styles['final-order-sp1']}>{i.count} *</span> 
