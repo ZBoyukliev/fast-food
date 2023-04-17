@@ -11,8 +11,11 @@ const AddressForm = () => {
 
     const { onDiscountSubmit } = useContext(FoodContext);
     const { user } = useContext(AuthContext);
+    const { error, errMsg, onHandleError } = useError();
 
-    const {error, errMsg, onHandleError } = useError();
+    const [errors, setErrors] = useState({});
+
+
     const { values, onChangeHandler } = useForm({
         firstname: '',
         surename: '',
@@ -23,65 +26,64 @@ const AddressForm = () => {
         code: ''
     });
 
-    const [errors, setErrors] = useState({});
- 
+
     const validateEmail = (email) => {
-      const regex = /\S+@\S+\.\S+/;
-      return regex.test(email);
+        const regex = /\S+@\S+\.\S+/;
+        return regex.test(email);
     };
-   
+
     const validatePhoneNumber = (phonenumber) => {
-      const regex = /08[7|8|9][0-9]{7}$/i;
-      return regex.test(phonenumber);
+        const regex = /08[7|8|9][0-9]{7}$/i;
+        return regex.test(phonenumber);
     };
-   
+
     const onBlurHandler = (event) => {
-      const { name, value } = event.target;
-      let error = null;
-   
-      switch (name) {
-        case 'email':
-          if (!validateEmail(value)) {
-            error = 'Invalid email address';
-          }
-          break;
-          case 'town':
-            if (value.trim() === '') {
-              error = 'Town is required';
-            }
-            break;
-        case 'address':
-          if (value.trim() === '') {
-            error = 'Address is required';
-          }
-          break;
-        case 'firstname':
-          if (value.trim() === '') {
-            error = 'Name is required';
-          }
-          break;
-          case 'surename':
-            if (value.trim() === '') {
-              error = 'Surename is required';
-            }
-            break;
-        case 'phonenumber':
-          if (!validatePhoneNumber(value)) {
-            error = 'Invalid phone number';
-          }
-          break;   
-        default:
-          break;
-      }
-   
-      setErrors({ ...errors, [name]: error });
+        const { name, value } = event.target;
+        let error = null;
+
+        switch (name) {
+            case 'email':
+                if (!validateEmail(value)) {
+                    error = 'невалиден имейл';
+                }
+                break;
+            case 'town':
+                if (value.trim() === '') {
+                    error = 'веведи град';
+                }
+                break;
+            case 'address':
+                if (value.trim() === '') {
+                    error = 'виведи адрес';
+                }
+                break;
+            case 'firstname':
+                if (value.trim() === '') {
+                    error = 'виведи име';
+                }
+                break;
+            case 'surename':
+                if (value.trim() === '') {
+                    error = 'въведи фамилия';
+                }
+                break;
+            case 'phonenumber':
+                if (!validatePhoneNumber(value)) {
+                    error = 'невалиден телефонен номер';
+                }
+                break;
+            default:
+                break;
+        }
+
+        setErrors({ ...errors, [name]: error });
     };
 
     const onDiscount = (e) => {
 
         if (values.name === '' || values.surename === '' || values.address === '' || values.phonenumber === '' || values.town === '' || values.email === '') {
             e.preventDefault();
-            onHandleError( 'всички полета със звездичка са задължителни!');
+            onHandleError('всички полета със звездичка са задължителни!');
             return;
         };
 
@@ -136,10 +138,10 @@ const AddressForm = () => {
                         id="email"
                         name="email"
                         value={values.email}
-                        onChange={onChangeHandler} 
+                        onChange={onChangeHandler}
                         onBlur={onBlurHandler}
-                        />
-                        {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}
+                    />
+                    {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}
                 </div>
                 <div className={styles['town']}>
                     <label htmlFor="town">Град*</label>
@@ -148,10 +150,10 @@ const AddressForm = () => {
                         id="town"
                         name="town"
                         value={values.town}
-                        onChange={onChangeHandler} 
+                        onChange={onChangeHandler}
                         onBlur={onBlurHandler}
-                        />
-                        {errors.town && <span style={{ color: 'red' }}>{errors.town}</span>}
+                    />
+                    {errors.town && <span style={{ color: 'red' }}>{errors.town}</span>}
                 </div>
                 <div className={styles['address']}>
                     <label htmlFor="address">Адрес*</label>
@@ -160,10 +162,10 @@ const AddressForm = () => {
                         id="address"
                         name="address"
                         value={values.address}
-                        onChange={onChangeHandler} 
+                        onChange={onChangeHandler}
                         onBlur={onBlurHandler}
-                        />
-                        {errors.address && <span style={{ color: 'red' }}>{errors.address}</span>}
+                    />
+                    {errors.address && <span style={{ color: 'red' }}>{errors.address}</span>}
                 </div>
                 <div className={styles['code']}>
                     <label htmlFor="code">Код за отстъпка</label>
@@ -172,9 +174,9 @@ const AddressForm = () => {
                         id="code"
                         name="code"
                         value={values.code}
-                        onChange={onChangeHandler} 
+                        onChange={onChangeHandler}
                         onBlur={onBlurHandler}
-                        />
+                    />
                 </div>
 
                 <input className={styles['order-btn']} type="submit" value="ПОРЪЧАЙ" />

@@ -87,3 +87,10 @@
 .product .product-form .buttons .clear:hover {
     cursor: pointer;
 }
+
+.product-form .span-error {
+    text-align: right;
+    display: block;
+    color: red;
+    font-size: 14px;
+}

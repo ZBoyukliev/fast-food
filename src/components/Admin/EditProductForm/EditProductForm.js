@@ -8,9 +8,9 @@ import styles from './EditProductForm.module.css';
 
 const EditProductForm = () => {
 
-    const { error, errMsg, } = useError();
     const [editProduct, setEditSetProduct] = useState({});
-    const { onHandleError } = useError();
+    const { error, errMsg ,onHandleError } = useError();
+    const [errors, setErrors] = useState({});
 
     const { foodId } = useParams();
     const navigate = useNavigate();
@@ -40,21 +40,43 @@ const EditProductForm = () => {
         default: category1 = ''; break;
     };
 
+    const onBlurHandler = (event) => {
+        const { name, value } = event.target;
+        let error = null;
+
+        switch (name) {
+            case 'title':
+                if (value.trim() === '') {
+                    error = 'въведи продукт';
+                }
+                break;
+            case 'imageUrl':
+                if (value.trim() === '') {
+                    error = 'виведи снимка';
+                }
+                break;
+            case 'price':
+                if (value.trim() < 0.1) {
+                    error = 'виведи цена по голяма от нула';
+                }
+                break;
+            case 'content':
+                if (value.trim() === '') {
+                    error = 'въведи съставки или грамаж ';
+                }
+                break;
+            default:
+                break;
+        }
+
+        setErrors({ ...errors, [name]: error });
+    };
+
     const onEditProductSubmitHandler = (e) => {
         e.preventDefault();
 
         if (editProduct.title === '' || editProduct.imageUrl === '' || editProduct.price === '' || editProduct.content === '') {
             onHandleError('ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ');
-            return;
-        };
-
-        if (editProduct.title.length < 3 ) {
-            onHandleError('ИМЕТО НА ПРОДУКТА ТРЯБВА ДА СЪДЪРЖА МИНИМУМ 3 СИМВОЛА');
-            return;
-        };
-
-        if (editProduct.price === 0) {
-            onHandleError('ЦЕНАТА ТРЯБВА ДА Е ПО ГОЛЯМА ОТ НУЛА!');
             return;
         };
 
@@ -89,8 +111,10 @@ const EditProductForm = () => {
                                 name="title"
                                 value={editProduct.title}
                                 onChange={onEditProductChangeHandler}
+                                onBlur={onBlurHandler}
                             />
                         </div>
+                             {errors.title && <span className={styles['span-error']}>{errors.title}</span>}
                         <div>
                             <label htmlFor="image">Снимка</label>
                             <input className={styles['form-control']}
@@ -99,8 +123,10 @@ const EditProductForm = () => {
                                 name="imageUrl"
                                 value={editProduct.imageUrl}
                                 onChange={onEditProductChangeHandler}
+                                onBlur={onBlurHandler}
                             />
                         </div>
+                             {errors.imageUrl && <span className={styles['span-error']}>{errors.imageUrl}</span>}
                         <div>
                             <label htmlFor="price">Цена в лева</label>
                             <input className={styles['form-control']}
@@ -110,8 +136,10 @@ const EditProductForm = () => {
                                 name="price"
                                 value={editProduct.price}
                                 onChange={onEditProductChangeHandler}
+                                onBlur={onBlurHandler}
                             />
                         </div>
+                        {errors.price && <span className={styles['span-error']}>{errors.price}</span>}
 
                         <div>
                             <label htmlFor="content">Съставки</label>
@@ -122,8 +150,10 @@ const EditProductForm = () => {
                                 placeholder='домати, краставици, лук ...'
                                 value={editProduct.content}
                                 onChange={onEditProductChangeHandler}
+                                onBlur={onBlurHandler}
                             />
                         </div>
+                        {errors.content && <span className={styles['span-error']}>{errors.content}</span>}
                         <p className={styles['important-msg']}>*След всяка съставка постави запетая!!!</p>
                         <div>
                             <label htmlFor="category">Категория</label>
@@ -147,7 +177,7 @@ const EditProductForm = () => {
                         </div>
 
                         <div className={styles['buttons']}>
-                            <input className={styles['confrim']} type="submit" value="&#10003; ДОБАВИ" />
+                            <input className={styles['confrim']} type="submit" value="&#10003; РЕДАКТИРАЙ" />
                             {/* <input className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" /> */}
                         </div>
                     </form>

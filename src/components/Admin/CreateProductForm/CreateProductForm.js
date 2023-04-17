@@ -1,14 +1,16 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { useForm } from '../../../hooks/useForm';
+import { useError } from '../../../hooks/useError';
 
 import * as menuService from '../../../services/menuService';
 import styles from './CreateProductForm.module.css';
-import { useError } from '../../../hooks/useError';
 
 const CreateProductForm = () => {
 
     const navigate = useNavigate();
     const { error, errMsg, onHandleError } = useError();
+    const [errors, setErrors] = useState({});
 
     const { values, onChangeHandler } = useForm({
         title: '',
@@ -30,23 +32,45 @@ const CreateProductForm = () => {
         case 'drinks': category1 = 'НАПИТКИ'; break;
         case 'kids': category1 = 'ДЕТСКО МЕНЮ'; break;
         default: category1 = ''; break;
-    }
+    };
+
+    const onBlurHandler = (event) => {
+        const { name, value } = event.target;
+        let error = null;
+
+        switch (name) {
+            case 'title':
+                if (value.trim() === '') {
+                    error = 'въведи продукт';
+                }
+                break;
+            case 'imageUrl':
+                if (value.trim() === '') {
+                    error = 'виведи снимка';
+                }
+                break;
+            case 'price':
+                if (value.trim() < 0.1) {
+                    error = 'виведи цена по голяма от нула';
+                }
+                break;
+            case 'content':
+                if (value.trim() === '') {
+                    error = 'въведи съставки или грамаж ';
+                }
+                break;
+            default:
+                break;
+        }
+
+        setErrors({ ...errors, [name]: error });
+    };
 
     const onProductSubmit = (e) => {
         e.preventDefault();
 
         if (values.title === '' || values.imageUrl === '' || values.price === '' || values.content === '') {
             onHandleError('ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ');
-            return;
-        };
-
-        if (values.title.length < 3 ) {
-            onHandleError('ИМЕТО НА ПРОДУКТА ТРЯБВА ДА СЪДЪРЖА МИНИМУМ 3 СИМВОЛА');
-            return;
-        };
-
-        if (values.price === 0) {
-            onHandleError('ЦЕНАТА ТРЯБВА ДА Е ПО ГОЛЯМА ОТ НУЛА!');
             return;
         };
 
@@ -79,8 +103,10 @@ const CreateProductForm = () => {
                                 name="title"
                                 value={values.title}
                                 onChange={onChangeHandler}
-                            />
+                                onBlur={onBlurHandler}
+                                />
                         </div>
+                                {errors.title && <span className={styles['span-error']}>{errors.title}</span>}
                         <div>
                             <label htmlFor="image">Снимка</label>
                             <input className={styles['form-control']}
@@ -89,8 +115,10 @@ const CreateProductForm = () => {
                                 name="imageUrl"
                                 value={values.imageUrl}
                                 onChange={onChangeHandler}
+                                onBlur={onBlurHandler}
                             />
                         </div>
+                        {errors.imageUrl && <span className={styles['span-error']}>{errors.imageUrl}</span>}
                         <div>
                             <label htmlFor="price">Цена в лева</label>
                             <input className={styles['form-control']}
@@ -100,8 +128,10 @@ const CreateProductForm = () => {
                                 name="price"
                                 value={values.price}
                                 onChange={onChangeHandler}
+                                onBlur={onBlurHandler}
                             />
                         </div>
+                        {errors.price && <span className={styles['span-error']}>{errors.price}</span>}
 
                         <div>
                             <label htmlFor="content">Съставки</label>
@@ -112,8 +142,10 @@ const CreateProductForm = () => {
                                 placeholder='домати, краставици, лук ...'
                                 value={values.content}
                                 onChange={onChangeHandler}
+                                onBlur={onBlurHandler}
                             />
                         </div>
+                        {errors.content && <span className={styles['span-error']}>{errors.content}</span>}
                         <p className={styles['important-msg']}>*След всяка съставка постави запетая!!!</p>
                         <div>
                             <label htmlFor="category">Категория</label>

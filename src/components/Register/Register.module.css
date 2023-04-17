@@ -48,7 +48,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
 }
  
 .register .register-form div .form-control {
@@ -60,6 +59,10 @@
     font-size: 18px;
     font-weight: 600;
     color: rgb(44, 44, 44);
+}
+
+.register .register-form .buttons {
+    margin-top: 30px;
 }
  
 .register .register-form .buttons input{
@@ -88,4 +91,15 @@
 
 .register .register-form .buttons .clear:hover {
     cursor: pointer;
+}
+
+ .span-error {
+    text-align: right;
+    display: block;
+    color: red;
+    font-size: 14px;
+}
+
+.register-form .div-form {
+    margin-top: 20px;
 }
