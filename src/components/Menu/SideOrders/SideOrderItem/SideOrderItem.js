@@ -16,7 +16,7 @@ const SideOrderItem = ({
 
     return (
         <div className={styles['menu-sec-product']}>
-            <h3 className={styles['menu-sec-title']}>{food.title}</h3>
+            <h3 className={styles['menu-sec-title']}>{food.title.toUpperCase()}</h3>
             <img src={food.imageUrl} alt='meal' />
             <div className={styles['menu-price']}>
                 <span>{food.priceLv}</span>
