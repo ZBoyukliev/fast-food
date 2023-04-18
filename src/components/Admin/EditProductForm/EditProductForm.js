@@ -10,9 +10,9 @@ import { MenuContext } from '../../../context/MenuContext';
 const EditProductForm = () => {
 
     const [editProduct, setEditSetProduct] = useState({});
-    const { error, errMsg ,onHandleError } = useError();
+    const { error, errMsg, onHandleError } = useError();
     const [errors, setErrors] = useState({});
-    const {product, onEditProductHandler } = useContext(MenuContext);
+    const { product, onEditProductHandler } = useContext(MenuContext);
 
     const { foodId } = useParams();
     const navigate = useNavigate();
@@ -42,16 +42,16 @@ const EditProductForm = () => {
         default: category1 = ''; break;
     };
 
-    const onBlurHandler = (event) => {
-        const { name, value } = event.target;
+    const onBlurHandler = (e) => {
+        const { name, value } = e.target;
         let error = null;
 
         switch (name) {
             case 'title':
                 if (value.trim() === '') {
                     error = 'въведи продукт';
-                } 
-                else if(product.find(p => p.title === value)) {
+                }
+                else if (product.find(p => (p.title.toLowerCase() === value.toLowerCase() && p._id !== foodId))) {
                     error = 'името вече е налично, моля избери друго име';
                 }
                 break;
@@ -97,9 +97,9 @@ const EditProductForm = () => {
 
 
         menuService.edit(foodId, { ...editProduct, priceLv: priceLv + '.', priceSt, content, category1 })
-         .then(res => {
-            onEditProductHandler(res, foodId);
-         });
+            .then(res => {
+                onEditProductHandler(res, foodId);
+            });
         navigate('/admin');
     };
 
@@ -122,7 +122,7 @@ const EditProductForm = () => {
                                 onBlur={onBlurHandler}
                             />
                         </div>
-                             {errors.title && <span className={styles['span-error']}>{errors.title}</span>}
+                        {errors.title && <span className={styles['span-error']}>{errors.title}</span>}
                         <div>
                             <label htmlFor="imageUrl">Снимка</label>
                             <input className={styles['form-control']}
@@ -134,7 +134,7 @@ const EditProductForm = () => {
                                 onBlur={onBlurHandler}
                             />
                         </div>
-                             {errors.imageUrl && <span className={styles['span-error']}>{errors.imageUrl}</span>}
+                        {errors.imageUrl && <span className={styles['span-error']}>{errors.imageUrl}</span>}
                         <div>
                             <label htmlFor="price">Цена в лева</label>
                             <input className={styles['form-control']}
@@ -186,7 +186,6 @@ const EditProductForm = () => {
 
                         <div className={styles['buttons']}>
                             <input className={styles['confrim']} type="submit" value="&#10003; РЕДАКТИРАЙ" />
-                            {/* <input className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" /> */}
                         </div>
                     </form>
 

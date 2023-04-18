@@ -12,12 +12,12 @@ const CreateProductForm = () => {
     const navigate = useNavigate();
     const { error, errMsg, onHandleError } = useError();
     const [errors, setErrors] = useState({});
-    const { onCreateProductHandler } = useContext(MenuContext);
+    const { product, onCreateProductHandler } = useContext(MenuContext);
 
     const { values, onChangeHandler } = useForm({
         title: '',
         imageUrl: '',
-        price: 0,
+        price: '',
         content: '',
         category: 'doner',
     });
@@ -44,6 +44,9 @@ const CreateProductForm = () => {
             case 'title':
                 if (value.trim() === '') {
                     error = 'въведи продукт';
+                }
+                else if(product.find(p => p.title.toLowerCase() === value.toLowerCase())) {
+                    error = 'името вече е налично, моля избери друго име';
                 }
                 break;
             case 'imageUrl':
@@ -176,7 +179,6 @@ const CreateProductForm = () => {
 
                         <div className={styles['buttons']}>
                             <input className={styles['confrim']} type="submit" value="&#10003; ДОБАВИ" />
-                            {/* <input className={styles['clear']} type="button" value="&#10008; ИЗЧИСТИ" /> */}
                         </div>
                     </form>
 

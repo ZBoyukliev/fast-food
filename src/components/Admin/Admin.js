@@ -10,7 +10,7 @@ import { MenuContext } from '../../context/MenuContext';
 
 const Admin = () => {
 
-    const { product, err, isLoading, onDeleteProductHandler} = useContext(MenuContext);
+    const { product, err, isLoading, onDeleteProductHandler } = useContext(MenuContext);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState([]);
 
