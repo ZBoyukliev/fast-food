@@ -68,6 +68,17 @@
     align-items: center;
 }
 
+.main .menu-sec .menu-sec-input {
+    height: 26px;
+    font-size: 20px;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    color: #514c46;
+    font-weight: 400;
+}
+
 .menu .menu-sec .no-products-msg {
     margin: 0 auto;
     font-size: 60px;
@@ -80,6 +91,7 @@
     font-weight: 600;
     margin: 60px auto;
     color: #514c46;
+    text-align: center;
 }
 
 .menu .menu-sec-title2 {
