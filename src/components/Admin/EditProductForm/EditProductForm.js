@@ -116,7 +116,7 @@ const EditProductForm = () => {
                         </div>
                              {errors.title && <span className={styles['span-error']}>{errors.title}</span>}
                         <div>
-                            <label htmlFor="image">Снимка</label>
+                            <label htmlFor="imageUrl">Снимка</label>
                             <input className={styles['form-control']}
                                 type="text"
                                 id="imageUrl"
