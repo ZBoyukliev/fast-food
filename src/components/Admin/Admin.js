@@ -42,7 +42,12 @@ const Admin = () => {
                     <ArrowToTop />
                     <div className={styles['menu-sec']}>
                         <section className={styles['menu']}>
-                            {err ? <h1 className={styles['menu-sec-title']}>НЯМА НАЛИЧНИ ПРОДУКТИ</h1> :
+
+                            {err ? 
+                            <>
+                            <h1 className={styles['menu-sec-title']}>НЯМА НАЛИЧНИ ПРОДУКТИ</h1> 
+                            </>
+                            :
                                 <>
                                     <div className={styles['menu-sec-input']}>
                                         <p>намери продукт</p>
@@ -53,7 +58,7 @@ const Admin = () => {
 
                                         {filteredData.map(d =>
                                             <div key={d._id} className={styles['menu-sec-product']}>
-                                                <h3 className={styles['menu-sec-title']}>{d.title.toUpperCase()}</h3>
+                                                <h3 className={styles['menu-sec-title']}>{d.title}</h3>
                                                 <img src={d.imageUrl} alt='meal' />
                                                 <div className={styles['menu-price']}>
                                                     <span>{d.priceLv}</span>

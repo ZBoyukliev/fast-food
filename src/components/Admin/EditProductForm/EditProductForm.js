@@ -61,7 +61,7 @@ const EditProductForm = () => {
                 }
                 break;
             case 'price':
-                if (value.trim() < 0.1) {
+                if (Number(value) < 0.1) {
                     error = 'виведи цена по голяма от нула';
                 }
                 break;
@@ -85,6 +85,11 @@ const EditProductForm = () => {
             return;
         };
 
+        if (Number(editProduct.price) < 0.1) {
+            onHandleError('виведи цена по голяма от нула');
+            return;
+        }
+
         let [priceLv, priceSt] = Number(editProduct.price).toFixed(2).split('.');
         let content = [];
 
@@ -99,6 +104,7 @@ const EditProductForm = () => {
         menuService.edit(foodId, { ...editProduct, priceLv: priceLv + '.', priceSt, content, category1 })
             .then(res => {
                 onEditProductHandler(res, foodId);
+                console.log(res);
             });
         navigate('/admin');
     };

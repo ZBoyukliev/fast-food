@@ -28,7 +28,6 @@ export const MenuProvider = ({
 
     const onCreateProductHandler = (newProduct) => {
         setProduct(state => [...state, newProduct]);
-        console.log(newProduct);
     };
 
     const onEditProductHandler = (updatedProduct, productId) => {
