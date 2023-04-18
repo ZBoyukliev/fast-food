@@ -1,16 +1,18 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from '../../../hooks/useForm';
 import { useError } from '../../../hooks/useError';
 
 import * as menuService from '../../../services/menuService';
 import styles from './CreateProductForm.module.css';
+import { MenuContext } from '../../../context/MenuContext';
 
 const CreateProductForm = () => {
 
     const navigate = useNavigate();
     const { error, errMsg, onHandleError } = useError();
     const [errors, setErrors] = useState({});
+    const { onCreateProductHandler } = useContext(MenuContext);
 
     const { values, onChangeHandler } = useForm({
         title: '',
@@ -83,8 +85,12 @@ const CreateProductForm = () => {
         } else {
             content.push(values.content);
         };
-
-        menuService.create({ ...values, priceLv: priceLv + '.', priceSt, content, category1 });
+     
+      
+        menuService.create({ ...values, priceLv: priceLv + '.', priceSt, content, category1 })
+        .then(res => {
+            onCreateProductHandler(res);
+        });
         navigate('/admin');
     };
 
@@ -108,7 +114,7 @@ const CreateProductForm = () => {
                         </div>
                                 {errors.title && <span className={styles['span-error']}>{errors.title}</span>}
                         <div>
-                            <label htmlFor="image">Снимка</label>
+                            <label htmlFor="imageUrl">Снимка</label>
                             <input className={styles['form-control']}
                                 type="text"
                                 id="imageUrl"

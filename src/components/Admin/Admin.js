@@ -1,42 +1,26 @@
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as menuService from '../../services/menuService';
 import styles from './Admin.module.css';
 import Spinner from '../Spinner/Spinner';
 import ArrowToTop from '../ArrowToTop/ArrowToTop';
+import { MenuContext } from '../../context/MenuContext';
 
 const Admin = () => {
 
-    const [product, setProduct] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const { product, err, isLoading, onDeleteProductHandler} = useContext(MenuContext);
     const [searchTerm, setSearchTerm] = useState('');
-    const [err, setErr] = useState(false);
-
-    useEffect(() => {
-        setIsLoading(true);
-        menuService.getAll()
-            .then(res => {
-                setProduct(res);
-                setIsLoading(false);
-            })
-            .catch((error) => {
-                setIsLoading(false);
-                setErr(true);
-                setProduct([]);
-            });
-    }, []);
-
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
         setFilteredData(product);
     }, [product]);
 
-    const onDeletProduct = (foodId) => {
+    const onDeleteProduct = (foodId) => {
         menuService.remove(foodId);
-        setProduct(state => state.filter(x => x._id !== foodId));
+        onDeleteProductHandler(foodId);
     };
 
     const handleSearch = (event) => {
@@ -79,7 +63,7 @@ const Admin = () => {
                                                 <div className={styles['div-btn']}>
                                                     <Link to={`/menu/${d.category}/${d._id}`} className={styles['btn']}>ДЕТАЍЛИ</Link>
                                                     <Link to={`/edit/${d._id}`} className={styles['btn']}>РЕДАКТИРАЙ</Link>
-                                                    <button onClick={() => window.confirm(`Сигурни ли сте че искате да изтриете ${d.title} от менюто?`) && onDeletProduct(d._id)} className={styles['btn-x']}>ИЗТРИЙ</button>
+                                                    <button onClick={() => window.confirm(`Сигурни ли сте че искате да изтриете ${d.title} от менюто?`) && onDeleteProduct(d._id)} className={styles['btn-x']}>ИЗТРИЙ</button>
                                                 </div>
                                             </div>
                                         )};

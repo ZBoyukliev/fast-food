@@ -1,16 +1,18 @@
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useError } from '../../../hooks/useError';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import * as menuService from '../../../services/menuService';
 import styles from './EditProductForm.module.css';
+import { MenuContext } from '../../../context/MenuContext';
 
 const EditProductForm = () => {
 
     const [editProduct, setEditSetProduct] = useState({});
     const { error, errMsg ,onHandleError } = useError();
     const [errors, setErrors] = useState({});
+    const {product, onEditProductHandler } = useContext(MenuContext);
 
     const { foodId } = useParams();
     const navigate = useNavigate();
@@ -48,6 +50,9 @@ const EditProductForm = () => {
             case 'title':
                 if (value.trim() === '') {
                     error = 'въведи продукт';
+                } 
+                else if(product.find(p => p.title === value)) {
+                    error = 'името вече е налично, моля избери друго име';
                 }
                 break;
             case 'imageUrl':
@@ -91,7 +96,10 @@ const EditProductForm = () => {
         };
 
 
-        menuService.edit(foodId, { ...editProduct, priceLv: priceLv + '.', priceSt, content, category1 });
+        menuService.edit(foodId, { ...editProduct, priceLv: priceLv + '.', priceSt, content, category1 })
+         .then(res => {
+            onEditProductHandler(res, foodId);
+         });
         navigate('/admin');
     };
 
