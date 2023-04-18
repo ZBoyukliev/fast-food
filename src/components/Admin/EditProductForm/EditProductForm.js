@@ -9,10 +9,16 @@ import { MenuContext } from '../../../context/MenuContext';
 
 const EditProductForm = () => {
 
-    const [editProduct, setEditSetProduct] = useState({});
+    const [editProduct, setEditProduct] = useState({});
     const { error, errMsg, onHandleError } = useError();
     const [errors, setErrors] = useState({});
     const { product, onEditProductHandler } = useContext(MenuContext);
+
+    const [title, setTitle] = useState('');
+    const [price, setPrice] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
+    const [content, setContent] = useState('');
+    const [category, setCategory] = useState('');
 
     const { foodId } = useParams();
     const navigate = useNavigate();
@@ -20,27 +26,14 @@ const EditProductForm = () => {
     useEffect(() => {
         menuService.getById(foodId)
             .then(res => {
-                setEditSetProduct(res);
+                setEditProduct(res);
+                setTitle(res.title);
+                setPrice(res.price);
+                setImageUrl(res.imageUrl);
+                setContent(res.content.join(', '));
+                setCategory(res.category);
             });
     }, [foodId]);
-
-    const onEditProductChangeHandler = (e) => {
-        setEditSetProduct(state => ({ ...state, [e.target.name]: e.target.value }));
-    };
-
-    let category1 = '';
-
-    switch (editProduct.category) {
-        case 'doner': category1 = 'ДЮНЕР'; break;
-        case 'burger': category1 = 'БУРГЕР'; break;
-        case 'pizza': category1 = 'ПИЦА'; break;
-        case 'chicken': category1 = 'ПИЛЕ'; break;
-        case 'falafel': category1 = 'ФАЛАФЕЛ'; break;
-        case 'souces': category1 = 'ГАРНИТУРИ И СОСОВЕ'; break;
-        case 'drinks': category1 = 'НАПИТКИ'; break;
-        case 'kids': category1 = 'ДЕТСКО МЕНЮ'; break;
-        default: category1 = ''; break;
-    };
 
     const onBlurHandler = (e) => {
         const { name, value } = e.target;
@@ -90,21 +83,38 @@ const EditProductForm = () => {
             return;
         }
 
-        let [priceLv, priceSt] = Number(editProduct.price).toFixed(2).split('.');
-        let content = [];
-
-        if (editProduct.content.includes(',')) {
-            let items = editProduct.content.split(',');
-            items.forEach(i => content.push(i.trim()));
-        } else {
-            content.push(editProduct.content);
+        let contentArray = content ? content.split(',').map((c) => c.trim()) : content;
+        let [priceLv, priceSt] = Number(price).toFixed(2).split('.');
+ 
+        let category1 = '';
+ 
+        switch (category) {
+            case 'doner': category1 = 'ДЮНЕР'; break;
+            case 'burger': category1 = 'БУРГЕР'; break;
+            case 'pizza': category1 = 'ПИЦА'; break;
+            case 'chicken': category1 = 'ПИЛЕ'; break;
+            case 'falafel': category1 = 'ФАЛАФЕЛ'; break;
+            case 'souces': category1 = 'ГАРНИТУРИ И СОСОВЕ'; break;
+            case 'drinks': category1 = 'НАПИТКИ'; break;
+            case 'kids': category1 = 'ДЕТСКО МЕНЮ'; break;
+            default: break;
+        };
+ 
+        const updatedValues = {
+            ...editProduct,
+            title,
+            imageUrl,
+            price: Number(price),
+            category,
+            category1,
+            content: contentArray,
+            priceLv: priceLv + '.',
+            priceSt,
         };
 
-
-        menuService.edit(foodId, { ...editProduct, priceLv: priceLv + '.', priceSt, content, category1 })
+        menuService.edit(foodId, updatedValues)
             .then(res => {
                 onEditProductHandler(res, foodId);
-                console.log(res);
             });
         navigate('/admin');
     };
@@ -123,8 +133,8 @@ const EditProductForm = () => {
                                 type="text"
                                 id="title"
                                 name="title"
-                                value={editProduct.title}
-                                onChange={onEditProductChangeHandler}
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
                                 onBlur={onBlurHandler}
                             />
                         </div>
@@ -135,8 +145,8 @@ const EditProductForm = () => {
                                 type="text"
                                 id="imageUrl"
                                 name="imageUrl"
-                                value={editProduct.imageUrl}
-                                onChange={onEditProductChangeHandler}
+                                value={imageUrl}
+                                onChange={(e) => setImageUrl(e.target.value)}
                                 onBlur={onBlurHandler}
                             />
                         </div>
@@ -148,8 +158,8 @@ const EditProductForm = () => {
                                 step='0.01'
                                 id="price"
                                 name="price"
-                                value={editProduct.price}
-                                onChange={onEditProductChangeHandler}
+                                value={price}
+                                onChange={(e) => setPrice(e.target.value)}
                                 onBlur={onBlurHandler}
                             />
                         </div>
@@ -162,8 +172,8 @@ const EditProductForm = () => {
                                 id="content"
                                 name="content"
                                 placeholder='домати, краставици, лук ...'
-                                value={editProduct.content}
-                                onChange={onEditProductChangeHandler}
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
                                 onBlur={onBlurHandler}
                             />
                         </div>
@@ -175,8 +185,8 @@ const EditProductForm = () => {
                                 type="text"
                                 id="category"
                                 name="category"
-                                value={editProduct.category}
-                                onChange={onEditProductChangeHandler}
+                                value={category}
+                                onChange={(e) => setCategory(e.target.value)}
                             >
                                 <option value='doner'>дюнер</option>
                                 <option value='pizza'>пица</option>

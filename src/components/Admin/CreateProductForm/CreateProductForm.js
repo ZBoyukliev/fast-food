@@ -22,19 +22,6 @@ const CreateProductForm = () => {
         category: 'doner',
     });
 
-    let category1 = '';
-
-    switch (values.category) {
-        case 'doner': category1 = 'ДЮНЕР'; break;
-        case 'burger': category1 = 'БУРГЕР'; break;
-        case 'pizza': category1 = 'ПИЦА'; break;
-        case 'chicken': category1 = 'ПИЛЕ'; break;
-        case 'falafel': category1 = 'ФАЛАФЕЛ'; break;
-        case 'souces': category1 = 'ГАРНИТУРИ И СОСОВЕ'; break;
-        case 'drinks': category1 = 'НАПИТКИ'; break;
-        case 'kids': category1 = 'ДЕТСКО МЕНЮ'; break;
-        default: category1 = ''; break;
-    };
 
     const onBlurHandler = (event) => {
         const { name, value } = event.target;
@@ -79,18 +66,34 @@ const CreateProductForm = () => {
             return;
         };
 
+        let contentArray = values.content ? values.content.split(',').map((c) => c.trim()) : values.content;
         let [priceLv, priceSt] = Number(values.price).toFixed(2).split('.');
-        let content = [];
-
-        if (values.content.includes(',')) {
-            let items = values.content.split(',');
-            items.forEach(i => content.push(i.trim()));
-        } else {
-            content.push(values.content);
+ 
+        let category1 = '';
+ 
+        switch (values.category) {
+            case 'doner': category1 = 'ДЮНЕР'; break;
+            case 'burger': category1 = 'БУРГЕР'; break;
+            case 'pizza': category1 = 'ПИЦА'; break;
+            case 'chicken': category1 = 'ПИЛЕ'; break;
+            case 'falafel': category1 = 'ФАЛАФЕЛ'; break;
+            case 'souces': category1 = 'ГАРНИТУРИ И СОСОВЕ'; break;
+            case 'drinks': category1 = 'НАПИТКИ'; break;
+            case 'kids': category1 = 'ДЕТСКО МЕНЮ'; break;
+            default: category1 = ''; break;
+        };
+ 
+        const updatedValues = {
+            ...values,
+            price: Number(values.price),
+            category1,
+            content: contentArray,
+            priceLv: priceLv + '.',
+            priceSt,
         };
      
-      
-        menuService.create({ ...values, priceLv: priceLv + '.', priceSt, content, category1 })
+  
+        menuService.create(updatedValues)
         .then(res => {
             onCreateProductHandler(res);
         });
