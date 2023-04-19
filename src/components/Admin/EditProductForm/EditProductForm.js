@@ -78,6 +78,10 @@ const EditProductForm = () => {
             return;
         };
 
+        if(errors.title || errors.imageUrl || errors.content || errors.category || errors.price) {
+            return;
+        }
+
         if (Number(editProduct.price) < 0.1) {
             onHandleError('виведи цена по голяма от нула');
             return;

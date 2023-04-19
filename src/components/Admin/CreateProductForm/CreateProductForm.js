@@ -66,6 +66,10 @@ const CreateProductForm = () => {
             return;
         };
 
+        if(errors.title || errors.imageUrl || errors.content || errors.category || errors.price) {
+            return;
+        }
+
         let contentArray = values.content ? values.content.split(',').map((c) => c.trim()) : values.content;
         let [priceLv, priceSt] = Number(values.price).toFixed(2).split('.');
  

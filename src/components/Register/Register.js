@@ -70,6 +70,10 @@ const Register = () => {
         if (password !== repass) {
             onHandleError('Passwords don`t match!');
             return;
+        };
+
+        if(errors.email || errors.password || errors.repass) {
+            return;
         }
 
         authService.register(email, password)
