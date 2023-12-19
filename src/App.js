@@ -31,7 +31,6 @@ import { MenuProvider } from './context/MenuContext';
 
 function App() {
 
-
   return (
     <>
       <AuthProvider>
