@@ -16,6 +16,7 @@ export const FoodProvider = ({
         let sum = 0;
         cartItem.forEach(c => sum += Number(c.newPrice));
         setTotalPrice(sum);
+        
     }, [cartItem, setTotalPrice]);
 
     const onAddToCart = (food) => {
