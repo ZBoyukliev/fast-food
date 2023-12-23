@@ -13,6 +13,7 @@ export const MenuProvider = ({
     const [err, setErr] = useState(false);
 
     useEffect(() => {
+        
         setIsLoading(true);
         menuService.getAll()
             .then(res => {
@@ -24,6 +25,7 @@ export const MenuProvider = ({
                 setErr(true);
                 setProduct([]);
             });
+        
     }, []);
 
     const onCreateProductHandler = (newProduct) => {
