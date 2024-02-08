@@ -1,7 +1,5 @@
-
 import * as request from './requester';
 const baseUrl = 'http://localhost:3030/data';
- 
 
 export const getAll = () => request.get(`${baseUrl}/menu`);
  
@@ -24,5 +22,3 @@ export const pagination = (skip) => request.get(`${baseUrl}/menu?offset=${skip}&
 // console.log(Number(true));
 
 // export const pagination = (skip, foodCategory) => request.get(`${baseUrl}/menu?where=category%3D%22${foodCategory}%22?offset=${skip}&pageSize=6`);
- 
-

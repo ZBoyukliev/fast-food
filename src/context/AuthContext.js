@@ -3,7 +3,6 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export const AuthContext = createContext();
 
-
 export const AuthProvider = ({
     children
 }) => {

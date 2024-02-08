@@ -1,7 +1,6 @@
 import * as request from './requester';
 const baseUrl = 'http://localhost:3030/data';
 
-
 export const getAllComments = () => request.get(`${baseUrl}/comments`);
 
 export const getCommendById = (commentId) => request.get(`${baseUrl}/comments/${commentId}`);
