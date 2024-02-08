@@ -2,9 +2,11 @@ import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { FoodProvider } from './context/FoodContext';
 import { SearchProvider } from './context/SearchContext';
+import { MenuProvider } from './context/MenuContext';
 
 import { RouteGuard } from './components/commons/RouteGuard';
 import { LogoutGuard } from './components/commons/LogoutGuard';
+import { AdminGuard } from './components/commons/AdminGuard';
 
 import { Logout } from './components/Logout/Logout';
 import CreateOrder from './components/CreateOrder/CreateOrder';
@@ -24,13 +26,10 @@ import Search from './components/Header/Search';
 import Astandarts from './components/Astandarts/Astandarts';
 import NotFound from './components/NotFound/NotFound';
 import Admin from './components/Admin/Admin';
-import { AdminGuard } from './components/commons/AdminGuard';
 import CreateProductForm from './components/Admin/CreateProductForm/CreateProductForm';
 import EditProductForm from './components/Admin/EditProductForm/EditProductForm';
-import { MenuProvider } from './context/MenuContext';
 
 function App() {
-
 
   return (
     <>

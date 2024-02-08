@@ -45,6 +45,7 @@ const Admin = () => {
 
                             {err ? 
                             <>
+                            <Link className={styles['div-btn-add']} to={'/create'}>ДОБАВИ ПРОДУКТ</Link>
                             <h1 className={styles['menu-sec-title']}>НЯМА НАЛИЧНИ ПРОДУКТИ</h1> 
                             </>
                             :
