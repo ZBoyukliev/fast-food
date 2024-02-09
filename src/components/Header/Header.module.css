@@ -7,7 +7,7 @@
 .header .working-time-login {
     width: 90%;
     height: 40px;
-    padding: 0 20px;
+    padding: 0 2%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -98,7 +98,6 @@
 }
 
 .header nav .nav-link:hover {
-    /* border-bottom: 3px solid #195e33; */
     text-decoration: underline;
     text-decoration-thickness: 4px;
     color: #195e33;
@@ -110,3 +109,7 @@
     color: #195e33;
 }
 
+.logo {
+    width: 10%;
+    height: auto;
+}
