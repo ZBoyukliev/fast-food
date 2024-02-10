@@ -1,7 +1,7 @@
 import { AuthContext } from '../../context/AuthContext';
 import { SearchContext } from '../../context/SearchContext';
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import styles from './Header.module.css';
@@ -11,6 +11,7 @@ const Header = () => {
 
     const { user } = useContext(AuthContext);
     const { onSearch } = useContext(SearchContext);
+    const [isNavVisible, setIsNavVisible] = useState(false);
 
     const { values, onChangeHandler } = useForm({ search: '' });
 
@@ -18,6 +19,10 @@ const Header = () => {
         onSearch(e, values.search);
         values.search = '';
     };
+
+    // const toggleNav = () => {
+    //     setIsNavVisible(!isNavVisible);
+    // };
 
     return (
         <header className={styles['header']}>
@@ -39,7 +44,8 @@ const Header = () => {
 
                 </div>
             </div>
-            <nav>
+                
+            <nav className={isNavVisible ? styles.navVisible : styles.nav}>
                 <ul className={styles['navigation']} >
                     <li className={styles['nav-link']}>
                         <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to='/menu'>МЕНЮ</NavLink>
