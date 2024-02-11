@@ -25,14 +25,15 @@
 }
 
 .menu .menu-title {
-    width: 130px;
+    /* width: 130px; */
+    width: 10%;
     /* height: 60px; */
     margin: 0 auto;
     background-color: #195e33;
     color: white;
-    padding: 16px 40px;
+    padding: 1rem 4rem;
     text-align: center;
-    font-size: 24px;
+    font-size: 180%;
     font-weight: 600;
     position: relative;
     top: -8px;
