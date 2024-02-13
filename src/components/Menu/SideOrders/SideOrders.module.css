@@ -36,13 +36,13 @@
 }
 
 .menu .menu-sec {
-    padding: 40px 120px;
+    padding: 10% 15%;
     display: flex;
     flex-wrap: wrap;
 }
 
 .menu .menu-sec-title {
-    font-size: 70px;
+    font-size: 15%;
     font-weight: 600;
     margin: 60px auto;
     color: #514c46;
@@ -50,9 +50,9 @@
 
 .menu .menu-sec-title2 {
     display: block;
-    font-size: 40px;
+    font-size: 12%;
     font-weight: 600;
-    margin: 60px auto;
+    margin: 20% auto;
     color: #514c46;
 }
 
