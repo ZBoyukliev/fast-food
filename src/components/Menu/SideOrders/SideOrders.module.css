@@ -71,7 +71,7 @@
 }
 
 .menu .menu-sec .menu-sec-product .menu-sec-title {
-    font-size: 34px;
+    font-size: 240%;
     font-weight: bold;
     text-align: center;
     color: #514c46;
@@ -84,8 +84,8 @@
 }
 
 .menu .menu-sec .menu-sec-product .menu-price {
-    width: 80px;
-    height: 80px;
+    width: 16%;
+    height: 14%;
     background-color: #195e33;
     color: white;
     position: absolute;
