@@ -155,12 +155,12 @@
 }
 
 .menu .menu-sec .menu-sec-product .div-btn .btn {
-    height: 42px;
-    width: 140px;
+    height: 105%;
+    width: 9rem;
     border: none;
     background-color: #195e33;
     color: white;
-    font-size: 16px;
+    font-size: 105%;
     font-weight: 600;
     cursor: pointer;
 }
