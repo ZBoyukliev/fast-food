@@ -2,13 +2,14 @@
 
 
 .container {
-    width: 100%;
+    /* width: 100%; */
     height: 60vh;
     display: flex;
     z-index: -20;
 }
 
 .container img {
+    max-width: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -191,6 +192,10 @@
 }
 
 @media only screen and (max-width: 480px) {
+
+    .main-container {
+        max-width: 50%;
+    }
 
     .container {
         width: 240%;

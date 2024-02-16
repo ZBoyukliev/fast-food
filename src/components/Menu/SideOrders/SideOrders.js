@@ -33,7 +33,7 @@ const SideOrders = ({ src, type }) => {
     }, [category]);
 
     return (
-        <>
+        <div className={styles['main-container']}>
             {isLoading ? <Spinner /> :
                 <>
                 
@@ -79,7 +79,7 @@ const SideOrders = ({ src, type }) => {
                     }
                 </>
             }
-        </>
+        </div>
     );
 };
 

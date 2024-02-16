@@ -28,6 +28,7 @@ import NotFound from './components/NotFound/NotFound';
 import Admin from './components/Admin/Admin';
 import CreateProductForm from './components/Admin/CreateProductForm/CreateProductForm';
 import EditProductForm from './components/Admin/EditProductForm/EditProductForm';
+import styles from './App.module.css';
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
           <SearchProvider>
             <MenuProvider>
               <Header />
-              <div className="App">
+              <div className={styles['App']}>
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/menu' element={<MenuNavPage src={'/images/slide-picture-duner1.jpg'} type={'ДЮНЕР'} />} />
