@@ -176,7 +176,9 @@
 
 .menu .menu-sec .menu-sec-product img {
     width: 300px;
+    max-width: 70%;
     height: 300px;
+    max-width: 70%;
 }
 
 /* -------------------------------------------------------------------------------- */
