@@ -194,10 +194,12 @@
 
     .container {
         width: 240%;
+        max-width: 240%;
     }
 
     .menu {
         width: 240%;
+        max-width: 240%;
     }
 
     .menu .menu-sec .menu-sec-product {
