@@ -70,7 +70,6 @@
 
     const { ServiceError: ServiceError$1 } = errors;
 
-
     function createHandler(plugins, services) {
         return async function handler(req, res) {
             const method = req.method;
@@ -159,8 +158,6 @@
             }
         };
     }
-
-
 
     function composeErrorObject(code, message) {
         return JSON.stringify({
@@ -413,7 +410,6 @@
      */
 
     const { AuthorizationError: AuthorizationError$1 } = errors;
-
 
 
     const userService = new Service_1();
