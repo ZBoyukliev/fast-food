@@ -306,7 +306,6 @@
 
     const uuid$1 = util.uuid;
 
-
     const data = fs__default['default'].existsSync('./data') ? fs__default['default'].readdirSync('./data').reduce((p, c) => {
         const content = JSON.parse(fs__default['default'].readFileSync('./data/' + c));
         const collection = c.slice(0, -5);
@@ -411,7 +410,6 @@
 
     const { AuthorizationError: AuthorizationError$1 } = errors;
 
-
     const userService = new Service_1();
 
     userService.get('me', getSelf);
@@ -445,7 +443,6 @@
     var users = userService.parseRequest;
 
     const { NotFoundError: NotFoundError$1, RequestError: RequestError$1 } = errors;
-
 
     var crud = {
         get,
