@@ -401,7 +401,6 @@
     dataService.patch(':collection', actions.patch);
     dataService.delete(':collection', actions.delete);
 
-
     var jsonstore = dataService.parseRequest;
 
     /*
@@ -507,7 +506,6 @@
             return operators[operator.toLowerCase()](prop, value);
         }
     }
-
 
     function get(context, tokens, query, body) {
         validateRequest(context, tokens);
