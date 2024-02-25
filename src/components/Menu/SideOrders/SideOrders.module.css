@@ -176,8 +176,8 @@
 }
 
 .menu .menu-sec .menu-sec-product img {
-    width: 300px;
-    max-width: 70%;
+    width: 320px;
+    max-width: 80%;
     height: 300px;
     max-width: 70%;
 }
@@ -209,6 +209,6 @@
     }
 
     .menu .menu-sec .menu-sec-product {
-        width: 150%; 
+        width: 160%; 
     }
 }
