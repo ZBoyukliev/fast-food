@@ -70,7 +70,6 @@
 
     const { ServiceError: ServiceError$1 } = errors;
 
-
     function createHandler(plugins, services) {
         return async function handler(req, res) {
             const method = req.method;
@@ -159,8 +158,6 @@
             }
         };
     }
-
-
 
     function composeErrorObject(code, message) {
         return JSON.stringify({
@@ -309,7 +306,6 @@
 
     const uuid$1 = util.uuid;
 
-
     const data = fs__default['default'].existsSync('./data') ? fs__default['default'].readdirSync('./data').reduce((p, c) => {
         const content = JSON.parse(fs__default['default'].readFileSync('./data/' + c));
         const collection = c.slice(0, -5);
@@ -405,7 +401,6 @@
     dataService.patch(':collection', actions.patch);
     dataService.delete(':collection', actions.delete);
 
-
     var jsonstore = dataService.parseRequest;
 
     /*
@@ -413,8 +408,6 @@
      */
 
     const { AuthorizationError: AuthorizationError$1 } = errors;
-
-
 
     const userService = new Service_1();
 
@@ -449,7 +442,6 @@
     var users = userService.parseRequest;
 
     const { NotFoundError: NotFoundError$1, RequestError: RequestError$1 } = errors;
-
 
     var crud = {
         get,
@@ -514,7 +506,6 @@
             return operators[operator.toLowerCase()](prop, value);
         }
     }
-
 
     function get(context, tokens, query, body) {
         validateRequest(context, tokens);
