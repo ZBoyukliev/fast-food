@@ -5,6 +5,7 @@ import Offers from './Offers/Offers';
 import Thumbs from './Thumbs/Thumbs';
 
 const Home = () => {
+    
     return (
         <>
             <Food />
