@@ -59,7 +59,7 @@
 
 .menu .menu-sec .menu-sec-product {
     cursor: pointer;
-    width: 35%;
+    width: 36%;
     padding: 20px 20px;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@
 }
 
 .menu .menu-sec .menu-sec-product .menu-sec-title {
-    font-size: 240%;
+    font-size: 242%;
     font-weight: bold;
     text-align: center;
     color: #514c46;
