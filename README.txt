@@ -5,7 +5,6 @@ fast-food app(Aladin) includes;
 CREATE, EDIT AND DELETE are in "КОМЕНТАРИ И РЕВЮТА" where you can create, edit and delete reviews with name, photos and comments.
 You can create comments only if you are loged in user. 
 
-
  - Login page
 
    -- There is 1 default registeret user wich is ADMIN ! --->  "zarko@abv.bg" with password - "123456"
@@ -61,4 +60,3 @@ You can create comments only if you are loged in user.
  - SoftUni practice server which is in folder server.
 
     -- to start the server go to folder server and start with command 'node server.js'
-
