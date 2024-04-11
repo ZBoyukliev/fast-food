@@ -1,4 +1,3 @@
-
 import News from '../HomePage/News/News';
 import styles from './WhatsNew.module.css';
 
