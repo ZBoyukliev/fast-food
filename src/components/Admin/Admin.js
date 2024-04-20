@@ -72,9 +72,7 @@ const Admin = () => {
                                                 </div>
                                             </div>
                                         )};
-
                                         {product.length === 0 && <h1 className={styles['no-products-msg']}>НЯМА НАЛИЧНИ ПРОДУКТИ.</h1>}
-
                                     </div>
                                 </>}
                         </section>
