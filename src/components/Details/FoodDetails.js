@@ -1,17 +1,13 @@
 import { FoodContext } from '../../context/FoodContext';
 import { AuthContext } from '../../context/AuthContext';
-
 import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
 import * as menuService from '../../services/menuService';
 import * as likeService from '../../services/likeService';
-
 import styles from './FoodDetails.module.css';
 import Subnav from '../Subnav/Subnav';
 import Trolley from '../Trolley/Trolley';
-
 
 const FoodDetails = () => {
 
@@ -103,7 +99,6 @@ const FoodDetails = () => {
                                   <i className="fa-solid fa-thumbs-up fa-2x"></i>
                               </button>)
                            : null) : null}
-                      
                         
                         <p className={styles['count-p']}>ХАРЕСВАНИЯ - </p>
                         <p className={styles['count-p2']}>{totalLikes}</p>
