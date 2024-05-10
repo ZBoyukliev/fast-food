@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { useForm } from '../../../hooks/useForm';
 import { useError } from '../../../hooks/useError';
-
 import * as menuService from '../../../services/menuService';
 import styles from './CreateProductForm.module.css';
 import { MenuContext } from '../../../context/MenuContext';
@@ -108,7 +107,6 @@ const CreateProductForm = () => {
         <>
             <section className={styles['bg']}>
                 <div className={styles['product']}>
-
                     <form className={styles['product-form']} onSubmit={onProductSubmit}>
                         {error && <p className={styles['error-msg']}>{errMsg}</p>}
                         <div>
@@ -183,7 +181,6 @@ const CreateProductForm = () => {
                                 <option value='kids'>детско меню</option>
                             </select>
                         </div>
-
                         <div className={styles['buttons']}>
                             <input className={styles['confrim']} type="submit" value="&#10003; ДОБАВИ" />
                         </div>
