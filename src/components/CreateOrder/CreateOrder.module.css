@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-
 .container {
     width: 100%;
     height: 60vh;
@@ -14,7 +13,6 @@
     object-fit: cover;
 }
 
-/* ---------------------------------------------------------------------------- */
 /* menu-sec */
 
 .menu {
@@ -132,10 +130,7 @@
     padding: 6px 14px;
 }
 
-
-/* ------------------------------------------------------------------------------------------------- */
 /* sum-to-pay */
-
 
 .prices .sum-to-pay {
     margin: 40px auto;
