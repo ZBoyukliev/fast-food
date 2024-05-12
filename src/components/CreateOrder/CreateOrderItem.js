@@ -1,7 +1,5 @@
-
 import { useContext } from 'react';
 import { FoodContext } from '../../context/FoodContext';
-
 import styles from './CreateOrder.module.css';
 
 const CreateOrderItem = ({food}) => {
