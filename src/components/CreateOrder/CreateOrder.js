@@ -1,10 +1,7 @@
-
 import { AuthContext } from '../../context/AuthContext';
 import { FoodContext } from '../../context/FoodContext';
-
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import styles from './CreateOrder.module.css';
 import CreateOrderItem from './CreateOrderItem';
 import AddressForm from './AddressForm/AddressForm';
@@ -27,7 +24,6 @@ const CreateOrder = () => {
     const onContinue = () => {
         setShowForm(true);
     };
-
 
     return (
         <>
