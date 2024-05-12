@@ -1,10 +1,8 @@
 import { FoodContext } from '../../../context/FoodContext';
 import { AuthContext } from '../../../context/AuthContext';
 import { useContext, useState } from 'react';
-
 import { useForm } from '../../../hooks/useForm';
 import { useError } from '../../../hooks/useError';
-
 import styles from './AddressForm.module.css';
 
 const AddressForm = () => {
