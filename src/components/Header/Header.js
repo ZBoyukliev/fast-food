@@ -1,9 +1,7 @@
 import { AuthContext } from '../../context/AuthContext';
 import { SearchContext } from '../../context/SearchContext';
-
 import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-
 import styles from './Header.module.css';
 import { useForm } from '../../hooks/useForm';
 
@@ -44,7 +42,6 @@ const Header = () => {
 
                 </div>
             </div>
-                
             <nav className={isNavVisible ? styles.navVisible : styles.nav}>
                 <ul className={styles['navigation']} >
                     <li className={styles['nav-link']}>
@@ -66,10 +63,7 @@ const Header = () => {
                        <li className={styles['nav-link']}>
                        <NavLink className={({ isActive }) => isActive ? styles['nav-active'] : ''} to="/admin">АДМИН</NavLink>
                    </li>}
-                 
-
                 </ul>
-
                 <div className={styles['phone-number']}>
                     <i className="fa-solid fa-phone"></i>
                     <span>0700044744</span>
