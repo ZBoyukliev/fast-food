@@ -1,4 +1,3 @@
-/* ------------------------------------------------------- */
 .main-details {
     background-image: url('/public/images/bg.jpg');
     height: 90vh;
@@ -157,8 +156,6 @@
     margin-left: 80px;
 }
 
-
-/* ---------------------------------- */
 /* likes btn */
 
 button.like {
@@ -204,7 +201,6 @@ button.dislike {
     margin: 0;
     margin-left: 2px;
 }
-
 
 @media screen and (max-width: 768px) {
     main {
@@ -276,7 +272,6 @@ button.dislike {
         right: 20px;
         top: 36px;
     }
-    
     .main-details .photo .menu-sec-product .menu-price :nth-child(4) {
         top: 52px;
     }
