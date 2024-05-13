@@ -1,11 +1,9 @@
 import { SearchContext } from '../../context/SearchContext';
 import { useContext } from 'react';
-
 import Trolley from '../Trolley/Trolley';
 import styles from '../Menu/SideOrders/SideOrders.module.css';
 import MainFoodItem from '../Menu/SideOrders/SideOrderItem/SideOrderItem';
 import Spinner from '../Spinner/Spinner';
-
 
 const Search = () => {
 
@@ -25,12 +23,9 @@ const Search = () => {
                             </>}
                             {isLoading ? <Spinner/> : 
                             searchFood.map(f => <MainFoodItem key={f._id} food={f} />)}
-                         
-
                     </div>
                 </section>
             </main>
-
         </>
     );
 };
