@@ -1,10 +1,8 @@
 import { AuthContext } from '../../context/AuthContext';
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
 import { useForm } from '../../hooks/useForm';
 import { useError } from '../../hooks/useError';
-
 import * as authService from '../../services/authService';
 import styles from './Register.module.css';
 
@@ -133,7 +131,6 @@ const Register = () => {
                             onBlur={onBlurHandler}
                         />
                     </div>
-
                     {errors.repass && <span className={styles['span-error']}>{errors.repass}</span>}
                     {error && <p className={styles['error-msg']}>{errMsg}</p>}
 
