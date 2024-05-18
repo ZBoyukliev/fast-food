@@ -2,7 +2,6 @@ import Thumbs from '../HomePage/Thumbs/Thumbs';
 import Subnav from '../Subnav/Subnav';
 import styles from './MenuNavPage.module.css';
 
-
 const MenuNavPage = ({src}) => {
     return (
         <>
