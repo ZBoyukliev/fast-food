@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-
 import * as menuService from '../../services/menuService';
-
 import styles from './OffersPageItem.module.css';
 
 const OffersPageItem = () => {
