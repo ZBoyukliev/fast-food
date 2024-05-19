@@ -6,7 +6,6 @@ import styles from './OffersPageItem.module.css';
 const OffersPageItem = () => {
 
     const [offer, setOffer] = useState({});
-
     const { offerId } = useParams();
     const navigate = useNavigate();
 
