@@ -14,7 +14,6 @@ const TrolleyItem = () => {
                         В момента нямате добавени артикули в количката
                     </li>
                 </div>}
-                
             {cartItem?.map(c =>
                 <div key={c._id} className={styles['items-aded-inner']}>
                     <li className={styles['items-aded-li']}>
