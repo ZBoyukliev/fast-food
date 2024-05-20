@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from 'react';
-
 export const FoodContext = createContext();
 
 export const FoodProvider = ({
@@ -86,7 +85,6 @@ export const FoodProvider = ({
     };
 
     return (
-        
         <FoodContext.Provider value={{
             cartItem,
             totalPrice,
@@ -101,6 +99,5 @@ export const FoodProvider = ({
         }}>
             {children}
         </FoodContext.Provider>
-
     );
 };
