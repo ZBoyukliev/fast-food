@@ -11,10 +11,7 @@
 }
 
 .trolley {
-    /* position: fixed; */
     background-image: url('/public/images/bg.jpg');
-    /* height: 500px;
-    width: 280px; */
     top: 40%;
     z-index: 100;
     margin: 0 auto;
@@ -74,9 +71,7 @@
     padding-bottom: 1px;
 }
 
-/* -------------------------------------------------------------------------- */
 /* devider  */
-
 .devider {
     height: 1px;
     width: 100%;
@@ -84,9 +79,7 @@
     
 }
 
-/* --------------------------------------------------------------------------------- */
 /* temp-sum  */
-
 .calc-sum {
     display: flex;
     align-items: center;
@@ -104,9 +97,7 @@
    font-weight: 900;
 }
 
-/* ------------------------------------------------------------------------------------------ */
 /* footer  */
-
 .trolley-footer {
     display: flex;
     align-items: center;
