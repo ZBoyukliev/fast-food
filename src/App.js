@@ -3,11 +3,9 @@ import { AuthProvider } from './context/AuthContext';
 import { FoodProvider } from './context/FoodContext';
 import { SearchProvider } from './context/SearchContext';
 import { MenuProvider } from './context/MenuContext';
-
 import { RouteGuard } from './components/commons/RouteGuard';
 import { LogoutGuard } from './components/commons/LogoutGuard';
 import { AdminGuard } from './components/commons/AdminGuard';
-
 import { Logout } from './components/Logout/Logout';
 import CreateOrder from './components/CreateOrder/CreateOrder';
 import Footer from './components/Footer/Footer';
