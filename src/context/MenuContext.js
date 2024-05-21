@@ -1,7 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-
 import * as menuService from '../services/menuService';
-
 export const MenuContext = createContext();
 
 export const MenuProvider = ({
