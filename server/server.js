@@ -2715,13 +2715,10 @@
             }
         },
 
-        likes: {
-            
-        }
+        likes: {}
     };
 
     // ------------------------------------------------------------------------------------------//
-
     var rules$1 = {
         users: {
             ".create": false,
@@ -2732,6 +2729,7 @@
             ".delete": false
         }
     };
+    
     var settings = {
         identity: identity,
         protectedData: protectedData,
@@ -2753,10 +2751,7 @@
     console.log(`Server started on port ${port}. You can make requests to http://localhost:${port}/`);
     console.log(`Admin panel located at http://localhost:${port}/admin`);
 
-    var softuniPracticeServer = {
-
-    };
+    var softuniPracticeServer = {};
 
     return softuniPracticeServer;
-
 })));
