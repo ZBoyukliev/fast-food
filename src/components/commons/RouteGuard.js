@@ -5,7 +5,6 @@ import { useContext } from 'react';
 export const RouteGuard = ({
     children,
 }) => {
-    
     const { user } = useContext(AuthContext);
     
     if (user.email) {
