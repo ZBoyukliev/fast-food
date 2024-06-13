@@ -5,7 +5,6 @@ import { useContext } from 'react';
 export const AdminGuard = ({
     children,
 }) => {
-    
     const { user } = useContext(AuthContext);
     
     if (!user.admin) {
