@@ -11,7 +11,6 @@ export const MenuProvider = ({
     const [err, setErr] = useState(false);
 
     useEffect(() => {
-        
         setIsLoading(true);
         menuService.getAll()
             .then(res => {
