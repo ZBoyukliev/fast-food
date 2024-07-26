@@ -29,7 +29,6 @@ import EditProductForm from './components/Admin/EditProductForm/EditProductForm'
 import styles from './App.module.css';
 
 function App() {
-
   return (
     <>
       <AuthProvider>
@@ -51,22 +50,18 @@ function App() {
                   <Route path='/menu/deserts' element={<SideOrders src={'/images/deserts/bgmuffins1.jpg'} type={'ДЕСЕРТИ'} />} />
                   <Route path='/menu/kids' element={<SideOrders src={'/images/kids/maxresdefault1.jpg'} type={'ДЕТСКО МЕНЮ'} />} />
                   <Route path='/coments' element={<Comments />} />
-
                   <Route element={<RouteGuard />}>
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
                   </Route>
-
                   <Route element={<LogoutGuard />}>
                     <Route path='/logout' element={<Logout />} />
                   </Route>
-
                   <Route element={<AdminGuard />}>
                     <Route path='/admin' element={<Admin />} />
                     <Route path='/create' element={<CreateProductForm />} />
                     <Route path='/edit/:foodId' element={<EditProductForm />} />
                   </Route>
-
                   <Route path='/offers' element={<OffersPage />} />
                   <Route path='/news' element={<WhatsNew src={'/images/pizza/pizza-news.jpg'} />} />
                   <Route path='/offers/:offerId' element={<OffersPageItem />} />
