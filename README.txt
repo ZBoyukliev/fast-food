@@ -1,5 +1,4 @@
 README 
-
 fast-food app(Aladin) includes;
 
 CREATE, EDIT AND DELETE are in "КОМЕНТАРИ И РЕВЮТА" where you can create, edit and delete reviews with name, photos and comments.
