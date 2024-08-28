@@ -21,7 +21,6 @@ const CreateProductForm = () => {
         category: 'doner',
     });
 
-
     const onBlurHandler = (event) => {
         const { name, value } = event.target;
         let error = null;
@@ -71,7 +70,6 @@ const CreateProductForm = () => {
 
         let contentArray = values.content ? values.content.split(',').map((c) => c.trim()) : values.content;
         let [priceLv, priceSt] = Number(values.price).toFixed(2).split('.');
- 
         let category1 = '';
  
         switch (values.category) {
@@ -94,7 +92,6 @@ const CreateProductForm = () => {
             priceLv: priceLv + '.',
             priceSt,
         };
-     
   
         menuService.create(updatedValues)
         .then(res => {
@@ -146,7 +143,6 @@ const CreateProductForm = () => {
                             />
                         </div>
                         {errors.price && <span className={styles['span-error']}>{errors.price}</span>}
-
                         <div>
                             <label htmlFor="content">Съставки</label>
                             <input className={styles['form-control']}
@@ -185,7 +181,6 @@ const CreateProductForm = () => {
                             <input className={styles['confrim']} type="submit" value="&#10003; ДОБАВИ" />
                         </div>
                     </form>
-
                 </div>
             </section>
         </>
