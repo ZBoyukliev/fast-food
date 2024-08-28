@@ -40,7 +40,6 @@ const Admin = () => {
                     <ArrowToTop />
                     <div className={styles['menu-sec']}>
                         <section className={styles['menu']}>
-
                             {err ? 
                             <>
                             <Link className={styles['div-btn-add']} to={'/create'}>ДОБАВИ ПРОДУКТ</Link>
@@ -78,7 +77,6 @@ const Admin = () => {
                     </div>
                 </main>
             }
-
         </>
     );
 };
