@@ -11,7 +11,6 @@ const EditProductForm = () => {
     const { error, errMsg, onHandleError } = useError();
     const [errors, setErrors] = useState({});
     const { product, onEditProductHandler } = useContext(MenuContext);
-
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const [imageUrl, setImageUrl] = useState('');
@@ -64,7 +63,6 @@ const EditProductForm = () => {
             default:
                 break;
         }
-
         setErrors({ ...errors, [name]: error });
     };
 
@@ -87,7 +85,6 @@ const EditProductForm = () => {
 
         let contentArray = content ? content.split(',').map((c) => c.trim()) : content;
         let [priceLv, priceSt] = Number(price).toFixed(2).split('.');
- 
         let category1 = '';
  
         switch (category) {
