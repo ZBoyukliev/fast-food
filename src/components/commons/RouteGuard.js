@@ -10,6 +10,5 @@ export const RouteGuard = ({
     if (user.email) {
         return <Navigate to="/" />;
     }
-
     return children ? children : <Outlet />;
 };
