@@ -10,6 +10,5 @@ export const LogoutGuard = ({
     if (!user.email) {
         return <Navigate to="/login" />;
     }
-
     return children ? children : <Outlet />;
 };
