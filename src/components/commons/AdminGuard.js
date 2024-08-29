@@ -10,6 +10,5 @@ export const AdminGuard = ({
     if (!user.admin) {
         return <Navigate to="/" />;
     }
-
     return children ? children : <Outlet />;
 };
