@@ -1,24 +1,19 @@
-
 import { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import { useError } from '../../hooks/useError';
-
 import * as commentsService from '../../services/commentsService';
 import styles from './Comments.module.css';
-
 import AddCommentForm from './AddCommentForm';
 import EditCommentForm from './EditCommentForm';
 import CommentItem from './CommentItem';
 import Spinner from '../Spinner/Spinner';
 
-
 const Comments = () => {
 
     const { user } = useContext(AuthContext);
     const { error, errMsg, onHandleError } = useError();
-
     const [comments, setComments] = useState([]);
     const [editComment, setEditComment] = useState({});
     const [editForm, setShowEditForm] = useState(false);
