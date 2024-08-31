@@ -1,4 +1,3 @@
-
 import styles from './Comments.module.css';
 
 const AddCommentForm = ({
@@ -6,7 +5,6 @@ const AddCommentForm = ({
     onChangeHandler,
     review
 }) => {
-
 
     return (
         <form className={styles['comments-form']} onSubmit={onSubmitHandler}>
@@ -41,7 +39,6 @@ const AddCommentForm = ({
                     onChange={onChangeHandler}
                 />
             </div>
-
             <input className={styles['add-btn']} type="submit" value="Добави коментар" />
         </form> 
     );
