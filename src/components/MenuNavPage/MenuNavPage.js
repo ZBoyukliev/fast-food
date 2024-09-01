@@ -7,13 +7,11 @@ const MenuNavPage = ({src}) => {
         <>
             <Subnav />
             <main className={styles['main']}>
-
                 <section className={styles['container']}>
                     <img src={src} alt="duner" />
                 </section>
                 <Thumbs />
             </main>
-            
         </>
     );
 };
