@@ -37,7 +37,6 @@ const OffersPageItem = () => {
                         <p>
                             {offer.offerdesc}
                         </p>
-
                     </div>
                 </div>
                 <Link className={styles['order-btn']} to={`/menu/${offer.category}/${offer._id}`}>ПОРЪЧАЙ </Link>
