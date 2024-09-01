@@ -23,6 +23,5 @@ export const Logout = () => {
         setIsLoading(true);
     }, [user.accessToken, navigate, userLogout]);
 
-
     return (isLoading ? <Spinner /> : null);
 };
