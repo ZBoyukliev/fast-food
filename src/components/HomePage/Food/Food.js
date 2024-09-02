@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './Food.module.css';
 
 const Food = () => {
-
     return (
-
         <section className={styles['container']}>
             <img src="/images/slide-picture-duner.jpg" alt="doner" />
             <div className={styles['content']}>
@@ -16,7 +14,6 @@ const Food = () => {
                 <Link to='/menu/doner' className={styles['btn-order']}>ПОРЪЧАЙ</Link>
             </div>
         </section>
-        
     );
 };
 
