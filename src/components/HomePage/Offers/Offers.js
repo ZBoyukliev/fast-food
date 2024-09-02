@@ -43,7 +43,6 @@ const Offers = () => {
                                 </div>
                             ) : <h2 className={styles['offer-sec-title']}>В МОМЕНТА НЯМА НАЛИЧНИ ПРОМОЦИИ.</h2> )
                         }
-                    
                     </div>
                 </section>
     );
