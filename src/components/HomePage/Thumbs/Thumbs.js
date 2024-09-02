@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import styles from './Thumbs.module.css';
 
 const Thumbs = () => {
-
     return (
         <section className={styles['thumbs']}>
             <ul>
