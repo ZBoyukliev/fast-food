@@ -10,17 +10,12 @@ const Header = () => {
     const { user } = useContext(AuthContext);
     const { onSearch } = useContext(SearchContext);
     const [isNavVisible, setIsNavVisible] = useState(false);
-
     const { values, onChangeHandler } = useForm({ search: '' });
 
     const onSearchSubmit = (e) => {
         onSearch(e, values.search);
         values.search = '';
     };
-
-    // const toggleNav = () => {
-    //     setIsNavVisible(!isNavVisible);
-    // };
 
     return (
         <header className={styles['header']}>
