@@ -14,7 +14,6 @@ const Search = () => {
             <main className={styles['main']}>
                 <Trolley />
                 <section className={styles['menu']}>
-
                     <div className={styles['menu-sec']}>
                         {searchFood.length === 0 &&
                             <>
