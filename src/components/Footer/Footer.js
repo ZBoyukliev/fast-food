@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 const Footer = () => {
-
   return (
     <section className={styles['footer']}>
       <div className={styles['footer-shell']}>
