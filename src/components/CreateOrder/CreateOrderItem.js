@@ -18,12 +18,10 @@ const CreateOrderItem = ({food}) => {
             <div className={styles['cart-row']}>
                 <h3 className={styles['cart-row-title']}>{food.title}</h3>
                 <div className={styles['cart-row-counter']}>
-
                     <button onClick={() => removeItem(food)} className={styles['add-remove-btn']}> - </button>
                     <span>{food.count}</span>
                     <button onClick={() => onAddItem(food)} className={styles['add-remove-btn']}> + </button>
                 </div>
-
                 <h5 className={styles['cart-row-price']}>
                     <span className={styles['cart-row-span']}>{food.newPrice.toFixed(2)}</span>лв.
                 </h5>
