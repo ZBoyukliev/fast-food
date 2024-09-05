@@ -17,8 +17,6 @@ const Receipt = () => {
                     <p className={styles['final-order-p']}>{reseiptInfo.phonenumber}</p>
                     <p className={styles['final-order-p']}>{reseiptInfo.address}</p>
                     <p className={styles['final-order-p']}>{reseiptInfo.email}</p>
-
-
                     <ul className={styles['final-order-ul']}>
                         {receiptItems.map(i => <li key={i._id}
                          className={styles['final-order-li']}>
