@@ -5,7 +5,6 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     gap:8px;
     padding: 24px 0px;
 }
@@ -61,8 +60,3 @@
     font-size: 18px;
     padding: 14px;
 }
-
-/* .product-form .span-error {
-    text-align: right;
-    color: red;
-} */
