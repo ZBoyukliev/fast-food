@@ -5,7 +5,6 @@
     padding: 20px 80px;
     display: flex;
     justify-content: space-between;
-    /* font-family: 'Oswald'; */
     font: inherit;
 }
 
@@ -95,7 +94,6 @@
     width: 400px;
     height: 400px;
 }
-
 
 .main-details .photo .menu-sec-product .menu-price {
     width: 100px;
