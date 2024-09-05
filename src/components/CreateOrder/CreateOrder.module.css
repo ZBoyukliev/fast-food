@@ -23,7 +23,6 @@
 
 .menu .menu-title {
     width: 130px;
-    /* height: 60px; */
     margin: 0 auto;
     background-color: #195e33;
     color: white;
@@ -181,7 +180,6 @@
     text-decoration: none;
 }
 
-/* ----------------------------------------------- */
 /* final oreder */
 
 .main .final-order {
