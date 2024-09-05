@@ -10,9 +10,7 @@ const AddressForm = () => {
     const { onDiscountSubmit } = useContext(FoodContext);
     const { user } = useContext(AuthContext);
     const { error, errMsg, onHandleError } = useError();
-
     const [errors, setErrors] = useState({});
-
 
     const { values, onChangeHandler } = useForm({
         firstname: '',
@@ -23,7 +21,6 @@ const AddressForm = () => {
         address: '',
         code: ''
     });
-
 
     const validateEmail = (email) => {
         const regex = /\S+@\S+\.\S+/;
@@ -78,13 +75,11 @@ const AddressForm = () => {
     };
 
     const onDiscount = (e) => {
-
         if (values.name === '' || values.surename === '' || values.address === '' || values.phonenumber === '' || values.town === '' || values.email === '') {
             e.preventDefault();
             onHandleError('всички полета със звездичка са задължителни!');
             return;
         };
-
         onDiscountSubmit(e, values);
     };
 
