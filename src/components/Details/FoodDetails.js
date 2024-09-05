@@ -13,7 +13,6 @@ const FoodDetails = () => {
 
     const { onAddToCart } = useContext(FoodContext);
     const { user } = useContext(AuthContext);
-
     const [food, setFood] = useState({});
     const [likes, setLikes] = useState([]);
     const [totalLikes, setTotalLikes] = useState(0);
@@ -62,8 +61,7 @@ const FoodDetails = () => {
     return (
         <div>
             <Subnav />
-            {!user.admin &&  <Trolley />}
-           
+            {!user.admin &&  <Trolley />}  
             <section className={styles['main-details']}>
                 <aside className={styles['info']}>
                     <Link onClick={() => navigate(-1)}><i className="fa-solid fa-chevron-left"></i>Обратно</Link>
