@@ -39,7 +39,6 @@ const EditCommentForm = ({
                 onChange={onEditChangeHandler}
             />
         </div>
-
         <input className={styles['add-btn']} type="submit" value="Редактирай" />
     </form>
     );
