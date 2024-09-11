@@ -18,7 +18,6 @@ const FoodDetails = () => {
     const [totalLikes, setTotalLikes] = useState(0);
     const [hasLike, setHasLike] = useState(0);
     const { foodId } = useParams();
-
     const navigate = useNavigate();
 
     const onAddItem = () => {
