@@ -118,12 +118,10 @@ const EditProductForm = () => {
         navigate('/admin');
     };
 
-
     return (
         <>
             <section className={styles['bg']}>
                 <div className={styles['product']}>
-
                     <form className={styles['product-form']} onSubmit={onEditProductSubmitHandler}>
                         {error && <p className={styles['error-msg']}>{errMsg}</p>}
                         <div>
@@ -163,7 +161,6 @@ const EditProductForm = () => {
                             />
                         </div>
                         {errors.price && <span className={styles['span-error']}>{errors.price}</span>}
-
                         <div>
                             <label htmlFor="content">Съставки</label>
                             <input className={styles['form-control']}
@@ -198,7 +195,6 @@ const EditProductForm = () => {
                                 <option value='kids'>детско меню</option>
                             </select>
                         </div>
-
                         <div className={styles['buttons']}>
                             <input className={styles['confrim']} type="submit" value="&#10003; РЕДАКТИРАЙ" />
                         </div>
