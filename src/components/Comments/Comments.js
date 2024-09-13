@@ -69,17 +69,13 @@ const Comments = () => {
         setShowEditForm(false);
     };
 
-
     return (
         <>
             {isLoading ? (<Spinner />) :
                 (<main className={styles['main']}>
-
                     <section className={styles['comment']}>
                         <h1 className={styles['comment-title1']}>ВАШИТЕ ОТЗИВИ СА ВАЖНИ ЗА НАС</h1>
-
                         <div className={styles['comment-sec']}>
-
                             {
                                 comments.length === 0 &&
                                 <div className={styles['no-comments-d']}>
@@ -89,7 +85,6 @@ const Comments = () => {
                                     </p>
                                 </div>
                             }
-
                             {comments?.map(c => (
                                 <CommentItem key={c._id}
                                     comment={c}
@@ -97,7 +92,6 @@ const Comments = () => {
                                     user={user}
                                     onDeleteHandler={onDeleteHandler} />
                             )) || []}
-
                         </div>
                         {user.userId && !editForm && <>
                             <h2 className={styles['comment-title2']}>
@@ -108,7 +102,6 @@ const Comments = () => {
                             {error ? <p className={styles['error-msg']}>{errMsg}</p> : null} 
                             <AddCommentForm onChangeHandler={onChangeHandler} review={review} onSubmitHandler={onSubmitHandler} />
                         </>}
-
                         {editForm &&
                             <EditCommentForm
                                 onEditChangeHandler={onEditChangeHandler}
