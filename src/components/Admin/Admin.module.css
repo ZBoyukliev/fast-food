@@ -14,8 +14,6 @@
     z-index: -10;
 }
 
-/* menu-sec */
-
 .menu {
     min-height: 78vh;
     width: 100%;
@@ -250,7 +248,6 @@
   }
 }
 
-/* Tablet styles */
 @media (max-width: 768px) {
   .menu a {
     font-size: 20px;
@@ -258,7 +255,6 @@
   }
 }
 
-/* Mobile styles */
 @media (max-width: 480px) {
   .menu a {
     font-size: 18px;
