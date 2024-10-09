@@ -199,7 +199,6 @@ const EditProductForm = () => {
                             <input className={styles['confrim']} type="submit" value="&#10003; РЕДАКТИРАЙ" />
                         </div>
                     </form>
-
                 </div>
             </section>
         </>
