@@ -16,7 +16,6 @@ const EditProductForm = () => {
     const [imageUrl, setImageUrl] = useState('');
     const [content, setContent] = useState('');
     const [category, setCategory] = useState('');
-
     const { foodId } = useParams();
     const navigate = useNavigate();
 
