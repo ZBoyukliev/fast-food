@@ -72,7 +72,6 @@ const Header = () => {
                         placeholder="Търси" />
                 </form>
                 <Link className={styles['order']} to="/createorder">ПОРЪЧАЙ </Link>
-                {/* {totalPrice > 0 ? totalPrice.toFixed(2) + 'лв.' : ''} */}
             </nav>
         </header>
     );
