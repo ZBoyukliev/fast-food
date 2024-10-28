@@ -12,12 +12,6 @@
             "email": "peter@users.bg",
             "age": 23
         },
-        "562f8422-88cc-47f9-b273-ed12a319d041": {
-            "_id": "562f8422-88cc-47f9-b273-ed12a319d041",
-            "username": "Mary",
-            "email": "mary@users.bg",
-            "age": 29
-        },
         "9d12abaf-b2f0-4c10-bb14-8bb90b5e518f": {
             "_id": "9d12abaf-b2f0-4c10-bb14-8bb90b5e518f",
             "username": "George",
@@ -122,13 +116,6 @@
             "email": "mary@gmail.com",
             "course": "JS-FUNDAMENTALS",
             "_id": "28f0b99e-218b-4079-873c-f976727e3c44"
-        },
-        "79aacd2b-b8ce-4eed-9aab-82abbb334741": {
-            "firstName": "Peter",
-            "lastName": "McConnel",
-            "email": "peter@gmail.com",
-            "course": "JS-CORE",
-            "_id": "79aacd2b-b8ce-4eed-9aab-82abbb334741"
         }
     }
 }
