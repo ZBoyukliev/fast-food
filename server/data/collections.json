@@ -30,13 +30,6 @@
             "facultyNumber": "90000334562",
             "grade": 4.4,
             "_id": "a8ab018a-5a00-4652-ab3b-036bc91bd21f"
-        },
-        "a9d1a18d-c617-4f05-b322-05aab720fe19": {
-            "firstName": "Aina",
-            "lastName": "Haward",
-            "facultyNumber": "90000451254",
-            "grade": 5.56,
-            "_id": "a9d1a18d-c617-4f05-b322-05aab720fe19"
         }
     },
     "myboard": {
