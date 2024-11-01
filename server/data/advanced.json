@@ -109,13 +109,6 @@
             "email": "sam@gmail.com",
             "course": "TECH-JS",
             "_id": "a459bacd-2912-4eb4-848c-8bc471da2d9f"
-        },
-        "28f0b99e-218b-4079-873c-f976727e3c44": {
-            "firstName": "Mary",
-            "lastName": "Sue",
-            "email": "mary@gmail.com",
-            "course": "JS-FUNDAMENTALS",
-            "_id": "28f0b99e-218b-4079-873c-f976727e3c44"
         }
     }
 }
