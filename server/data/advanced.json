@@ -17,12 +17,6 @@
             "username": "George",
             "email": "george@users.bg",
             "age": 25
-        },
-        "8677c541-4041-4122-9db3-b88caf93e76d": {
-            "_id": "8677c541-4041-4122-9db3-b88caf93e76d",
-            "username": "Bob",
-            "email": "bob@users.bg",
-            "age": 34
         }
     },
     "articles": {
