@@ -89,13 +89,6 @@
             "email": "max@softuni.com",
             "course": "JS-WEB",
             "_id": "68f653c3-97c7-40be-9f8e-b3f182a0061e"
-        },
-        "b9e75605-b617-43ac-87a9-8409a990801a": {
-            "firstName": "Philip",
-            "lastName": "Anderson",
-            "email": "philip@softuni.com",
-            "course": "FRONT-END",
-            "_id": "b9e75605-b617-43ac-87a9-8409a990801a"
         }
     }
 }
