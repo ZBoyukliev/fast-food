@@ -69,13 +69,13 @@
                 },
                 {
                     "condition": "Rain",
-                    "high": "11",
-                    "low": "3"
+                    "high": "12",
+                    "low": "4"
                 },
                 {
                     "condition": "Rain",
-                    "high": "8",
-                    "low": "5"
+                    "high": "5",
+                    "low": "2"
                 }
             ],
             "name": "London"
