@@ -2665,9 +2665,9 @@
                 "imageUrl": "/images/kids/burger.png",
                 "content": ["513g"],
                 "_createdOn": 1657194128611,
-                "price": 7.50,
+                "price": 7.80,
                 "priceLv": "7.",
-                "priceSt": "50",
+                "priceSt": "80",
             },
 
             // СУПЕР МЕНЮ ФИЛЕНЦА  ----------------------------------------------------------------
@@ -2680,9 +2680,9 @@
                 "imageUrl": "/images/kids/filenca.png",
                 "content": ["300g"],
                 "_createdOn": 1657194128612,
-                "price": 7.50,
+                "price": 7.60,
                 "priceLv": "7.",
-                "priceSt": "50",
+                "priceSt": "60",
             },
         },
 
