@@ -5,7 +5,6 @@ import styles from './CreateOrder.module.css';
 const CreateOrderItem = ({food}) => {
 
     const {  onRemoveFromCart, onAddToCart, onRemoveOneItem } = useContext(FoodContext);
-
     const onAddItem = (food) => {
         onAddToCart({...food, count:1});
     };
