@@ -24,7 +24,6 @@ const CreateProductForm = () => {
     const onBlurHandler = (event) => {
         const { name, value } = event.target;
         let error = null;
-
         switch (name) {
             case 'title':
                 if (value.trim() === '') {
@@ -52,7 +51,6 @@ const CreateProductForm = () => {
             default:
                 break;
         }
-
         setErrors({ ...errors, [name]: error });
     };
 
