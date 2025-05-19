@@ -6,7 +6,6 @@ export const AdminGuard = ({
     children,
 }) => {
     const { user } = useContext(AuthContext);
-    
     if (!user.admin) {
         return <Navigate to="/" />;
     }
