@@ -6,7 +6,6 @@ export const LogoutGuard = ({
     children,
 }) => {
     const { user } = useContext(AuthContext);
-    
     if (!user.email) {
         return <Navigate to="/login" />;
     }
