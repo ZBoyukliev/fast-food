@@ -6,7 +6,6 @@ export const RouteGuard = ({
     children,
 }) => {
     const { user } = useContext(AuthContext);
-    
     if (user.email) {
         return <Navigate to="/" />;
     }
