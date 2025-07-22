@@ -58,13 +58,6 @@
             "email": "john@john-dam.com",
             "course": "JS-CORE",
             "_id": "50537fbe-5d7e-44bf-a90f-69383c3b5bf4"
-        },
-        "68f653c3-97c7-40be-9f8e-b3f182a0061e": {
-            "firstName": "Max",
-            "lastName": "Peterson",
-            "email": "max@softuni.com",
-            "course": "JS-WEB",
-            "_id": "68f653c3-97c7-40be-9f8e-b3f182a0061e"
         }
     }
 }
