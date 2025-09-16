@@ -46,7 +46,7 @@
     "table": {
         "50537fbe-5d7e-44bf-a90f-69383c3b5bf4": {
             "firstName": "John",
-            "lastName": "Dan",
+            "lastName": "Doe",
             "email": "john@john-dam.com",
             "course": "JS-CORE",
             "_id": "50537fbe-5d7e-44bf-a90f-69383c3b5bf4"
